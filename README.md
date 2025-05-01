@@ -123,7 +123,8 @@ Consider using `Amp/Cab/Cbo` for amp options?
 
 -   Parameter assigments seem to use `"@controller" : 3` through `"@controller" : 8`
 
-## Testing
+## File Cleanup
 
 -   [ ] Test each "free" block can be assigned via the on-device selection process.
--   [ ] Run "Clear All Assignments"
+-   [ ] Run "Clear All Assignments" on the Pod Go Unit
+-   [ ] Delete all snapshots in each JSON file
