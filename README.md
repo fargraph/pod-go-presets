@@ -28,73 +28,72 @@ Consider using `Amp/Cab/Cbo` for amp options?
 
 ## Preset Combinations
 
-| Free Blocks                                                                                  | Volume |  Wah   | FX Loop |   EQ   | Looper |  Amp   |  Cab   | File name                                                                             | Notes                   |
-| -------------------------------------------------------------------------------------------- | :----: | :----: | :-----: | :----: | :----: | :----: | :----: | ------------------------------------------------------------------------------------- | ----------------------- |
-| 7                                                                                            |   ❌   |   ❌   |   ❌    |   ✅   |   ❌   |   ✅   |   ✅   | [`7bl_Eq_Amp_Cab`](7bl_Eq_Amp_Cab.pgp)                                                |                         |
-| [`7bl_Eq_Amp_Cab.pgp`](7bl_Eq_Amp_Cab.pgp)                                                   |
-| 7                                                                                            |   ❌   |   ❌   |   ❌    |   ❌   |   ✅   |   ✅   |   ✅   | [`7bl_Lpr_Amp_Cab`](7bl_Lpr_Amp_Cab.pgp)                                              |                         |
-| [`7bl_Lpr_Amp_Cab.pgp`](7bl_Lpr_Amp_Cab.pgp)                                                 |
-| 7                                                                                            |   ❌   |   ❌   |   ❌    |   ✅   |   ✅   |   ✅   |   ❌   | [`7bl_Eq_Lpr_Amp`](7bl_Eq_Lpr_Amp.pgp)                                                |                         |
-| [`7bl_Eq_Lpr_Amp.pgp`](7bl_Eq_Lpr_Amp.pgp)                                                   |
-| 5                                                                                            |   ✅   |   ✅   |   ✅    |   ✅   |   ✅   |   ❌   |   ❌   | [`5bl_Vol_Wah_Fx_Eq`](broken/No Amp and Cab/5bl_Vol_Wah_Fx_Eq_lpr BROKEN.pgp)         |                         |
-| [`5bl_Vol_Wah_Fx_Eq_lpr BROKEN.pgp`](broken/No Amp and Cab/5bl_Vol_Wah_Fx_Eq_lpr BROKEN.pgp) |
-| ~~6~~                                                                                        | ~~✅~~ | ~~❌~~ | ~~✅~~  | ~~✅~~ | ~~✅~~ | ~~❌~~ | ~~✅~~ | [~~`6bl_Vol_Fx_Eq_Cab`~~](broken/No Amp/6bl_Vol_Fx_Eq_Cab BROKEN.pgp)                 | BROKEN                  |
-| ~~7~~                                                                                        | ~~✅~~ | ~~❌~~ | ~~❌~~  | ~~✅~~ | ~~✅~~ | ~~❌~~ | ~~❌~~ | [~~`7bl_Vol_Eq_Lpr`~~](broken/No Amp and Cab/7bl_Vol_Eq_Lpr_BROKEN.pgp)               | BROKEN                  |
-| ~~7~~                                                                                        | ~~❌~~ | ~~❌~~ | ~~✅~~  | ~~✅~~ | ~~✅~~ | ~~❌~~ | ~~❌~~ | [~~`7bl_FX_Eq_Lpr`~~](broken/No Amp and Cab/7bl_Fx_Eq_loopr BROKEN.pgp)               | BROKEN                  |
-| 6                                                                                            |   ❌   |   ❌   |   ✅    |   ✅   |   ❌   |   ✅   |   ✅   | [`6bl_Fx_Eq_Amp_Cab`](6bl_Fx_Eq_Amp_Cab.pgp)                                          |                         |
-| 6                                                                                            |   ❌   |   ❌   |   ✅    |   ❌   |   ✅   |   ✅   |   ✅   | [`6bl_Fx_Lpr_Amp_Cab`](6bl_Fx_Lpr_Amp_Cab.pgp)                                        |                         |
-| ~~6~~                                                                                        | ~~✅~~ | ~~❌~~ | ~~✅~~  | ~~✅~~ | ~~✅~~ | ~~❌~~ | ~~❌~~ | [~~`6bl_Vol_Fx_Eq_Lpr`~~](broken/No Amp and Cab/6bl_Vol_Fx_Eq_Lpr_BROKEN.pgp)         | BROKEN                  |
-| 6                                                                                            |   ❌   |   ❌   |   ❌    |   ✅   |   ✅   |   ✅   |   ✅   | [`6bl_Eq_Lpr_Amp_Cab`](6bl_Eq_Lpr_Amp_Cab.pgp)                                        | Use `7bl/Eq`instead     |
-| 6                                                                                            |   ✅   |   ❌   |   ❌    |   ✅   |   ❌   |   ✅   |   ✅   | [`6bl_Vol_Eq_Amp_Cab`](6bl_Eq_Vol_Amp_Cab.pgp)                                        |                         |
-| 6                                                                                            |   ✅   |   ❌   |   ❌    |   ❌   |   ✅   |   ✅   |   ✅   | [`6bl_Vol_Lpr_Amp_Cab`](6bl_Loopr_Vol_Amp_Cab.pgp)                                    |                         |
-| ~~5~~                                                                                        | ~~✅~~ | ~~✅~~ | ~~✅~~  | ~~✅~~ | ~~✅~~ | ~~❌~~ | ~~❌~~ | [~~`5bl_Vol_Wah_Fx_Eq_Lpr`~~](broken/No Amp and Cab/5bl_Vol_Wah_Fx_Eq_lpr BROKEN.pgp) | BROKEN                  |
-| 5                                                                                            |   ✅   |   ❌   |   ✅    |   ✅   |   ❌   |   ✅   |   ✅   | [`5bl_Vol_Fx_Eq_Amp_Cab`](5bl_Vol_Fx_Eq_Amp_Cab.pgp)                                  |                         |
-| 5                                                                                            |   ✅   |   ❌   |   ✅    |   ❌   |   ✅   |   ✅   |   ✅   | [`5bl_Vol_Fx_Lpr_Amp_Cab`](5bl_Vol_Fx_Lpr_Amp_Cab.pgp)                                |                         |
-| 5                                                                                            |   ❌   |   ❌   |   ✅    |   ✅   |   ✅   |   ✅   |   ✅   | [`5bl_Fx_Eq_Lpr_Amp_Cab`](5bl_Fx_Eq_Lpr_Amp_Cab.pgp)                                  | Use `6bl/Fx/Eq` instead |
+| Free Blocks                                  | Volume |  Wah   | FX Loop |   EQ   | Looper |  Amp   |  Cab   | File name                                                                                                                                                                           | Notes                   |
+| -------------------------------------------- | :----: | :----: | :-----: | :----: | :----: | :----: | :----: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------- |
+| 7                                            |   ❌   |   ❌   |   ❌    |   ✅   |   ❌   |   ✅   |   ✅   | [`7bl_Eq_Amp_Cab`](7bl_Eq_Amp_Cab.pgp)                                                                                                                                              |                         |
+| [`7bl_Eq_Amp_Cab.pgp`](7bl_Eq_Amp_Cab.pgp)   |
+| 7                                            |   ❌   |   ❌   |   ❌    |   ❌   |   ✅   |   ✅   |   ✅   | [`7bl_Lpr_Amp_Cab`](7bl_Lpr_Amp_Cab.pgp)                                                                                                                                            |                         |
+| [`7bl_Lpr_Amp_Cab.pgp`](7bl_Lpr_Amp_Cab.pgp) |
+| 7                                            |   ❌   |   ❌   |   ❌    |   ✅   |   ✅   |   ✅   |   ❌   | [`7bl_Eq_Lpr_Amp`](7bl_Eq_Lpr_Amp.pgp)                                                                                                                                              |                         |
+| [`7bl_Eq_Lpr_Amp.pgp`](7bl_Eq_Lpr_Amp.pgp)   |
+| ~~5~~                                        | ~~✅~~ | ~~✅~~ | ~~✅~~  | ~~✅~~ | ~~✅~~ | ~~❌~~ | ~~❌~~ | [~~`5bl_Vol_Wah_Fx_Eq`~~](broken/No Amp and Cab/5bl_Vol_Wah_Fx_Eq_lpr BROKEN.pgp), [~~`5bl_Vol_Wah_Fx_Eq_lpr BROKEN.pgp`~~](broken/No Amp and Cab/5bl_Vol_Wah_Fx_Eq_lpr BROKEN.pgp) |
+| ~~6~~                                        | ~~✅~~ | ~~❌~~ | ~~✅~~  | ~~✅~~ | ~~✅~~ | ~~❌~~ | ~~✅~~ | [~~`6bl_Vol_Fx_Eq_Cab`~~](broken/No Amp/6bl_Vol_Fx_Eq_Cab BROKEN.pgp)                                                                                                               | BROKEN                  |
+| ~~7~~                                        | ~~✅~~ | ~~❌~~ | ~~❌~~  | ~~✅~~ | ~~✅~~ | ~~❌~~ | ~~❌~~ | [~~`7bl_Vol_Eq_Lpr`~~](broken/No Amp and Cab/7bl_Vol_Eq_Lpr_BROKEN.pgp)                                                                                                             | BROKEN                  |
+| ~~7~~                                        | ~~❌~~ | ~~❌~~ | ~~✅~~  | ~~✅~~ | ~~✅~~ | ~~❌~~ | ~~❌~~ | [~~`7bl_FX_Eq_Lpr`~~](broken/No Amp and Cab/7bl_Fx_Eq_loopr BROKEN.pgp)                                                                                                             | BROKEN                  |
+| 6                                            |   ❌   |   ❌   |   ✅    |   ✅   |   ❌   |   ✅   |   ✅   | [`6bl_Fx_Eq_Amp_Cab`](6bl_Fx_Eq_Amp_Cab.pgp)                                                                                                                                        |                         |
+| 6                                            |   ❌   |   ❌   |   ✅    |   ❌   |   ✅   |   ✅   |   ✅   | [`6bl_Fx_Lpr_Amp_Cab`](6bl_Fx_Lpr_Amp_Cab.pgp)                                                                                                                                      |                         |
+| ~~6~~                                        | ~~✅~~ | ~~❌~~ | ~~✅~~  | ~~✅~~ | ~~✅~~ | ~~❌~~ | ~~❌~~ | [~~`6bl_Vol_Fx_Eq_Lpr`~~](broken/No Amp and Cab/6bl_Vol_Fx_Eq_Lpr_BROKEN.pgp)                                                                                                       | BROKEN                  |
+| 6                                            |   ❌   |   ❌   |   ❌    |   ✅   |   ✅   |   ✅   |   ✅   | [`6bl_Eq_Lpr_Amp_Cab`](6bl_Eq_Lpr_Amp_Cab.pgp)                                                                                                                                      | Use `7bl/Eq`instead     |
+| 6                                            |   ✅   |   ❌   |   ❌    |   ✅   |   ❌   |   ✅   |   ✅   | [`6bl_Vol_Eq_Amp_Cab`](6bl_Eq_Vol_Amp_Cab.pgp)                                                                                                                                      |                         |
+| 6                                            |   ✅   |   ❌   |   ❌    |   ❌   |   ✅   |   ✅   |   ✅   | [`6bl_Vol_Lpr_Amp_Cab`](6bl_Loopr_Vol_Amp_Cab.pgp)                                                                                                                                  |                         |
+| ~~5~~                                        | ~~✅~~ | ~~✅~~ | ~~✅~~  | ~~✅~~ | ~~✅~~ | ~~❌~~ | ~~❌~~ | [~~`5bl_Vol_Wah_Fx_Eq_Lpr`~~](broken/No Amp and Cab/5bl_Vol_Wah_Fx_Eq_lpr BROKEN.pgp)                                                                                               | BROKEN                  |
+| 5                                            |   ✅   |   ❌   |   ✅    |   ✅   |   ❌   |   ✅   |   ✅   | [`5bl_Vol_Fx_Eq_Amp_Cab`](5bl_Vol_Fx_Eq_Amp_Cab.pgp)                                                                                                                                |                         |
+| 5                                            |   ✅   |   ❌   |   ✅    |   ❌   |   ✅   |   ✅   |   ✅   | [`5bl_Vol_Fx_Lpr_Amp_Cab`](5bl_Vol_Fx_Lpr_Amp_Cab.pgp)                                                                                                                              |                         |
+| 5                                            |   ❌   |   ❌   |   ✅    |   ✅   |   ✅   |   ✅   |   ✅   | [`5bl_Fx_Eq_Lpr_Amp_Cab`](5bl_Fx_Eq_Lpr_Amp_Cab.pgp)                                                                                                                                | Use `6bl/Fx/Eq` instead |
 
 ## Notes
 
--   When selecting what preset to use, consider the following
-    -   Start with what pedals you need. Volume, Wah, and Fx Loop cannot be selected for a free block, so they must be chosen at the beginning.
-    -   You will need to have at least one mandatory block, choose whether you want the Looper or the Eq.
-        -   Looper is a useful tone tweaking and problem solving tool with no workaround.
-        -   Eq is also a useful problem solving tool, but it can often be adjusted using an effect or amp's tone stack or in an emergency via the Global EQ.
--   All presets have no footswitch assignments or snapshots. The intent of this library is to provide a blank slate for you to create your own presets. This makes it simpler to work with and maintain the preset files.
--   Reordering blocks seems to also change the block number and `@position` property.
--   The mandatory Eq block can be converted to a looper block
--   The only way to get 7 free user assignable blocks is to remove the Volume pedal and the FX Loop. Keeping either of those effects in the chain will cause the Pod Go to display any free blocks > 6 but they can't be assigned by the user.
--   To get similar functionality with the hardware pedal without needing a Volume block, use a preset that has no volume block, but assign Exp 2 to control the level of an effect in the chain:
-    -   Beginning-of-chain use:
-        -   Dirt pedal `Gain` control
-        -   Amp `Gain` control
-    -   Mid chain, post-gain, pre-wet volume control use:
-        -   EQ `Level`
-        -   Amp `Ch Vol`
-        -   Fx Loop `Return` if used before amp for dry effects.
-    -   End-of-chain use:
-        -   Cab `Level` parameter
-        -   Output `Level` parameter
--   When editing a preset the following keys can be deleted:
-    -   `snapshot0` through `snapshot3` - Pod Go will rebuild them on import
-    -   `footswitch` - Pod Go will rebuild them on first assignment
-    -   `controllers` - Pod Go will rebuild them on first assignment
--   Cab and Amp can be removed, but a 7 block limit still exists, and the FX Loop, Volume, Wah all contribute to that limit. That means that even without the FX Loop, Volume, and Wah, presets would be limited to:
-    -   EQ
-    -   Looper
-    -   7 Free
-    -   1 Un-assignable (recommend keeping amp model and using a preamp as a drive)
--   In the basic, factory preset, the `@type` properties are assigned as follows:
-    | Block | Type |
-    | ----- | ---- |
-    | Volume | 0 |
-    | Wah | 0 |
-    | Fx Loop | 5 |
-    | Eq | 0 |
-    | Looper | 4 |
-    | Amp | 1 |
-    | Cab | 2,0 |
-    | Some Delay and Reverb blocks | 5 |
--   In the basic, factory preset, the free blocks look like this:
+- When selecting what preset to use, consider the following
+    - Start with what pedals you need. Volume, Wah, and Fx Loop cannot be selected for a free block, so they must be chosen at the beginning.
+    - You will need to have at least one mandatory block, choose whether you want the Looper or the Eq.
+        - Looper is a useful tone tweaking and problem solving tool with no workaround.
+        - Eq is also a useful problem solving tool, but it can often be adjusted using an effect or amp's tone stack or in an emergency via the Global EQ.
+- All presets have no footswitch assignments or snapshots. The intent of this library is to provide a blank slate for you to create your own presets. This makes it simpler to work with and maintain the preset files.
+- Reordering blocks seems to also change the block number and `@position` property.
+- The mandatory Eq block can be converted to a looper block
+- The only way to get 7 free user assignable blocks is to remove the Volume pedal and the FX Loop. Keeping either of those effects in the chain will cause the Pod Go to display any free blocks > 6 but they can't be assigned by the user.
+- To get similar functionality with the hardware pedal without needing a Volume block, use a preset that has no volume block, but assign Exp 2 to control the level of an effect in the chain:
+    - Beginning-of-chain use:
+        - Dirt pedal `Gain` control
+        - Amp `Gain` control
+    - Mid chain, post-gain, pre-wet volume control use:
+        - EQ `Level`
+        - Amp `Ch Vol`
+        - Fx Loop `Return` if used before amp for dry effects.
+    - End-of-chain use:
+        - Cab `Level` parameter
+        - Output `Level` parameter
+- When editing a preset the following keys can be deleted:
+    - `snapshot0` through `snapshot3` - Pod Go will rebuild them on import
+    - `footswitch` - Pod Go will rebuild them on first assignment
+    - `controllers` - Pod Go will rebuild them on first assignment
+- Cab and Amp can be removed, but a 7 block limit still exists, and the FX Loop, Volume, Wah all contribute to that limit. That means that even without the FX Loop, Volume, and Wah, presets would be limited to:
+    - EQ
+    - Looper
+    - 7 Free
+    - 1 Un-assignable (recommend keeping amp model and using a preamp as a drive)
+- In the basic, factory preset, the `@type` properties are assigned as follows:
+  | Block | Type |
+  | ----- | ---- |
+  | Volume | 0 |
+  | Wah | 0 |
+  | Fx Loop | 5 |
+  | Eq | 0 |
+  | Looper | 4 |
+  | Amp | 1 |
+  | Cab | 2,0 |
+  | Some Delay and Reverb blocks | 5 |
+- In the basic, factory preset, the free blocks look like this:
     ```
         "block9" : {
           "@position" : 9
@@ -103,8 +102,8 @@ Consider using `Amp/Cab/Cbo` for amp options?
 
 ## Troubleshooting
 
--   Free blocks that seemingly can't be assigned because the top dial won't change effect categories can still be assigned a Looper block. Scroll the top dial even though it seems like nothing is happening. Then scroll the bottom dial, you will see the category change and effect selection will change. You CANNOT select any of these effects though. Make your way blindly to the Looper category using the upper dial. Then use the lower dial to select the Looper you want. The Looper SHOULD be selectable.
--   If a footswitch controlling parameters gets out of sync, for example, a footswitch toggle in a snapshot is reversed compared to other snapshots, try setting
+- Free blocks that seemingly can't be assigned because the top dial won't change effect categories can still be assigned a Looper block. Scroll the top dial even though it seems like nothing is happening. Then scroll the bottom dial, you will see the category change and effect selection will change. You CANNOT select any of these effects though. Make your way blindly to the Looper category using the upper dial. Then use the lower dial to select the Looper you want. The Looper SHOULD be selectable.
+- If a footswitch controlling parameters gets out of sync, for example, a footswitch toggle in a snapshot is reversed compared to other snapshots, try setting
     ```
     "controller" : {
         "dsp0" : {
@@ -125,10 +124,10 @@ Consider using `Amp/Cab/Cbo` for amp options?
 
 ### Assignments
 
--   Parameter assigments seem to use `"@controller" : 3` through `"@controller" : 8`
+- Parameter assigments seem to use `"@controller" : 3` through `"@controller" : 8`
 
 ## File Cleanup
 
--   [ ] Test each "free" block can be assigned via the on-device selection process.
--   [ ] Run "Clear All Assignments" on the Pod Go Unit
--   [ ] Delete all snapshots in each JSON file
+- [ ] Test each "free" block can be assigned via the on-device selection process.
+- [ ] Run "Clear All Assignments" on the Pod Go Unit
+- [ ] Delete all snapshots in each JSON file
