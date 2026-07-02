@@ -3,6 +3,8 @@
 A `.pgp` preset is a **JSON** file exported by POD Go Edit. Everything in this
 library targets **POD Go firmware v2.50**; no backward-compatibility guarantees.
 
+↩ [presets index](README.md)
+
 ## Top-level shape
 
 ```
@@ -65,4 +67,4 @@ keys are safe to delete — POD Go rebuilds them:
   limits in [naming-and-registry.md](naming-and-registry.md).
 - **Dropped slots.** A preset can end up with fewer than 10 `blockN` entries if a
   free slot was accidentally removed during editing (see
-  [data-quality.md](data-quality.md)). That silently lowers the free-block count.
+  [data-quality.md](../knowledge/data-quality.md)). That silently lowers the free-block count.

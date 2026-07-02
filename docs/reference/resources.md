@@ -38,8 +38,8 @@ throughout is **POD Go v2.50** (Helix 3.5-era model set).
 - **Hardware and POD Go Edit beat the docs.** Line 6's marketing counts differ from the
   itemized manual tables, and at least one research claim was wrong (dual-cab — POD Go is
   single-cab only). When a source disagrees with the unit, the unit wins; record the
-  correction in [reference-models.json](../registry/reference-models.json) and re-run
-  `tools/coverage.py`. See [lessons-learned.md](lessons-learned.md).
+  correction in [reference-models.json](../../registry/reference-models.json) and re-run
+  `tools/coverage.py`. See [lessons-learned.md](../knowledge/lessons-learned.md).
 - **Internal `@model` ids are never published** by Line 6 — the manuals/gallery give
   display names only. Ids can only be captured by dumping a preset (see
-  [reference/model-id-conventions.md](reference/model-id-conventions.md)).
+  [reference/model-id-conventions.md](model-id-conventions.md)).

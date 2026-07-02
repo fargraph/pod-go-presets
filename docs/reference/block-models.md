@@ -6,10 +6,12 @@ The authoritative list of every block POD Go can load, by category. Firmware
 of which internal `@model` ids we've actually captured is in
 [data-coverage.md](data-coverage.md).
 
+↩ [reference index](README.md)
+
 > Display names are the human labels shown on-device. The internal `@model` id
 > (e.g. `HD2_AmpDelSol300`) is **not** published by Line 6 — the only way to learn
 > it is to dump a preset that uses the block. That is the purpose of
-> [`data-presets/`](../../data-presets/) and the coverage worklist.
+> [`data-presets/`](../../data-presets) and the coverage worklist.
 
 ## Chain architecture
 

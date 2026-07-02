@@ -6,6 +6,8 @@ harvested ([registry/blocks.json](../../registry/blocks.json)). The internal id 
 `name_overrides` in [reference-models.json](../../registry/reference-models.json) for
 the crosswalk and divergences.
 
+↩ [reference index](README.md)
+
 ## Prefixes
 
 | Prefix | Count* | Meaning |

@@ -3,6 +3,8 @@
 How POD Go's block chain works, and the rules that decide which preset
 combinations are possible. This is the conceptual core of the project.
 
+↩ [presets index](README.md)
+
 ## The chain
 
 A preset's signal chain lives at `data.tone.dsp0` in the `.pgp` JSON. It is an
@@ -62,7 +64,7 @@ Removing built-ins *should* give more free blocks, but two hard limits bite:
    Volume and FX Loop (Wah too counts against the budget).
 
 2. **Removing Amp/Cab destabilizes the chain.** Empirically (see
-   [data-quality.md](data-quality.md) and the registry), presets that remove the
+   [data-quality.md](../knowledge/data-quality.md) and the registry), presets that remove the
    **Amp** tend to break, and removing **both Amp and Cab** collapses the chain to
    8–9 slots and reliably breaks. Removing only the **Cab** while keeping the Amp
    is fine. This is why the taxonomy below matters.
@@ -80,7 +82,7 @@ validity:
 | `no-amp-and-cab` | ❌ | ❌ | Breaks (all known examples broken) |
 
 Working/broken status is **not** encoded by folder — it lives in
-[registry/combinations.json](../registry/combinations.json) and in a `_broken`
+[registry/combinations.json](../../registry/combinations.json) and in a `_broken`
 filename suffix. A folder just says which built-ins were removed.
 
 ## Mandatory block: EQ or Looper

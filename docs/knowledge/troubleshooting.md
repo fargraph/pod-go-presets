@@ -2,6 +2,8 @@
 
 ## Assigning a "stuck" free block
 
+↩ [knowledge index](README.md)
+
 Free blocks that seem unassignable (the top dial won't change effect categories)
 can still take a **Looper**. Scroll the top dial even though nothing appears to
 happen, then scroll the bottom dial — the category/selection will change but you
@@ -12,7 +14,7 @@ select.
 > If a preset has more than the assignable ceiling of free blocks (e.g. 7 free
 > while keeping Volume or the FX Loop), the extra slot is a phantom and can't be
 > assigned at all. That's a design limit, not a bug — see
-> [blocks-and-constraints.md](blocks-and-constraints.md).
+> [blocks-and-constraints.md](../presets/blocks-and-constraints.md).
 
 ## Footswitch / snapshot out of sync
 

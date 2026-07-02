@@ -2,9 +2,11 @@
 
 Issues surfaced by the classifier (`tools/`) when the library was reorganized.
 Files were renamed to match their **actual contents**; the discrepancies below are
-recorded here and in [registry/combinations.json](../registry/combinations.json)
+recorded here and in [registry/combinations.json](../../registry/combinations.json)
 (`notes` + `original_file`). Items marked **verify** likely warrant an on-device
 check or fix by the author.
+
+↩ [knowledge index](README.md)
 
 ## Working presets
 
@@ -41,7 +43,7 @@ check or fix by the author.
 - **`no-amp-and-cab/*`** — every "no amp and cab" experiment is broken, and several
   have **collapsed to 8–9 `blockN` slots** (vs the healthy 10). Strong evidence that
   removing both Amp and Cab destabilizes the chain. See
-  [blocks-and-constraints.md](blocks-and-constraints.md).
+  [blocks-and-constraints.md](../presets/blocks-and-constraints.md).
 
 ## Re-checking
 
