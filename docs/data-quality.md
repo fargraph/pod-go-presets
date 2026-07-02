@@ -1,0 +1,50 @@
+# Data-Quality Findings
+
+Issues surfaced by the classifier (`tools/`) when the library was reorganized.
+Files were renamed to match their **actual contents**; the discrepancies below are
+recorded here and in [registry/combinations.json](../registry/combinations.json)
+(`notes` + `original_file`). Items marked **verify** likely warrant an on-device
+check or fix by the author.
+
+## Working presets
+
+- **`no-cab/7bl_eq_amp.pgp`** (was `7bl_Eq_Fx_loopr_Amp.pgp`) — **verify.** The old
+  name claimed an FX Loop and a Looper, but the file contains **neither** (only
+  EQ + Amp, 7 free blocks). Renamed to match content. If FX Loop + Looper were
+  intended, re-export a corrected preset.
+
+- **`no-amp/5bl_vol_fx_eq_lpr_cab.pgp`** (was `5bl_Fx_Eq_Lpr_Cab.pgp`) — **verify.**
+  Two issues: (1) the old name omitted a **Volume** block that is present; (2) it is
+  **not a blank slate** — it ships with a full loaded chain (Comp / Dist / Chorus /
+  Delay / Reverb). Also a no-amp config, which is otherwise unproven. Decide whether
+  to clear the effects (blank-slate intent) or keep it as a demo.
+
+- **`with-amp-cab/5bl_fx_lpr_amp_cab.pgp`** (was `6bl_Fx_Lpr_Amp_Cab.pgp`) —
+  **verify / fixable.** The file is missing slot **`block5`**, so it exposes only
+  **5** free blocks despite the original `6bl` name. Almost certainly an accidental
+  drop. To restore the intended 6th free block, add `"block5": { "@position": 5 }`
+  to `dsp0` (then it should be renamed back to `6bl_...`).
+
+## Broken presets
+
+- **`with-amp-cab/6bl_vol_amp_cab_broken.pgp`** (was `6bl_Vol_Fx_Amp_Cab BROKEN`) —
+  contains **two Volume blocks** (duplicate) and no FX Loop despite the old name.
+  The duplicate built-in is a plausible cause of breakage.
+
+- **`with-amp-cab/7bl_vol_amp_cab_broken.pgp`** (was `7bl_Vol_Amp_Cab BROKEN`) —
+  **malformed JSON**: a trailing comma makes it invalid to strict parsers (POD Go
+  tolerates it; our tools recover and flag `parse: recovered-trailing-comma`).
+
+- **`with-amp-cab/7bl_fx_amp_cab_broken.pgp`** — 7 free blocks while the FX Loop is
+  present; per the assignable-block ceiling the 7th free slot can't be assigned.
+
+- **`no-amp-and-cab/*`** — every "no amp and cab" experiment is broken, and several
+  have **collapsed to 8–9 `blockN` slots** (vs the healthy 10). Strong evidence that
+  removing both Amp and Cab destabilizes the chain. See
+  [blocks-and-constraints.md](blocks-and-constraints.md).
+
+## Re-checking
+
+Run `python3 tools/validate_presets.py` after any edit — it re-derives each
+preset's taxonomy, free-block count, and name from contents and fails on
+mismatch. It currently passes with 0 errors.

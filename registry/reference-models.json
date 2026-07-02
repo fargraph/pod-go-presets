@@ -1,0 +1,57 @@
+{
+  "schema": "podgo-reference-models/v1",
+  "note": "Authoritative POD Go block/model list by category, transcribed from Line 6 primary sources. Display names as they appear on-device. This is the master list to diff harvested @model ids against (see tools/coverage.py).",
+  "firmware": "v2.5x",
+  "sources": [
+    "https://line6.com/podgo-models/ (official interactive model gallery)",
+    "POD Go 2.50 Owner's Manual, doc 40-00-0568 Rev G (fw v2.50)",
+    "POD Go 2.0 / 1.10 Owner's Manuals; POD Go 1.40 release notes; kb.line6.com POD Go FAQ"
+  ],
+  "helix_deltas": [
+    "Cab block is SINGLE-cab only. POD Go does NOT support Helix's dual-cab mode (confirmed by project owner; the research draft claimed two modes and was wrong).",
+    "No polyphonic pitch (Poly Pitch, Poly Wham, Poly Capo, 12-String, Poly Sustain, Poly Detune).",
+    "Single fixed FX Loop block instead of Helix's Send/Return category.",
+    "Every amp is also selectable as a Preamp; only standalone preamp is Studio Tube Pre.",
+    "Possibly lacks a few newest Helix delays/reverbs (e.g. Cosmos Echo) - unverified."
+  ],
+  "caveats": [
+    "Per-category counts drift +/-1-2 by firmware snapshot; verify against a live v2.5x unit or POD Go Edit for a byte-exact list.",
+    "Effect display names here are the human labels; the internal @model id is only knowable by dumping a preset that uses the block (that is what data-presets/ is for)."
+  ],
+  "name_overrides": {
+    "_comment": "Records reference names whose actual internal @model id doesn't cleanly derive from the name (so the coverage matcher can't auto-link them), plus a place to log the on-device DISPLAY name when it differs from the reference key. Fields: model_id = the captured @model id (null = we don't have it / not a POD Go model); display_name = the actual on-device label when it differs from this key (set after hardware verification, else omit); note = why they diverge.",
+    "Volume Pedal":    { "model_id": "HD2_VolPanVolStereo" },
+    "Gain":            { "model_id": null, "note": "not captured yet" },
+    "Pan":             { "model_id": null, "note": "not captured yet" },
+    "Stereo Width":    { "model_id": null, "note": "not captured yet" },
+    "Stereo":          { "model_id": "HD2_DL4StereoDelay", "note": "legacy delay; name is a bare generic word" },
+    "Digital":         { "model_id": "HD2_DL4DigDelay", "note": "id abbreviates to DigDelay" },
+    "Lo Res":          { "model_id": "HD2_DL4LowResDelay", "note": "id spells LowRes" },
+    "Multi-Head":      { "model_id": "HD2_DL4MultiheadStereo", "note": "id: Multihead (one token)" },
+    "Auto-Volume Echo":{ "model_id": "HD2_DL4AutoVolStereo", "note": "id: AutoVol, drops 'Echo'" },
+    "Cali Q Graphic":  { "model_id": "HD2_CaliQStereo", "note": "id: CaliQ (no 'Graphic')" },
+    "Acoustic Sim":    { "model_id": "L6SPB_AcousGtrSimStereo", "note": "id: AcousGtrSim; no HD2_ prefix" },
+    "Frequency Shift": { "model_id": "HD2_MM4FrequencyShifter", "note": "id: FrequencyShifter" },
+    "Tape Eater":      { "model_id": "HD2_TapeEater" },
+    "Seismik Synth":   { "model_id": "HD2_SeismicSynth", "note": "id spells Seismic, not Seismik" }
+  },
+  "categories": {
+    "amp-guitar": {"models": ["US Small Tweed","Tweed Blues Nrm","Tweed Blues Brt","Fullerton Nrm","Fullerton Brt","Fullerton Jump","Grammatico LG Nrm","Grammatico LG Brt","Grammatico LG Jump","US Princess","US Deluxe Nrm","US Deluxe Vib","US Double Nrm","US Double Vib","US Super Nrm","US Super Vib","Mail Order Twin","Divided Duo","Interstate Zed","Derailed Ingrid","Grammatico GSG","Jazz Rivet 120","Essex A15","Essex A30","A30 Fawn Nrm","A30 Fawn Brt","Matchstick Ch1","Matchstick Ch2","Matchstick Jump","Mandarin 80","Mandarin Rocker","Moo)))n Nrm","Moo)))n Brt","Moo)))n Jump","Brit J45 Nrm","Brit J45 Brt","Brit Trem Nrm","Brit Trem Brt","Brit Trem Jump","Brit Plexi Nrm","Brit Plexi Brt","Brit Plexi Jump","Brit P75 Nrm","Brit P75 Brt","Brit 2203","Brit 2204","Placater Clean","Placater Dirty","Cartographer","German Mahadeva","German Ubersonic","German Xtra Blue","German Xtra Red","Cali Texas Ch1","Cali Texas Ch2","Cali IV Rhythm 1","Cali IV Rhythm 2","Cali IV Lead","Cali Rectifire","Archetype Clean","Archetype Lead","ANGL Meteor","Solo Lead Clean","Solo Lead Crunch","Solo Lead OD","PV Panama","Revv Gen Purple","Revv Gen Red","Das Benzin Mega","Das Benzin Lead","WhoWatt 100","Soup Pro","Stone Age 185","Voltage Queen","Line 6 Clarity","Line 6 Aristocrat","Line 6 Carillon","Line 6 Voltage","Line 6 Kinetic","Line 6 Oblivion","Line 6 Ventoux","Line 6 Elmsley","Line 6 Elektrik","Line 6 Doom","Line 6 Epic","Line 6 2204 Mod","Line 6 Fatality","Line 6 Litigator","Line 6 Badonk"]},
+    "amp-bass": {"models": ["US Dripman Nrm","Mandarin 200","Ampeg B-15NF","Ampeg SVT Nrm","Ampeg SVT Brt","Ampeg SVT-4 Pro","Woody Blue","Agua Sledge","Agua 51","Cali Bass","Cali 400 Ch1","Cali 400 Ch2","G Cougar 800","Del Sol 300","Busy One Ch1","Busy One Ch2","Busy One Jump"]},
+    "preamp": {"note": "Every amp above is also selectable as a Preamp; this is the only standalone one.", "models": ["Studio Tube Pre"]},
+    "cab-guitar": {"models": ["1x6x9 Soup Pro Ellipse","1x8 Small Tweed","1x10 US Princess","1x12 Fullerton","1x12 Grammatico","1x12 US Deluxe","1x12 Cali IV","1x12 Cali EXT","1x12 Blue Bell","1x12 Open Cast","1x12 Open Cream","1x12 Field Coil","1x12 Celest 12H","1x12 Lead 80","2x12 Blue Bell","2x12 Silver Bell","2x12 Match H30","2x12 Match G25","2x12 Double C12N","2x12 Jazz Rivet","2x12 Mail C12Q","2x12 Interstate","2x12 Mandarin 30","4x10 US Super","4x12 WhoWatt 100","4x12 Greenback 20","4x12 Greenback 25","4x12 Greenback 30","4x12 1960 T75","4x12 Blackback 30","4x12 Brit V30","4x12 Cali V30","4x12 Cartog Guv","4x12 Cartog C90","4x12 Mandarin EM","4x12 MOO)))N T75","4x12 Uber T75","4x12 Uber V30","4x12 XXL V30","4x12 SoloLead EM"]},
+    "cab-bass": {"models": ["1x12 Epicenter","1x15 Ampeg B-15","1x18 Del Sol","1x18 Woody Blue","2x15 Dripman","2x15 Brute","4x10 Garden","4x10 Tweed P10R","4x10 Ampeg Pro","6x10 Cali Power","8x10 SVT AV"]},
+    "cab-mic": {"note": "Mic is chosen per-cab, not a separate block.", "models": ["57 Dynamic","409 Dynamic","421 Dynamic","30 Dynamic","20 Dynamic","112 Dynamic","12 Dynamic","7 Dynamic","121 Ribbon","160 Ribbon","4038 Ribbon","414 Cond","84 Cond","67 Cond","87 Cond","47 Cond"]},
+    "dynamics": {"models": ["Deluxe Comp","Red Squeeze","Kinky Comp","Ampeg Opto Comp","Rochester Comp","LA Studio Comp","3-Band Comp","Noise Gate","Hard Gate","Horizon Gate","Autoswell","Tube Comp","Red Comp","Blue Comp","Blue Comp Treb","Vetta Comp","Vetta Juice","Boost Comp"]},
+    "distortion": {"models": ["Regal Bass DI","Kinky Boost","Deranged Master","Minotaur","Teemah!","Heir Apparent","Alpaca Rogue","Compulsive Drive","Dhyana Drive","Horizon Drive","Valve Driver","Top Secret OD","Scream 808","Pillars OD","Hedgehog D9","Stupor OD","Deez One Vintage","Deez One Mod","Ratatouille Dist","Vermin Dist","KWB","Swedish Chainsaw","Arbitrator Fuzz","Pocket Fuzz","Bighorn Fuzz","Triangle Fuzz","Dark Dove Fuzz","Ballistic Fuzz","Industrial Fuzz","Tycoctavia Fuzz","Wringer Fuzz","Thrifter Fuzz","Xenomorph Fuzz","Megaphone","Bitcrusher","Ampeg Scrambler","ZeroAmp Bass DI","Obsidian 7000","Tube Drive","Screamer","Overdrive","Classic Dist","Heavy Dist","Colordrive","Buzz Saw","Facial Fuzz","Jumbo Fuzz","Fuzz Pi","Jet Fuzz","L6 Drive","L6 Distortion","Sub Oct Fuzz","Octave Fuzz","Bronze Master","Killer Z"]},
+    "eq": {"models": ["Simple EQ","Low and High Cut","Low/High Shelf","Parametric","Tilt","10 Band Graphic","Cali Q Graphic","Acoustic Sim"]},
+    "modulation": {"models": ["Optical Trem","60s Bias Trem","Tremolo/Autopan","Harmonic Tremolo","Bleat Chop Trem","Script Mod Phase","Pebble Phaser","Ubiquitous Vibe","FlexoVibe","Deluxe Phaser","Gray Flanger","Harmonic Flanger","Courtesan Flange","Dynamix Flanger","Chorus","70s Chorus","PlastiChorus","Ampeg Liquifier","Trinity Chorus","4-Voice Chorus","Bubble Vibrato","Vibe Rotary","122 Rotary","145 Rotary","Triple Rotary","Retro Reel","Double Take","AM Ring Mod","Pitch Ring Mod","Pattern Tremolo","Panner","Bias Tremolo","Opto Tremolo","Script Phase","Panned Phaser","Barberpole","Dual Phaser","U-Vibe","Phaser","Pitch Vibrato","Dimension","Analog Chorus","Tri Chorus","Analog Flanger","Jet Flanger","AC Flanger","80A Flanger","Frequency Shift","Ring Modulator","Rotary Drum","Rotary Drum/Horn","Tape Eater","Warble-Matic","Random S&H","Sweeper"]},
+    "delay": {"models": ["Simple Delay","Mod/Chorus Echo","Dual Delay","Multitap 4","Multitap 6","Ping Pong","Sweep Echo","Ducked Delay","Reverse Delay","Vintage Digital","Vintage Swell","Pitch Echo","Transistor Tape","Harmony Delay","Bucket Brigade","Adriatic Delay","Adriatic Swell","Elephant Man","Multi Pass","Glitch Delay","Euclidean Delay","ADT","Crisscross","Tesselator","Ratchet","Ping Pong Legacy","Dynamic","Stereo","Digital","Dig w/Mod","Reverse","Lo Res","Tube Echo","Tape Echo","Echo Platter","Analog Echo","Analog w/Mod","Auto-Volume Echo","Multi-Head","Bubble Echo","Phaze Eko"]},
+    "reverb": {"models": ["Dynamic Hall","Dynamic Plate","Dynamic Room","Dynamic Ambience","Shimmer","Hot Springs","Glitz","Ganymede","Searchlights","Plateaux","Double Tank","Plate","Room","Chamber","Hall","Echo","Tile","Cave","Ducking","Octo","'63 Spring","Spring","Particle Verb"]},
+    "pitch-synth": {"models": ["Pitch Wham","Twin Harmony","Simple Pitch","Dual Pitch","Boctaver","3 Note Generator","4 OSC Generator","Bass Octaver","Smart Harmony","Octi Synth","Synth O Matic","Attack Synth","Synth String","Growler","Buzz Wave","Rez Synth","Seismik Synth","Analog Synth","Synth Lead","String Theory","Synth FX","Saturn 5 Ring Mod","Synth Harmony","Double Bass"]},
+    "filter": {"models": ["Mutant Filter","Mystery Filter","Autofilter","Asheville Pattrn","Voice Box","V Tron","Q Filter","Seeker","Obi Wah","Tron Up","Tron Down","Throbber","Slow Filter","Spin Cycle","Comet Trails"]},
+    "wah": {"models": ["UK Wah 846","Teardrop 310","Fassel","Weeper","Chrome","Chrome Custom","Throaty","Vetta Wah","Colorful","Conductor","Teardrop Bass Q"]},
+    "volume-pan": {"models": ["Volume Pedal","Gain","Pan","Stereo Width"]},
+    "fx-loop": {"models": ["FX Loop"]}
+  }
+}

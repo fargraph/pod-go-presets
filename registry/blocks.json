@@ -1,0 +1,3363 @@
+{
+  "schema": "podgo-blocks/v2",
+  "note": "Distinct @model ids we have captured, with the exact preset files each appears in ('presets'). Regenerate anytime to refresh the linkage. Category is heuristic; see docs/reference/block-models.md for the authoritative list.",
+  "distinct_models": 319,
+  "counts_by_category": {
+    "amp": 44,
+    "cab": 27,
+    "delay": 44,
+    "distortion": 56,
+    "dynamics": 17,
+    "eq": 10,
+    "filter": 15,
+    "fx-loop": 1,
+    "looper": 4,
+    "modulation": 52,
+    "pitch-synth": 25,
+    "reverb": 22,
+    "volume-pan": 1,
+    "wah": 1
+  },
+  "models": {
+    "HD2_AmpA30FawnBrt": {
+      "category": "amp",
+      "name": "Amp A30Fawn Brt",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp A30FawnBrt.pgp"
+      ]
+    },
+    "HD2_AmpA30FawnNrm": {
+      "category": "amp",
+      "name": "Amp A30Fawn Nrm",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp A30FawnNrm.pgp"
+      ]
+    },
+    "HD2_AmpBritJ45Brt": {
+      "category": "amp",
+      "name": "Amp Brit J45Brt",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp BritJ45Brt.pgp"
+      ]
+    },
+    "HD2_AmpBritJ45Nrm": {
+      "category": "amp",
+      "name": "Amp Brit J45Nrm",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp BritJ45Nrm.pgp"
+      ]
+    },
+    "HD2_AmpBritTremBrt": {
+      "category": "amp",
+      "name": "Amp Brit Trem Brt",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp BritTremBrt.pgp"
+      ]
+    },
+    "HD2_AmpBritTremJump": {
+      "category": "amp",
+      "name": "Amp Brit Trem Jump",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp BritTremJump.pgp"
+      ]
+    },
+    "HD2_AmpBritTremNrm": {
+      "category": "amp",
+      "name": "Amp Brit Trem Nrm",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp BritTremNrm.pgp"
+      ]
+    },
+    "HD2_AmpDelSol300": {
+      "category": "amp",
+      "name": "Amp Del Sol 300",
+      "occurrences": 64,
+      "in_presets": 64,
+      "presets": [
+        "data-presets/Delay Page 1a.pgp",
+        "data-presets/Delay Page 1b.pgp",
+        "data-presets/Delay Page 2a.pgp",
+        "data-presets/Delay Page 2b.pgp",
+        "data-presets/Delay Page 3a.pgp",
+        "data-presets/Delay Page 3b.pgp",
+        "data-presets/Delay Page 4.pgp",
+        "data-presets/Delay Page 5.pgp",
+        "data-presets/Delay Page 6a.pgp",
+        "data-presets/Delay Page 6b.pgp",
+        "data-presets/Dist Page 1.pgp",
+        "data-presets/Dist Page 2.pgp",
+        "data-presets/Dist Page 3.pgp",
+        "data-presets/Dist Page 4.pgp",
+        "data-presets/Dist Page 5.pgp",
+        "data-presets/Dist Page 6.pgp",
+        "data-presets/Dist Page 7.pgp",
+        "data-presets/Dist Page 8.pgp",
+        "data-presets/Dyn Page 1.pgp",
+        "data-presets/Dyn Page 2.pgp",
+        "data-presets/Dyn Page 3.pgp",
+        "data-presets/EQ Page 1.pgp",
+        "data-presets/EQ Page 2.pgp",
+        "data-presets/Filter Page 1.pgp",
+        "data-presets/Filter Page 2.pgp",
+        "data-presets/Filter Page 3.pgp",
+        "data-presets/Looper Page 1.pgp",
+        "data-presets/Looper Page 2.pgp",
+        "data-presets/Looper Page 3.pgp",
+        "data-presets/Looper Page 4.pgp",
+        "data-presets/Mod Page 1.pgp",
+        "data-presets/Mod Page 2a.pgp",
+        "data-presets/Mod Page 2b.pgp",
+        "data-presets/Mod Page 3a.pgp",
+        "data-presets/Mod Page 3b.pgp",
+        "data-presets/Mod Page 4a.pgp",
+        "data-presets/Mod Page 4b.pgp",
+        "data-presets/Mod Page 5.pgp",
+        "data-presets/Mod Page 6.pgp",
+        "data-presets/Mod Page 7.pgp",
+        "data-presets/Mod Page 8.pgp",
+        "data-presets/Pitch Page 1.pgp",
+        "data-presets/Pitch Page 2.pgp",
+        "data-presets/Pitch Page 3.pgp",
+        "data-presets/Pitch Page 4.pgp",
+        "data-presets/Reverb Page 1a.pgp",
+        "data-presets/Reverb Page 1b.pgp",
+        "data-presets/Reverb Page 1c.pgp",
+        "data-presets/Reverb Page 2a.pgp",
+        "data-presets/Reverb Page 2b.pgp",
+        "data-presets/Reverb Page 3a.pgp",
+        "data-presets/Reverb Page 3b.pgp",
+        "data-presets/Reverb Page 4.pgp",
+        "presets/no-cab/7bl_eq_amp.pgp",
+        "presets/no-cab/7bl_eq_lpr_amp.pgp",
+        "presets/with-amp-cab/5bl_fx_eq_lpr_amp_cab.pgp",
+        "presets/with-amp-cab/5bl_fx_lpr_amp_cab.pgp",
+        "presets/with-amp-cab/5bl_vol_fx_lpr_amp_cab.pgp",
+        "presets/with-amp-cab/6bl_eq_lpr_amp_cab.pgp",
+        "presets/with-amp-cab/6bl_fx_eq_amp_cab.pgp",
+        "presets/with-amp-cab/6bl_vol_eq_amp_cab.pgp",
+        "presets/with-amp-cab/6bl_vol_lpr_amp_cab.pgp",
+        "presets/with-amp-cab/7bl_eq_amp_cab.pgp",
+        "presets/with-amp-cab/7bl_lpr_amp_cab.pgp"
+      ]
+    },
+    "HD2_AmpDerailedIngrid": {
+      "category": "amp",
+      "name": "Amp Derailed Ingrid",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp DerailedIngr.pgp"
+      ]
+    },
+    "HD2_AmpDividedDuo": {
+      "category": "amp",
+      "name": "Amp Divided Duo",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp DividedDuo.pgp"
+      ]
+    },
+    "HD2_AmpEssexA15": {
+      "category": "amp",
+      "name": "Amp Essex A15",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp EssexA15.pgp"
+      ]
+    },
+    "HD2_AmpEssexA30": {
+      "category": "amp",
+      "name": "Amp Essex A30",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp EssexA30.pgp"
+      ]
+    },
+    "HD2_AmpFullertonBrt": {
+      "category": "amp",
+      "name": "Amp Fullerton Brt",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp FullertonBr.pgp"
+      ]
+    },
+    "HD2_AmpFullertonJump": {
+      "category": "amp",
+      "name": "Amp Fullerton Jump",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp FullertonJp.pgp"
+      ]
+    },
+    "HD2_AmpFullertonNrm": {
+      "category": "amp",
+      "name": "Amp Fullerton Nrm",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp FullertonNm.pgp"
+      ]
+    },
+    "HD2_AmpGSG100": {
+      "category": "amp",
+      "name": "Amp GSG100",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp GrammaticoGS.pgp"
+      ]
+    },
+    "HD2_AmpGrammaticoBrt": {
+      "category": "amp",
+      "name": "Amp Grammatico Brt",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp GrammaticoBr.pgp"
+      ]
+    },
+    "HD2_AmpGrammaticoJump": {
+      "category": "amp",
+      "name": "Amp Grammatico Jump",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp GrammaticoJp.pgp"
+      ]
+    },
+    "HD2_AmpGrammaticoNrm": {
+      "category": "amp",
+      "name": "Amp Grammatico Nrm",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp GrammaticoNm.pgp"
+      ]
+    },
+    "HD2_AmpInterstateZed": {
+      "category": "amp",
+      "name": "Amp Interstate Zed",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp InterstateZe.pgp"
+      ]
+    },
+    "HD2_AmpJazzRivet120": {
+      "category": "amp",
+      "name": "Amp Jazz Rivet 120",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp JazzRivet120.pgp"
+      ]
+    },
+    "HD2_AmpLine6Litigator": {
+      "category": "amp",
+      "name": "Amp Line 6Litigator",
+      "occurrences": 3,
+      "in_presets": 3,
+      "presets": [
+        "presets/with-amp-cab/5bl_vol_fx_eq_amp_cab.pgp",
+        "presets/with-amp-cab/6bl_vol_amp_cab_broken.pgp",
+        "presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp"
+      ]
+    },
+    "HD2_AmpMailOrderTwin": {
+      "category": "amp",
+      "name": "Amp Mail Order Twin",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp MailOrderTwi.pgp"
+      ]
+    },
+    "HD2_AmpMandarin80": {
+      "category": "amp",
+      "name": "Amp Mandarin 80",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp Mandrn80.pgp"
+      ]
+    },
+    "HD2_AmpMandarinRocker": {
+      "category": "amp",
+      "name": "Amp Mandarin Rocker",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp MandrnRocker.pgp"
+      ]
+    },
+    "HD2_AmpMatchstickCh1": {
+      "category": "amp",
+      "name": "Amp Matchstick Ch 1",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp MatchCh1.pgp"
+      ]
+    },
+    "HD2_AmpMatchstickCh2": {
+      "category": "amp",
+      "name": "Amp Matchstick Ch 2",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp MatchCh2.pgp"
+      ]
+    },
+    "HD2_AmpMatchstickJump": {
+      "category": "amp",
+      "name": "Amp Matchstick Jump",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp MatchJump.pgp"
+      ]
+    },
+    "HD2_AmpMoonBrt": {
+      "category": "amp",
+      "name": "Amp Moon Brt",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp Moo)))nBrt.pgp"
+      ]
+    },
+    "HD2_AmpMoonJump": {
+      "category": "amp",
+      "name": "Amp Moon Jump",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp Moo)))nJump.pgp"
+      ]
+    },
+    "HD2_AmpMoonNrm": {
+      "category": "amp",
+      "name": "Amp Moon Nrm",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp Moo)))nNrm.pgp"
+      ]
+    },
+    "HD2_AmpStoneAge185": {
+      "category": "amp",
+      "name": "Amp Stone Age 185",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp StoneAge185.pgp"
+      ]
+    },
+    "HD2_AmpTweedBluesBrt": {
+      "category": "amp",
+      "name": "Amp Tweed Blues Brt",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp TweedBluesBr.pgp"
+      ]
+    },
+    "HD2_AmpTweedBluesNrm": {
+      "category": "amp",
+      "name": "Amp Tweed Blues Nrm",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp TweedBluesNm.pgp"
+      ]
+    },
+    "HD2_AmpUSDeluxeNrm": {
+      "category": "amp",
+      "name": "Amp USDeluxe Nrm",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp UsDeluxeNm.pgp"
+      ]
+    },
+    "HD2_AmpUSDeluxeVib": {
+      "category": "amp",
+      "name": "Amp USDeluxe Vib",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp UsDeluxeVib.pgp"
+      ]
+    },
+    "HD2_AmpUSDoubleNrm": {
+      "category": "amp",
+      "name": "Amp USDouble Nrm",
+      "occurrences": 2,
+      "in_presets": 2,
+      "presets": [
+        "data-presets/Amp UsDoubleNm.pgp",
+        "presets/with-amp-cab/7bl_vol_amp_cab_broken.pgp"
+      ]
+    },
+    "HD2_AmpUSDoubleVib": {
+      "category": "amp",
+      "name": "Amp USDouble Vib",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp UsDoubleVib.pgp"
+      ]
+    },
+    "HD2_AmpUSPrincess": {
+      "category": "amp",
+      "name": "Amp USPrincess",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp UsPrincess.pgp"
+      ]
+    },
+    "HD2_AmpUSSmallTweed": {
+      "category": "amp",
+      "name": "Amp USSmall Tweed",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp UsSmallTweed.pgp"
+      ]
+    },
+    "HD2_AmpUSSuperNorm": {
+      "category": "amp",
+      "name": "Amp USSuper Norm",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp UsSuperNm.pgp"
+      ]
+    },
+    "HD2_AmpUSSuperVib": {
+      "category": "amp",
+      "name": "Amp USSuper Vib",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp UsSuperVib.pgp"
+      ]
+    },
+    "HD2_AmpVoltageQueen": {
+      "category": "amp",
+      "name": "Amp Voltage Queen",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp VoltageQueen.pgp"
+      ]
+    },
+    "HD2_AmpWhoWatt100": {
+      "category": "amp",
+      "name": "Amp Who Watt 100",
+      "occurrences": 2,
+      "in_presets": 2,
+      "presets": [
+        "data-presets/Amp SoupPro.pgp",
+        "data-presets/Amp WhoWatt100.pgp"
+      ]
+    },
+    "HD2_Cab2x12DoubleC12N": {
+      "category": "cab",
+      "name": "Cab 2x 12Double C12N",
+      "occurrences": 2,
+      "in_presets": 2,
+      "presets": [
+        "data-presets/Amp UsDoubleNm.pgp",
+        "presets/with-amp-cab/7bl_vol_amp_cab_broken.pgp"
+      ]
+    },
+    "HD2_CabMicIr_1x10USPrincess": {
+      "category": "cab",
+      "name": "Cab Mic Ir_1x 10USPrincess",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp UsPrincess.pgp"
+      ]
+    },
+    "HD2_CabMicIr_1x12BlueBell": {
+      "category": "cab",
+      "name": "Cab Mic Ir_1x 12Blue Bell",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp EssexA15.pgp"
+      ]
+    },
+    "HD2_CabMicIr_1x12Fullerton": {
+      "category": "cab",
+      "name": "Cab Mic Ir_1x 12Fullerton",
+      "occurrences": 3,
+      "in_presets": 3,
+      "presets": [
+        "data-presets/Amp FullertonBr.pgp",
+        "data-presets/Amp FullertonJp.pgp",
+        "data-presets/Amp FullertonNm.pgp"
+      ]
+    },
+    "HD2_CabMicIr_1x12Grammatico": {
+      "category": "cab",
+      "name": "Cab Mic Ir_1x 12Grammatico",
+      "occurrences": 4,
+      "in_presets": 4,
+      "presets": [
+        "data-presets/Amp GrammaticoBr.pgp",
+        "data-presets/Amp GrammaticoJp.pgp",
+        "data-presets/Amp GrammaticoNm.pgp",
+        "data-presets/Amp StoneAge185.pgp"
+      ]
+    },
+    "HD2_CabMicIr_1x12OpenCast": {
+      "category": "cab",
+      "name": "Cab Mic Ir_1x 12Open Cast",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp GrammaticoGS.pgp"
+      ]
+    },
+    "HD2_CabMicIr_1x12OpenCream": {
+      "category": "cab",
+      "name": "Cab Mic Ir_1x 12Open Cream",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp DividedDuo.pgp"
+      ]
+    },
+    "HD2_CabMicIr_1x12USDeluxe": {
+      "category": "cab",
+      "name": "Cab Mic Ir_1x 12USDeluxe",
+      "occurrences": 3,
+      "in_presets": 3,
+      "presets": [
+        "data-presets/Amp UsDeluxeNm.pgp",
+        "data-presets/Amp UsDeluxeVib.pgp",
+        "data-presets/Amp VoltageQueen.pgp"
+      ]
+    },
+    "HD2_CabMicIr_1x8SmallTweed": {
+      "category": "cab",
+      "name": "Cab Mic Ir_1x 8Small Tweed",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp UsSmallTweed.pgp"
+      ]
+    },
+    "HD2_CabMicIr_2x12BlueBell": {
+      "category": "cab",
+      "name": "Cab Mic Ir_2x 12Blue Bell",
+      "occurrences": 2,
+      "in_presets": 2,
+      "presets": [
+        "data-presets/Amp A30FawnBrt.pgp",
+        "data-presets/Amp A30FawnNrm.pgp"
+      ]
+    },
+    "HD2_CabMicIr_2x12DoubleC12N": {
+      "category": "cab",
+      "name": "Cab Mic Ir_2x 12Double C12N",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp UsDoubleVib.pgp"
+      ]
+    },
+    "HD2_CabMicIr_2x12Interstate": {
+      "category": "cab",
+      "name": "Cab Mic Ir_2x 12Interstate",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp InterstateZe.pgp"
+      ]
+    },
+    "HD2_CabMicIr_2x12JazzRivet": {
+      "category": "cab",
+      "name": "Cab Mic Ir_2x 12Jazz Rivet",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp JazzRivet120.pgp"
+      ]
+    },
+    "HD2_CabMicIr_2x12MailC12Q": {
+      "category": "cab",
+      "name": "Cab Mic Ir_2x 12Mail C12Q",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp MailOrderTwi.pgp"
+      ]
+    },
+    "HD2_CabMicIr_2x12Mandarin": {
+      "category": "cab",
+      "name": "Cab Mic Ir_2x 12Mandarin",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp MandrnRocker.pgp"
+      ]
+    },
+    "HD2_CabMicIr_2x12MatchG25": {
+      "category": "cab",
+      "name": "Cab Mic Ir_2x 12Match G25",
+      "occurrences": 2,
+      "in_presets": 2,
+      "presets": [
+        "data-presets/Amp MatchCh2.pgp",
+        "data-presets/Amp MatchJump.pgp"
+      ]
+    },
+    "HD2_CabMicIr_2x12MatchH30": {
+      "category": "cab",
+      "name": "Cab Mic Ir_2x 12Match H30",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp MatchCh1.pgp"
+      ]
+    },
+    "HD2_CabMicIr_2x12SilverBell": {
+      "category": "cab",
+      "name": "Cab Mic Ir_2x 12Silver Bell",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp EssexA30.pgp"
+      ]
+    },
+    "HD2_CabMicIr_2x15Brute": {
+      "category": "cab",
+      "name": "Cab Mic Ir_2x 15Brute",
+      "occurrences": 9,
+      "in_presets": 9,
+      "presets": [
+        "presets/with-amp-cab/5bl_fx_eq_lpr_amp_cab.pgp",
+        "presets/with-amp-cab/5bl_fx_lpr_amp_cab.pgp",
+        "presets/with-amp-cab/5bl_vol_fx_lpr_amp_cab.pgp",
+        "presets/with-amp-cab/6bl_eq_lpr_amp_cab.pgp",
+        "presets/with-amp-cab/6bl_fx_eq_amp_cab.pgp",
+        "presets/with-amp-cab/6bl_vol_eq_amp_cab.pgp",
+        "presets/with-amp-cab/6bl_vol_lpr_amp_cab.pgp",
+        "presets/with-amp-cab/7bl_eq_amp_cab.pgp",
+        "presets/with-amp-cab/7bl_lpr_amp_cab.pgp"
+      ]
+    },
+    "HD2_CabMicIr_4x10TweedP10R": {
+      "category": "cab",
+      "name": "Cab Mic Ir_4x 10Tweed P10R",
+      "occurrences": 2,
+      "in_presets": 2,
+      "presets": [
+        "data-presets/Amp TweedBluesBr.pgp",
+        "data-presets/Amp TweedBluesNm.pgp"
+      ]
+    },
+    "HD2_CabMicIr_4x10USSuper": {
+      "category": "cab",
+      "name": "Cab Mic Ir_4x 10USSuper",
+      "occurrences": 2,
+      "in_presets": 2,
+      "presets": [
+        "data-presets/Amp UsSuperNm.pgp",
+        "data-presets/Amp UsSuperVib.pgp"
+      ]
+    },
+    "HD2_CabMicIr_4x12CaliV30": {
+      "category": "cab",
+      "name": "Cab Mic Ir_4x 12Cali V30",
+      "occurrences": 6,
+      "in_presets": 6,
+      "presets": [
+        "data-presets/Amp DerailedIngr.pgp",
+        "presets/no-amp/5bl_vol_fx_eq_lpr_cab.pgp",
+        "presets/no-amp/6bl_vol_fx_eq_cab_broken.pgp",
+        "presets/with-amp-cab/5bl_vol_fx_eq_amp_cab.pgp",
+        "presets/with-amp-cab/6bl_vol_amp_cab_broken.pgp",
+        "presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp"
+      ]
+    },
+    "HD2_CabMicIr_4x12Greenback20": {
+      "category": "cab",
+      "name": "Cab Mic Ir_4x 12Greenback 20",
+      "occurrences": 2,
+      "in_presets": 2,
+      "presets": [
+        "data-presets/Amp BritJ45Brt.pgp",
+        "data-presets/Amp BritJ45Nrm.pgp"
+      ]
+    },
+    "HD2_CabMicIr_4x12Greenback25": {
+      "category": "cab",
+      "name": "Cab Mic Ir_4x 12Greenback 25",
+      "occurrences": 3,
+      "in_presets": 3,
+      "presets": [
+        "data-presets/Amp BritTremBrt.pgp",
+        "data-presets/Amp BritTremJump.pgp",
+        "data-presets/Amp BritTremNrm.pgp"
+      ]
+    },
+    "HD2_CabMicIr_4x12MOONT75": {
+      "category": "cab",
+      "name": "Cab Mic Ir_4x 12MOONT75",
+      "occurrences": 3,
+      "in_presets": 3,
+      "presets": [
+        "data-presets/Amp Moo)))nBrt.pgp",
+        "data-presets/Amp Moo)))nJump.pgp",
+        "data-presets/Amp Moo)))nNrm.pgp"
+      ]
+    },
+    "HD2_CabMicIr_4x12Mandarin": {
+      "category": "cab",
+      "name": "Cab Mic Ir_4x 12Mandarin",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Amp Mandrn80.pgp"
+      ]
+    },
+    "HD2_CabMicIr_4x12WhoWatt100": {
+      "category": "cab",
+      "name": "Cab Mic Ir_4x 12Who Watt 100",
+      "occurrences": 2,
+      "in_presets": 2,
+      "presets": [
+        "data-presets/Amp SoupPro.pgp",
+        "data-presets/Amp WhoWatt100.pgp"
+      ]
+    },
+    "HD2_DL4AnalogDelayStereo": {
+      "category": "delay",
+      "name": "DL4Analog Delay",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 6a.pgp"
+      ]
+    },
+    "HD2_DL4AnalogDelayStereoMod": {
+      "category": "delay",
+      "name": "DL4Analog Delay Stereo Mod",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 6a.pgp"
+      ]
+    },
+    "HD2_DL4AutoVolStereo": {
+      "category": "delay",
+      "name": "DL4Auto Vol",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 6a.pgp"
+      ]
+    },
+    "HD2_DL4DigDelay": {
+      "category": "delay",
+      "name": "DL4Dig Delay",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 5.pgp"
+      ]
+    },
+    "HD2_DL4DigDelayWithMod": {
+      "category": "delay",
+      "name": "DL4Dig Delay With Mod",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 5.pgp"
+      ]
+    },
+    "HD2_DL4DynamicDelayStereo": {
+      "category": "delay",
+      "name": "DL4Dynamic Delay",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 4.pgp"
+      ]
+    },
+    "HD2_DL4EchoPlatterStereo": {
+      "category": "delay",
+      "name": "DL4Echo Platter",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 6a.pgp"
+      ]
+    },
+    "HD2_DL4LowResDelay": {
+      "category": "delay",
+      "name": "DL4Low Res Delay",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 5.pgp"
+      ]
+    },
+    "HD2_DL4MultiheadStereo": {
+      "category": "delay",
+      "name": "DL4Multihead",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 6a.pgp"
+      ]
+    },
+    "HD2_DL4PingPong": {
+      "category": "delay",
+      "name": "DL4Ping Pong",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 4.pgp"
+      ]
+    },
+    "HD2_DL4Reverse": {
+      "category": "delay",
+      "name": "DL4Reverse",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 5.pgp"
+      ]
+    },
+    "HD2_DL4StereoDelay": {
+      "category": "delay",
+      "name": "DL4Stereo Delay",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 4.pgp"
+      ]
+    },
+    "HD2_DL4SweepEchoStereo": {
+      "category": "delay",
+      "name": "DL4Sweep Echo",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 5.pgp"
+      ]
+    },
+    "HD2_DL4TapeEchoStereo": {
+      "category": "delay",
+      "name": "DL4Tape Echo",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 5.pgp"
+      ]
+    },
+    "HD2_DL4TubeEchoStereo": {
+      "category": "delay",
+      "name": "DL4Tube Echo",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 5.pgp"
+      ]
+    },
+    "HD2_DelayADTStereo": {
+      "category": "delay",
+      "name": "Delay ADT",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 4.pgp"
+      ]
+    },
+    "HD2_DelayAdriaticDelayStereo": {
+      "category": "delay",
+      "name": "Delay Adriatic Delay",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 3a.pgp"
+      ]
+    },
+    "HD2_DelayBucketBrigadeStereo": {
+      "category": "delay",
+      "name": "Delay Bucket Brigade",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 3a.pgp"
+      ]
+    },
+    "HD2_DelayCrissCrossStereo": {
+      "category": "delay",
+      "name": "Delay Criss Cross",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 4.pgp"
+      ]
+    },
+    "HD2_DelayDoubleDoubleStereo": {
+      "category": "delay",
+      "name": "Delay Double Double",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 4b.pgp"
+      ]
+    },
+    "HD2_DelayDualDelayStereo": {
+      "category": "delay",
+      "name": "Delay Dual Delay",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 1a.pgp"
+      ]
+    },
+    "HD2_DelayDuckedDelayStereo": {
+      "category": "delay",
+      "name": "Delay Ducked Delay",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 2a.pgp"
+      ]
+    },
+    "HD2_DelayElephantManStereo": {
+      "category": "delay",
+      "name": "Delay Elephant Man",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 3a.pgp"
+      ]
+    },
+    "HD2_DelayHarmonyDelayStereo": {
+      "category": "delay",
+      "name": "Delay Harmony Delay",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 2b.pgp"
+      ]
+    },
+    "HD2_DelayModChorusEchoStereo": {
+      "category": "delay",
+      "name": "Delay Mod Chorus Echo",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 1a.pgp"
+      ]
+    },
+    "HD2_DelayMultiPassStereo": {
+      "category": "delay",
+      "name": "Delay Multi Pass",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 3a.pgp"
+      ]
+    },
+    "HD2_DelayMultitap4Stereo": {
+      "category": "delay",
+      "name": "Delay Multitap 4",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 1a.pgp"
+      ]
+    },
+    "HD2_DelayMultitap6Stereo": {
+      "category": "delay",
+      "name": "Delay Multitap 6",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 1a.pgp"
+      ]
+    },
+    "HD2_DelayPingPongStereo": {
+      "category": "delay",
+      "name": "Delay Ping Pong",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 1a.pgp"
+      ]
+    },
+    "HD2_DelayPitchStereo": {
+      "category": "delay",
+      "name": "Delay Pitch",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 2a.pgp"
+      ]
+    },
+    "HD2_DelayReverseDelayStereo": {
+      "category": "delay",
+      "name": "Delay Reverse Delay",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 2a.pgp"
+      ]
+    },
+    "HD2_DelaySimpleDelayStereo": {
+      "category": "delay",
+      "name": "Delay Simple Delay",
+      "occurrences": 3,
+      "in_presets": 3,
+      "presets": [
+        "data-presets/Delay Page 1a.pgp",
+        "presets/no-amp-and-cab/5bl_vol_eq_lpr_broken.pgp",
+        "presets/no-amp-and-cab/5bl_vol_fx_eq_lpr_broken.pgp"
+      ]
+    },
+    "HD2_DelaySweepEchoStereo": {
+      "category": "delay",
+      "name": "Delay Sweep Echo",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 1b.pgp"
+      ]
+    },
+    "HD2_DelaySwellAdriaticStereo": {
+      "category": "delay",
+      "name": "Delay Swell Adriatic",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 3a.pgp"
+      ]
+    },
+    "HD2_DelaySwellVintageDigitalStereo": {
+      "category": "delay",
+      "name": "Delay Swell Vintage Digital",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 2a.pgp"
+      ]
+    },
+    "HD2_DelayTransistorTapeStereo": {
+      "category": "delay",
+      "name": "Delay Transistor Tape",
+      "occurrences": 8,
+      "in_presets": 8,
+      "presets": [
+        "data-presets/Delay Page 2a.pgp",
+        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken.pgp",
+        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken_v2.pgp",
+        "presets/no-amp-and-cab/6bl_fx_eq_lpr_broken.pgp",
+        "presets/no-amp/5bl_vol_fx_eq_lpr_cab.pgp",
+        "presets/no-amp/6bl_vol_fx_eq_cab_broken.pgp",
+        "presets/with-amp-cab/6bl_vol_amp_cab_broken.pgp",
+        "presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp"
+      ]
+    },
+    "HD2_DelayVintageDigitalStereoV2": {
+      "category": "delay",
+      "name": "Delay Vintage Digital Stereo V2",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 2a.pgp"
+      ]
+    },
+    "HD2_ReverbEchoStereo": {
+      "category": "delay",
+      "name": "Reverb Echo",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Reverb Page 3a.pgp"
+      ]
+    },
+    "L6BubbleEcho": {
+      "category": "delay",
+      "name": "L6Bubble Echo",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 6b.pgp"
+      ]
+    },
+    "L6PhazeEko": {
+      "category": "delay",
+      "name": "L6Phaze Eko",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 6b.pgp"
+      ]
+    },
+    "VIC_DelayGlitchStereo": {
+      "category": "delay",
+      "name": "Delay Glitch",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 3b.pgp"
+      ]
+    },
+    "VIC_DelayRatchetStereo": {
+      "category": "delay",
+      "name": "Delay Ratchet",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 4.pgp"
+      ]
+    },
+    "VIC_DelayStutterEditStereo": {
+      "category": "delay",
+      "name": "Delay Stutter Edit",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 4.pgp"
+      ]
+    },
+    "Victoria_EuclideanDelayStereo": {
+      "category": "delay",
+      "name": "Victoria_Euclidean Delay",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Delay Page 3b.pgp"
+      ]
+    },
+    "HD2_DM4BassOctaver": {
+      "category": "distortion",
+      "name": "DM4Bass Octaver",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Pitch Page 2.pgp"
+      ]
+    },
+    "HD2_DM4BuzzSaw": {
+      "category": "distortion",
+      "name": "DM4Buzz Saw",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 7.pgp"
+      ]
+    },
+    "HD2_DM4ClassicDistortion": {
+      "category": "distortion",
+      "name": "DM4Classic Distortion",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 6.pgp"
+      ]
+    },
+    "HD2_DM4ColorDrive": {
+      "category": "distortion",
+      "name": "DM4Color Drive",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 7.pgp"
+      ]
+    },
+    "HD2_DM4FacialFuzz": {
+      "category": "distortion",
+      "name": "DM4Facial Fuzz",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 7.pgp"
+      ]
+    },
+    "HD2_DM4FuzzPi": {
+      "category": "distortion",
+      "name": "DM4Fuzz Pi",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 7.pgp"
+      ]
+    },
+    "HD2_DM4HeavyDistortion": {
+      "category": "distortion",
+      "name": "DM4Heavy Distortion",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 7.pgp"
+      ]
+    },
+    "HD2_DM4JetFuzz": {
+      "category": "distortion",
+      "name": "DM4Jet Fuzz",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 7.pgp"
+      ]
+    },
+    "HD2_DM4JumboFuzz": {
+      "category": "distortion",
+      "name": "DM4Jumbo Fuzz",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 7.pgp"
+      ]
+    },
+    "HD2_DM4Line6Distortion": {
+      "category": "distortion",
+      "name": "DM4Line 6Distortion",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 8.pgp"
+      ]
+    },
+    "HD2_DM4Line6Drive": {
+      "category": "distortion",
+      "name": "DM4Line 6Drive",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 8.pgp"
+      ]
+    },
+    "HD2_DM4OctaveFuzz": {
+      "category": "distortion",
+      "name": "DM4Octave Fuzz",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 8.pgp"
+      ]
+    },
+    "HD2_DM4Overdrive": {
+      "category": "distortion",
+      "name": "DM4Overdrive",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 6.pgp"
+      ]
+    },
+    "HD2_DM4Screamer": {
+      "category": "distortion",
+      "name": "DM4Screamer",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 6.pgp"
+      ]
+    },
+    "HD2_DM4SubOctFuzz": {
+      "category": "distortion",
+      "name": "DM4Sub Oct Fuzz",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 8.pgp"
+      ]
+    },
+    "HD2_DM4TubeDrive": {
+      "category": "distortion",
+      "name": "DM4Tube Drive",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 6.pgp"
+      ]
+    },
+    "HD2_DistAlpacaRougeMono": {
+      "category": "distortion",
+      "name": "Dist Alpaca Rouge",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 1.pgp"
+      ]
+    },
+    "HD2_DistAmpegScramblerODMono": {
+      "category": "distortion",
+      "name": "Dist Ampeg Scrambler OD",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 5.pgp"
+      ]
+    },
+    "HD2_DistArbitratorFuzzMono": {
+      "category": "distortion",
+      "name": "Dist Arbitrator Fuzz",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 4.pgp"
+      ]
+    },
+    "HD2_DistBallisticFuzzMono": {
+      "category": "distortion",
+      "name": "Dist Ballistic Fuzz",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 4.pgp"
+      ]
+    },
+    "HD2_DistBitcrusherMono": {
+      "category": "distortion",
+      "name": "Dist Bitcrusher",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 5.pgp"
+      ]
+    },
+    "HD2_DistCompulsiveDriveMono": {
+      "category": "distortion",
+      "name": "Dist Compulsive Drive",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 1.pgp"
+      ]
+    },
+    "HD2_DistDarkDoveFuzzMono": {
+      "category": "distortion",
+      "name": "Dist Dark Dove Fuzz",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 4.pgp"
+      ]
+    },
+    "HD2_DistDeezOneModMono": {
+      "category": "distortion",
+      "name": "Dist Deez One Mod",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 3.pgp"
+      ]
+    },
+    "HD2_DistDeezOneVintageMono": {
+      "category": "distortion",
+      "name": "Dist Deez One Vintage",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 3.pgp"
+      ]
+    },
+    "HD2_DistDerangedMasterMono": {
+      "category": "distortion",
+      "name": "Dist Deranged Master",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 1.pgp"
+      ]
+    },
+    "HD2_DistDhyanaDriveMono": {
+      "category": "distortion",
+      "name": "Dist Dhyana Drive",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 2.pgp"
+      ]
+    },
+    "HD2_DistHedgehogD9Mono": {
+      "category": "distortion",
+      "name": "Dist Hedgehog D9",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 2.pgp"
+      ]
+    },
+    "HD2_DistHeirApparentMono": {
+      "category": "distortion",
+      "name": "Dist Heir Apparent",
+      "occurrences": 8,
+      "in_presets": 8,
+      "presets": [
+        "data-presets/Dist Page 1.pgp",
+        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken.pgp",
+        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken_v2.pgp",
+        "presets/no-amp-and-cab/6bl_fx_eq_lpr_broken.pgp",
+        "presets/no-amp/5bl_vol_fx_eq_lpr_cab.pgp",
+        "presets/no-amp/6bl_vol_fx_eq_cab_broken.pgp",
+        "presets/with-amp-cab/6bl_vol_amp_cab_broken.pgp",
+        "presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp"
+      ]
+    },
+    "HD2_DistHorizonDriveMono": {
+      "category": "distortion",
+      "name": "Dist Horizon Drive",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 2.pgp"
+      ]
+    },
+    "HD2_DistIndustrialFuzzMono": {
+      "category": "distortion",
+      "name": "Dist Industrial Fuzz",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 4.pgp"
+      ]
+    },
+    "HD2_DistKWBMono": {
+      "category": "distortion",
+      "name": "Dist KWB",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 3.pgp"
+      ]
+    },
+    "HD2_DistKinkyBoostMono": {
+      "category": "distortion",
+      "name": "Dist Kinky Boost",
+      "occurrences": 3,
+      "in_presets": 3,
+      "presets": [
+        "data-presets/Dist Page 1.pgp",
+        "presets/no-amp-and-cab/5bl_vol_eq_lpr_broken.pgp",
+        "presets/no-amp-and-cab/5bl_vol_fx_eq_lpr_broken.pgp"
+      ]
+    },
+    "HD2_DistMegaphoneMono": {
+      "category": "distortion",
+      "name": "Dist Megaphone",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 5.pgp"
+      ]
+    },
+    "HD2_DistMinotaurMono": {
+      "category": "distortion",
+      "name": "Dist Minotaur",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 1.pgp"
+      ]
+    },
+    "HD2_DistObsidian7000Mono": {
+      "category": "distortion",
+      "name": "Dist Obsidian 7000",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 6.pgp"
+      ]
+    },
+    "HD2_DistPillarsMono": {
+      "category": "distortion",
+      "name": "Dist Pillars",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 2.pgp"
+      ]
+    },
+    "HD2_DistPocketFuzzMono": {
+      "category": "distortion",
+      "name": "Dist Pocket Fuzz",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 4.pgp"
+      ]
+    },
+    "HD2_DistRamsHeadMono": {
+      "category": "distortion",
+      "name": "Dist Rams Head",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 4.pgp"
+      ]
+    },
+    "HD2_DistRatatouilleDistMono": {
+      "category": "distortion",
+      "name": "Dist Ratatouille Dist",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 3.pgp"
+      ]
+    },
+    "HD2_DistRegalBassDIMono": {
+      "category": "distortion",
+      "name": "Dist Regal Bass DI",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 6.pgp"
+      ]
+    },
+    "HD2_DistScream808Mono": {
+      "category": "distortion",
+      "name": "Dist Scream 808",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 2.pgp"
+      ]
+    },
+    "HD2_DistStuporODMono": {
+      "category": "distortion",
+      "name": "Dist Stupor OD",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 3.pgp"
+      ]
+    },
+    "HD2_DistSwedishChainsawMono": {
+      "category": "distortion",
+      "name": "Dist Swedish Chainsaw",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 3.pgp"
+      ]
+    },
+    "HD2_DistTeemahMono": {
+      "category": "distortion",
+      "name": "Dist Teemah",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 1.pgp"
+      ]
+    },
+    "HD2_DistThrifterFuzzMono": {
+      "category": "distortion",
+      "name": "Dist Thrifter Fuzz",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 5.pgp"
+      ]
+    },
+    "HD2_DistTopSecretODMono": {
+      "category": "distortion",
+      "name": "Dist Top Secret OD",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 2.pgp"
+      ]
+    },
+    "HD2_DistTriangleFuzzMono": {
+      "category": "distortion",
+      "name": "Dist Triangle Fuzz",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 4.pgp"
+      ]
+    },
+    "HD2_DistTycoctaviaFuzzMono": {
+      "category": "distortion",
+      "name": "Dist Tycoctavia Fuzz",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 5.pgp"
+      ]
+    },
+    "HD2_DistValveDriverMono": {
+      "category": "distortion",
+      "name": "Dist Valve Driver",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 2.pgp"
+      ]
+    },
+    "HD2_DistVerminDistMono": {
+      "category": "distortion",
+      "name": "Dist Vermin Dist",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 3.pgp"
+      ]
+    },
+    "HD2_DistWringerFuzzMono": {
+      "category": "distortion",
+      "name": "Dist Wringer Fuzz",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 5.pgp"
+      ]
+    },
+    "HD2_DistXenomorphFuzzMono": {
+      "category": "distortion",
+      "name": "Dist Xenomorph Fuzz",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 5.pgp"
+      ]
+    },
+    "HD2_DistZeroAmpBassDIMono": {
+      "category": "distortion",
+      "name": "Dist Zero Amp Bass DI",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 6.pgp"
+      ]
+    },
+    "KillerZ": {
+      "category": "distortion",
+      "name": "Killer Z",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 8.pgp"
+      ]
+    },
+    "Line6BronzeMaster": {
+      "category": "distortion",
+      "name": "Line 6Bronze Master",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dist Page 8.pgp"
+      ]
+    },
+    "HD2_CompressorAutoSwellMono": {
+      "category": "dynamics",
+      "name": "Compressor Auto Swell",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dyn Page 2.pgp"
+      ]
+    },
+    "HD2_CompressorDeluxeCompMono": {
+      "category": "dynamics",
+      "name": "Compressor Deluxe Comp",
+      "occurrences": 11,
+      "in_presets": 10,
+      "presets": [
+        "data-presets/Dyn Page 1.pgp",
+        "presets/no-amp-and-cab/5bl_vol_eq_lpr_broken.pgp",
+        "presets/no-amp-and-cab/5bl_vol_fx_eq_lpr_broken.pgp",
+        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken.pgp",
+        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken_v2.pgp",
+        "presets/no-amp-and-cab/6bl_fx_eq_lpr_broken.pgp",
+        "presets/no-amp/5bl_vol_fx_eq_lpr_cab.pgp",
+        "presets/no-amp/6bl_vol_fx_eq_cab_broken.pgp",
+        "presets/with-amp-cab/6bl_vol_amp_cab_broken.pgp",
+        "presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp"
+      ]
+    },
+    "HD2_CompressorKinkyCompMono": {
+      "category": "dynamics",
+      "name": "Compressor Kinky Comp",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dyn Page 1.pgp"
+      ]
+    },
+    "HD2_CompressorLAStudioCompMono": {
+      "category": "dynamics",
+      "name": "Compressor LAStudio Comp",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dyn Page 1.pgp"
+      ]
+    },
+    "HD2_CompressorOptoCompMono": {
+      "category": "dynamics",
+      "name": "Compressor Opto Comp",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dyn Page 1.pgp"
+      ]
+    },
+    "HD2_CompressorRedSqueezeMono": {
+      "category": "dynamics",
+      "name": "Compressor Red Squeeze",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dyn Page 1.pgp"
+      ]
+    },
+    "HD2_CompressorRochesterCompMono": {
+      "category": "dynamics",
+      "name": "Compressor Rochester Comp",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dyn Page 1.pgp"
+      ]
+    },
+    "HD2_DM4BlueComp": {
+      "category": "dynamics",
+      "name": "DM4Blue Comp",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dyn Page 2.pgp"
+      ]
+    },
+    "HD2_DM4BlueCompTreb": {
+      "category": "dynamics",
+      "name": "DM4Blue Comp Treb",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dyn Page 3.pgp"
+      ]
+    },
+    "HD2_DM4BoostComp": {
+      "category": "dynamics",
+      "name": "DM4Boost Comp",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dyn Page 3.pgp"
+      ]
+    },
+    "HD2_DM4RedComp": {
+      "category": "dynamics",
+      "name": "DM4Red Comp",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dyn Page 2.pgp"
+      ]
+    },
+    "HD2_DM4TubeComp": {
+      "category": "dynamics",
+      "name": "DM4Tube Comp",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dyn Page 2.pgp"
+      ]
+    },
+    "HD2_DM4VettaComp": {
+      "category": "dynamics",
+      "name": "DM4Vetta Comp",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dyn Page 3.pgp"
+      ]
+    },
+    "HD2_DM4VettaJuice": {
+      "category": "dynamics",
+      "name": "DM4Vetta Juice",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dyn Page 3.pgp"
+      ]
+    },
+    "HD2_GateHardGateMono": {
+      "category": "dynamics",
+      "name": "Gate Hard Gate",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dyn Page 2.pgp"
+      ]
+    },
+    "HD2_GateHorizonGateMono": {
+      "category": "dynamics",
+      "name": "Gate Horizon Gate",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dyn Page 2.pgp"
+      ]
+    },
+    "HD2_GateNoiseGateMono": {
+      "category": "dynamics",
+      "name": "Gate Noise Gate",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Dyn Page 2.pgp"
+      ]
+    },
+    "HD2_CaliQStereo": {
+      "category": "eq",
+      "name": "Cali Q",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/EQ Page 1.pgp"
+      ]
+    },
+    "HD2_EQGraphic10BandStereo": {
+      "category": "eq",
+      "name": "EQGraphic 10Band",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/EQ Page 1.pgp"
+      ]
+    },
+    "HD2_EQLowCutHighCutStereo": {
+      "category": "eq",
+      "name": "EQLow Cut High Cut",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/EQ Page 1.pgp"
+      ]
+    },
+    "HD2_EQLowShelfHighShelfStereo": {
+      "category": "eq",
+      "name": "EQLow Shelf High Shelf",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/EQ Page 1.pgp"
+      ]
+    },
+    "HD2_EQParametricStereo": {
+      "category": "eq",
+      "name": "EQParametric",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/EQ Page 1.pgp"
+      ]
+    },
+    "HD2_EQSimple3BandStereo": {
+      "category": "eq",
+      "name": "EQSimple 3Band",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/EQ Page 1.pgp"
+      ]
+    },
+    "HD2_EQSimpleTiltStereo": {
+      "category": "eq",
+      "name": "EQSimple Tilt",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/EQ Page 1.pgp"
+      ]
+    },
+    "HD2_EQ_STATIC_ParametricStereo": {
+      "category": "eq",
+      "name": "EQ_STATIC_Parametric",
+      "occurrences": 56,
+      "in_presets": 56,
+      "presets": [
+        "data-presets/Amp A30FawnBrt.pgp",
+        "data-presets/Amp A30FawnNrm.pgp",
+        "data-presets/Amp BritJ45Brt.pgp",
+        "data-presets/Amp BritJ45Nrm.pgp",
+        "data-presets/Amp BritTremBrt.pgp",
+        "data-presets/Amp BritTremJump.pgp",
+        "data-presets/Amp BritTremNrm.pgp",
+        "data-presets/Amp DerailedIngr.pgp",
+        "data-presets/Amp DividedDuo.pgp",
+        "data-presets/Amp EssexA15.pgp",
+        "data-presets/Amp EssexA30.pgp",
+        "data-presets/Amp FullertonBr.pgp",
+        "data-presets/Amp FullertonJp.pgp",
+        "data-presets/Amp FullertonNm.pgp",
+        "data-presets/Amp GrammaticoBr.pgp",
+        "data-presets/Amp GrammaticoGS.pgp",
+        "data-presets/Amp GrammaticoJp.pgp",
+        "data-presets/Amp GrammaticoNm.pgp",
+        "data-presets/Amp InterstateZe.pgp",
+        "data-presets/Amp JazzRivet120.pgp",
+        "data-presets/Amp MailOrderTwi.pgp",
+        "data-presets/Amp Mandrn80.pgp",
+        "data-presets/Amp MandrnRocker.pgp",
+        "data-presets/Amp MatchCh1.pgp",
+        "data-presets/Amp MatchCh2.pgp",
+        "data-presets/Amp MatchJump.pgp",
+        "data-presets/Amp Moo)))nBrt.pgp",
+        "data-presets/Amp Moo)))nJump.pgp",
+        "data-presets/Amp Moo)))nNrm.pgp",
+        "data-presets/Amp SoupPro.pgp",
+        "data-presets/Amp StoneAge185.pgp",
+        "data-presets/Amp TweedBluesBr.pgp",
+        "data-presets/Amp TweedBluesNm.pgp",
+        "data-presets/Amp UsDeluxeNm.pgp",
+        "data-presets/Amp UsDeluxeVib.pgp",
+        "data-presets/Amp UsDoubleNm.pgp",
+        "data-presets/Amp UsDoubleVib.pgp",
+        "data-presets/Amp UsPrincess.pgp",
+        "data-presets/Amp UsSmallTweed.pgp",
+        "data-presets/Amp UsSuperNm.pgp",
+        "data-presets/Amp UsSuperVib.pgp",
+        "data-presets/Amp VoltageQueen.pgp",
+        "data-presets/Amp WhoWatt100.pgp",
+        "presets/no-amp-and-cab/4bl_vol_wah_fx_eq_broken.pgp",
+        "presets/no-amp-and-cab/5bl_vol_eq_lpr_broken.pgp",
+        "presets/no-amp-and-cab/5bl_vol_fx_eq_lpr_broken.pgp",
+        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken.pgp",
+        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken_v2.pgp",
+        "presets/no-amp-and-cab/6bl_fx_eq_lpr_broken.pgp",
+        "presets/no-amp/5bl_vol_fx_eq_lpr_cab.pgp",
+        "presets/no-amp/6bl_vol_fx_eq_cab_broken.pgp",
+        "presets/with-amp-cab/5bl_fx_eq_lpr_amp_cab.pgp",
+        "presets/with-amp-cab/5bl_vol_fx_eq_amp_cab.pgp",
+        "presets/with-amp-cab/6bl_eq_lpr_amp_cab.pgp",
+        "presets/with-amp-cab/6bl_fx_eq_amp_cab.pgp",
+        "presets/with-amp-cab/6bl_vol_eq_amp_cab.pgp"
+      ]
+    },
+    "HD2_EQ_STATIC_Simple3BandStereo": {
+      "category": "eq",
+      "name": "EQ_STATIC_Simple 3Band",
+      "occurrences": 56,
+      "in_presets": 56,
+      "presets": [
+        "data-presets/Delay Page 1a.pgp",
+        "data-presets/Delay Page 1b.pgp",
+        "data-presets/Delay Page 2a.pgp",
+        "data-presets/Delay Page 2b.pgp",
+        "data-presets/Delay Page 3a.pgp",
+        "data-presets/Delay Page 3b.pgp",
+        "data-presets/Delay Page 4.pgp",
+        "data-presets/Delay Page 5.pgp",
+        "data-presets/Delay Page 6a.pgp",
+        "data-presets/Delay Page 6b.pgp",
+        "data-presets/Dist Page 1.pgp",
+        "data-presets/Dist Page 2.pgp",
+        "data-presets/Dist Page 3.pgp",
+        "data-presets/Dist Page 4.pgp",
+        "data-presets/Dist Page 5.pgp",
+        "data-presets/Dist Page 6.pgp",
+        "data-presets/Dist Page 7.pgp",
+        "data-presets/Dist Page 8.pgp",
+        "data-presets/Dyn Page 1.pgp",
+        "data-presets/Dyn Page 2.pgp",
+        "data-presets/Dyn Page 3.pgp",
+        "data-presets/EQ Page 1.pgp",
+        "data-presets/EQ Page 2.pgp",
+        "data-presets/Filter Page 1.pgp",
+        "data-presets/Filter Page 2.pgp",
+        "data-presets/Filter Page 3.pgp",
+        "data-presets/Looper Page 1.pgp",
+        "data-presets/Looper Page 2.pgp",
+        "data-presets/Looper Page 3.pgp",
+        "data-presets/Looper Page 4.pgp",
+        "data-presets/Mod Page 1.pgp",
+        "data-presets/Mod Page 2a.pgp",
+        "data-presets/Mod Page 2b.pgp",
+        "data-presets/Mod Page 3a.pgp",
+        "data-presets/Mod Page 3b.pgp",
+        "data-presets/Mod Page 4a.pgp",
+        "data-presets/Mod Page 4b.pgp",
+        "data-presets/Mod Page 5.pgp",
+        "data-presets/Mod Page 6.pgp",
+        "data-presets/Mod Page 7.pgp",
+        "data-presets/Mod Page 8.pgp",
+        "data-presets/Pitch Page 1.pgp",
+        "data-presets/Pitch Page 2.pgp",
+        "data-presets/Pitch Page 3.pgp",
+        "data-presets/Pitch Page 4.pgp",
+        "data-presets/Reverb Page 1a.pgp",
+        "data-presets/Reverb Page 1b.pgp",
+        "data-presets/Reverb Page 1c.pgp",
+        "data-presets/Reverb Page 2a.pgp",
+        "data-presets/Reverb Page 2b.pgp",
+        "data-presets/Reverb Page 3a.pgp",
+        "data-presets/Reverb Page 3b.pgp",
+        "data-presets/Reverb Page 4.pgp",
+        "presets/no-cab/7bl_eq_amp.pgp",
+        "presets/no-cab/7bl_eq_lpr_amp.pgp",
+        "presets/with-amp-cab/7bl_eq_amp_cab.pgp"
+      ]
+    },
+    "L6SPB_AcousGtrSimStereo": {
+      "category": "eq",
+      "name": "L6SPB_Acous Gtr Sim",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/EQ Page 2.pgp"
+      ]
+    },
+    "HD2_FM4CometTrails": {
+      "category": "filter",
+      "name": "FM4Comet Trails",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Filter Page 3.pgp"
+      ]
+    },
+    "HD2_FM4ObiWah": {
+      "category": "filter",
+      "name": "FM4Obi Wah",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Filter Page 2.pgp"
+      ]
+    },
+    "HD2_FM4QFilter": {
+      "category": "filter",
+      "name": "FM4QFilter",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Filter Page 1.pgp"
+      ]
+    },
+    "HD2_FM4Seeker": {
+      "category": "filter",
+      "name": "FM4Seeker",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Filter Page 2.pgp"
+      ]
+    },
+    "HD2_FM4SlowFilter": {
+      "category": "filter",
+      "name": "FM4Slow Filter",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Filter Page 2.pgp"
+      ]
+    },
+    "HD2_FM4SpinCycle": {
+      "category": "filter",
+      "name": "FM4Spin Cycle",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Filter Page 2.pgp"
+      ]
+    },
+    "HD2_FM4Throbber": {
+      "category": "filter",
+      "name": "FM4Throbber",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Filter Page 2.pgp"
+      ]
+    },
+    "HD2_FM4TronDown": {
+      "category": "filter",
+      "name": "FM4Tron Down",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Filter Page 2.pgp"
+      ]
+    },
+    "HD2_FM4TronUp": {
+      "category": "filter",
+      "name": "FM4Tron Up",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Filter Page 2.pgp"
+      ]
+    },
+    "HD2_FM4VTron": {
+      "category": "filter",
+      "name": "FM4VTron",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Filter Page 1.pgp"
+      ]
+    },
+    "HD2_FM4VoiceBox": {
+      "category": "filter",
+      "name": "FM4Voice Box",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Filter Page 1.pgp"
+      ]
+    },
+    "HD2_FilterAshevillePattrnStereo": {
+      "category": "filter",
+      "name": "Filter Asheville Pattrn",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Filter Page 1.pgp"
+      ]
+    },
+    "HD2_FilterAutoFilterStereo": {
+      "category": "filter",
+      "name": "Filter Auto Filter",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Filter Page 1.pgp"
+      ]
+    },
+    "HD2_FilterMutantFilterStereo": {
+      "category": "filter",
+      "name": "Filter Mutant Filter",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Filter Page 1.pgp"
+      ]
+    },
+    "HD2_FilterMysterFilterStereo": {
+      "category": "filter",
+      "name": "Filter Myster Filter",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Filter Page 1.pgp"
+      ]
+    },
+    "HD2_FXLoopMono1": {
+      "category": "fx-loop",
+      "name": "FXLoop Mono 1",
+      "occurrences": 56,
+      "in_presets": 56,
+      "presets": [
+        "data-presets/Amp A30FawnBrt.pgp",
+        "data-presets/Amp A30FawnNrm.pgp",
+        "data-presets/Amp BritJ45Brt.pgp",
+        "data-presets/Amp BritJ45Nrm.pgp",
+        "data-presets/Amp BritTremBrt.pgp",
+        "data-presets/Amp BritTremJump.pgp",
+        "data-presets/Amp BritTremNrm.pgp",
+        "data-presets/Amp DerailedIngr.pgp",
+        "data-presets/Amp DividedDuo.pgp",
+        "data-presets/Amp EssexA15.pgp",
+        "data-presets/Amp EssexA30.pgp",
+        "data-presets/Amp FullertonBr.pgp",
+        "data-presets/Amp FullertonJp.pgp",
+        "data-presets/Amp FullertonNm.pgp",
+        "data-presets/Amp GrammaticoBr.pgp",
+        "data-presets/Amp GrammaticoGS.pgp",
+        "data-presets/Amp GrammaticoJp.pgp",
+        "data-presets/Amp GrammaticoNm.pgp",
+        "data-presets/Amp InterstateZe.pgp",
+        "data-presets/Amp JazzRivet120.pgp",
+        "data-presets/Amp MailOrderTwi.pgp",
+        "data-presets/Amp Mandrn80.pgp",
+        "data-presets/Amp MandrnRocker.pgp",
+        "data-presets/Amp MatchCh1.pgp",
+        "data-presets/Amp MatchCh2.pgp",
+        "data-presets/Amp MatchJump.pgp",
+        "data-presets/Amp Moo)))nBrt.pgp",
+        "data-presets/Amp Moo)))nJump.pgp",
+        "data-presets/Amp Moo)))nNrm.pgp",
+        "data-presets/Amp SoupPro.pgp",
+        "data-presets/Amp StoneAge185.pgp",
+        "data-presets/Amp TweedBluesBr.pgp",
+        "data-presets/Amp TweedBluesNm.pgp",
+        "data-presets/Amp UsDeluxeNm.pgp",
+        "data-presets/Amp UsDeluxeVib.pgp",
+        "data-presets/Amp UsDoubleNm.pgp",
+        "data-presets/Amp UsDoubleVib.pgp",
+        "data-presets/Amp UsPrincess.pgp",
+        "data-presets/Amp UsSmallTweed.pgp",
+        "data-presets/Amp UsSuperNm.pgp",
+        "data-presets/Amp UsSuperVib.pgp",
+        "data-presets/Amp VoltageQueen.pgp",
+        "data-presets/Amp WhoWatt100.pgp",
+        "presets/no-amp-and-cab/4bl_vol_wah_fx_eq_broken.pgp",
+        "presets/no-amp-and-cab/5bl_vol_fx_eq_lpr_broken.pgp",
+        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken.pgp",
+        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken_v2.pgp",
+        "presets/no-amp-and-cab/6bl_fx_eq_lpr_broken.pgp",
+        "presets/no-amp/5bl_vol_fx_eq_lpr_cab.pgp",
+        "presets/no-amp/6bl_vol_fx_eq_cab_broken.pgp",
+        "presets/with-amp-cab/5bl_fx_eq_lpr_amp_cab.pgp",
+        "presets/with-amp-cab/5bl_fx_lpr_amp_cab.pgp",
+        "presets/with-amp-cab/5bl_vol_fx_eq_amp_cab.pgp",
+        "presets/with-amp-cab/5bl_vol_fx_lpr_amp_cab.pgp",
+        "presets/with-amp-cab/6bl_fx_eq_amp_cab.pgp",
+        "presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp"
+      ]
+    },
+    "HD2_LooperMono": {
+      "category": "looper",
+      "name": "Looper",
+      "occurrences": 63,
+      "in_presets": 63,
+      "presets": [
+        "data-presets/Delay Page 1a.pgp",
+        "data-presets/Delay Page 1b.pgp",
+        "data-presets/Delay Page 2a.pgp",
+        "data-presets/Delay Page 2b.pgp",
+        "data-presets/Delay Page 3a.pgp",
+        "data-presets/Delay Page 3b.pgp",
+        "data-presets/Delay Page 4.pgp",
+        "data-presets/Delay Page 5.pgp",
+        "data-presets/Delay Page 6a.pgp",
+        "data-presets/Delay Page 6b.pgp",
+        "data-presets/Dist Page 1.pgp",
+        "data-presets/Dist Page 2.pgp",
+        "data-presets/Dist Page 3.pgp",
+        "data-presets/Dist Page 4.pgp",
+        "data-presets/Dist Page 5.pgp",
+        "data-presets/Dist Page 6.pgp",
+        "data-presets/Dist Page 7.pgp",
+        "data-presets/Dist Page 8.pgp",
+        "data-presets/Dyn Page 1.pgp",
+        "data-presets/Dyn Page 2.pgp",
+        "data-presets/Dyn Page 3.pgp",
+        "data-presets/EQ Page 1.pgp",
+        "data-presets/EQ Page 2.pgp",
+        "data-presets/Filter Page 1.pgp",
+        "data-presets/Filter Page 2.pgp",
+        "data-presets/Filter Page 3.pgp",
+        "data-presets/Looper Page 1.pgp",
+        "data-presets/Mod Page 1.pgp",
+        "data-presets/Mod Page 2a.pgp",
+        "data-presets/Mod Page 2b.pgp",
+        "data-presets/Mod Page 3a.pgp",
+        "data-presets/Mod Page 3b.pgp",
+        "data-presets/Mod Page 4a.pgp",
+        "data-presets/Mod Page 4b.pgp",
+        "data-presets/Mod Page 5.pgp",
+        "data-presets/Mod Page 6.pgp",
+        "data-presets/Mod Page 7.pgp",
+        "data-presets/Mod Page 8.pgp",
+        "data-presets/Pitch Page 1.pgp",
+        "data-presets/Pitch Page 2.pgp",
+        "data-presets/Pitch Page 3.pgp",
+        "data-presets/Pitch Page 4.pgp",
+        "data-presets/Reverb Page 1a.pgp",
+        "data-presets/Reverb Page 1b.pgp",
+        "data-presets/Reverb Page 1c.pgp",
+        "data-presets/Reverb Page 2a.pgp",
+        "data-presets/Reverb Page 2b.pgp",
+        "data-presets/Reverb Page 3a.pgp",
+        "data-presets/Reverb Page 3b.pgp",
+        "data-presets/Reverb Page 4.pgp",
+        "presets/no-amp-and-cab/5bl_vol_eq_lpr_broken.pgp",
+        "presets/no-amp-and-cab/5bl_vol_fx_eq_lpr_broken.pgp",
+        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken.pgp",
+        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken_v2.pgp",
+        "presets/no-amp-and-cab/6bl_fx_eq_lpr_broken.pgp",
+        "presets/no-amp/5bl_vol_fx_eq_lpr_cab.pgp",
+        "presets/no-cab/7bl_eq_lpr_amp.pgp",
+        "presets/with-amp-cab/5bl_fx_eq_lpr_amp_cab.pgp",
+        "presets/with-amp-cab/5bl_fx_lpr_amp_cab.pgp",
+        "presets/with-amp-cab/5bl_vol_fx_lpr_amp_cab.pgp",
+        "presets/with-amp-cab/6bl_eq_lpr_amp_cab.pgp",
+        "presets/with-amp-cab/6bl_vol_lpr_amp_cab.pgp",
+        "presets/with-amp-cab/7bl_lpr_amp_cab.pgp"
+      ]
+    },
+    "HD2_LooperOneSwitchMono": {
+      "category": "looper",
+      "name": "Looper One Switch",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Looper Page 2.pgp"
+      ]
+    },
+    "HD2_LooperOneSwitchStereo": {
+      "category": "looper",
+      "name": "Looper One Switch",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Looper Page 4.pgp"
+      ]
+    },
+    "HD2_LooperStereo": {
+      "category": "looper",
+      "name": "Looper",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Looper Page 3.pgp"
+      ]
+    },
+    "HD2_Chorus4VoiceStereo": {
+      "category": "modulation",
+      "name": "Chorus 4Voice",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 3b.pgp"
+      ]
+    },
+    "HD2_Chorus70sChorusStereo": {
+      "category": "modulation",
+      "name": "Chorus 70s Chorus",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 3a.pgp"
+      ]
+    },
+    "HD2_ChorusAmpegLiquifierStereo": {
+      "category": "modulation",
+      "name": "Chorus Ampeg Liquifier",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 3a.pgp"
+      ]
+    },
+    "HD2_ChorusPlastiChorusStereo": {
+      "category": "modulation",
+      "name": "Chorus Plasti Chorus",
+      "occurrences": 8,
+      "in_presets": 8,
+      "presets": [
+        "data-presets/Mod Page 3a.pgp",
+        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken.pgp",
+        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken_v2.pgp",
+        "presets/no-amp-and-cab/6bl_fx_eq_lpr_broken.pgp",
+        "presets/no-amp/5bl_vol_fx_eq_lpr_cab.pgp",
+        "presets/no-amp/6bl_vol_fx_eq_cab_broken.pgp",
+        "presets/with-amp-cab/6bl_vol_amp_cab_broken.pgp",
+        "presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp"
+      ]
+    },
+    "HD2_ChorusStereo": {
+      "category": "modulation",
+      "name": "Chorus",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 3a.pgp"
+      ]
+    },
+    "HD2_ChorusTrinityChorusStereo": {
+      "category": "modulation",
+      "name": "Chorus Trinity Chorus",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 3b.pgp"
+      ]
+    },
+    "HD2_FlangerCourtesanFlangeStereo": {
+      "category": "modulation",
+      "name": "Flanger Courtesan Flange",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 2b.pgp"
+      ]
+    },
+    "HD2_FlangerDynamixFlangerStereo": {
+      "category": "modulation",
+      "name": "Flanger Dynamix Flanger",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 2b.pgp"
+      ]
+    },
+    "HD2_FlangerGrayFlangerStereo": {
+      "category": "modulation",
+      "name": "Flanger Gray Flanger",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 2a.pgp"
+      ]
+    },
+    "HD2_FlangerHarmonicFlangerStereo": {
+      "category": "modulation",
+      "name": "Flanger Harmonic Flanger",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 2a.pgp"
+      ]
+    },
+    "HD2_M1380AFlanger": {
+      "category": "modulation",
+      "name": "M1380AFlanger",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 7.pgp"
+      ]
+    },
+    "HD2_M13ACFlanger": {
+      "category": "modulation",
+      "name": "M13ACFlanger",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 7.pgp"
+      ]
+    },
+    "HD2_MM4AnalogChorus": {
+      "category": "modulation",
+      "name": "MM4Analog Chorus",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 6.pgp"
+      ]
+    },
+    "HD2_MM4AnalogFlanger": {
+      "category": "modulation",
+      "name": "MM4Analog Flanger",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 7.pgp"
+      ]
+    },
+    "HD2_MM4BarberpolePhaser": {
+      "category": "modulation",
+      "name": "MM4Barberpole Phaser",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 6.pgp"
+      ]
+    },
+    "HD2_MM4BiasTremolo": {
+      "category": "modulation",
+      "name": "MM4Bias Tremolo",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 5.pgp"
+      ]
+    },
+    "HD2_MM4Dimension": {
+      "category": "modulation",
+      "name": "MM4Dimension",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 6.pgp"
+      ]
+    },
+    "HD2_MM4DualPhaser": {
+      "category": "modulation",
+      "name": "MM4Dual Phaser",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 6.pgp"
+      ]
+    },
+    "HD2_MM4FrequencyShifter": {
+      "category": "modulation",
+      "name": "MM4Frequency Shifter",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 7.pgp"
+      ]
+    },
+    "HD2_MM4JetFlanger": {
+      "category": "modulation",
+      "name": "MM4Jet Flanger",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 7.pgp"
+      ]
+    },
+    "HD2_MM4OptoTremolo": {
+      "category": "modulation",
+      "name": "MM4Opto Tremolo",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 5.pgp"
+      ]
+    },
+    "HD2_MM4PannedPhaser": {
+      "category": "modulation",
+      "name": "MM4Panned Phaser",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 5.pgp"
+      ]
+    },
+    "HD2_MM4Panner": {
+      "category": "modulation",
+      "name": "MM4Panner",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 5.pgp"
+      ]
+    },
+    "HD2_MM4PatternTrem": {
+      "category": "modulation",
+      "name": "MM4Pattern Trem",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 5.pgp"
+      ]
+    },
+    "HD2_MM4Phaser": {
+      "category": "modulation",
+      "name": "MM4Phaser",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 6.pgp"
+      ]
+    },
+    "HD2_MM4RingModulator": {
+      "category": "modulation",
+      "name": "MM4Ring Modulator",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 7.pgp"
+      ]
+    },
+    "HD2_MM4RotaryDrum": {
+      "category": "modulation",
+      "name": "MM4Rotary Drum",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 8.pgp"
+      ]
+    },
+    "HD2_MM4RotaryDrumHorn": {
+      "category": "modulation",
+      "name": "MM4Rotary Drum Horn",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 8.pgp"
+      ]
+    },
+    "HD2_MM4ScriptPhase": {
+      "category": "modulation",
+      "name": "MM4Script Phase",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 5.pgp"
+      ]
+    },
+    "HD2_MM4TriChorus": {
+      "category": "modulation",
+      "name": "MM4Tri Chorus",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 7.pgp"
+      ]
+    },
+    "HD2_MM4UVibe": {
+      "category": "modulation",
+      "name": "MM4UVibe",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 6.pgp"
+      ]
+    },
+    "HD2_PhaserDeluxePhaserStereo": {
+      "category": "modulation",
+      "name": "Phaser Deluxe Phaser",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 2a.pgp"
+      ]
+    },
+    "HD2_PhaserPebblePhaserStereo": {
+      "category": "modulation",
+      "name": "Phaser Pebble Phaser",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 1.pgp"
+      ]
+    },
+    "HD2_PhaserScriptModPhaseStereo": {
+      "category": "modulation",
+      "name": "Phaser Script Mod Phase",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 1.pgp"
+      ]
+    },
+    "HD2_PhaserUbiquitousVibeStereo": {
+      "category": "modulation",
+      "name": "Phaser Ubiquitous Vibe",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 2a.pgp"
+      ]
+    },
+    "HD2_RetroReelStereo": {
+      "category": "modulation",
+      "name": "Retro Reel",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 4b.pgp"
+      ]
+    },
+    "HD2_RingModulatorAMRingModStereo": {
+      "category": "modulation",
+      "name": "Ring Modulator AMRing Mod",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 4b.pgp"
+      ]
+    },
+    "HD2_Rotary122RotaryStereo": {
+      "category": "modulation",
+      "name": "Rotary 122Rotary",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 4a.pgp"
+      ]
+    },
+    "HD2_Rotary145RotaryStereo": {
+      "category": "modulation",
+      "name": "Rotary 145Rotary",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 4a.pgp"
+      ]
+    },
+    "HD2_Rotary3RotorStereo": {
+      "category": "modulation",
+      "name": "Rotary 3Rotor",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 4b.pgp"
+      ]
+    },
+    "HD2_RotaryVibeRotaryStereo": {
+      "category": "modulation",
+      "name": "Rotary Vibe Rotary",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 4a.pgp"
+      ]
+    },
+    "HD2_Tremolo60sBiasTremStereo": {
+      "category": "modulation",
+      "name": "Tremolo 60s Bias Trem",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 1.pgp"
+      ]
+    },
+    "HD2_TremoloHarmonicStereo": {
+      "category": "modulation",
+      "name": "Tremolo Harmonic",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 1.pgp"
+      ]
+    },
+    "HD2_TremoloOpticalTremStereo": {
+      "category": "modulation",
+      "name": "Tremolo Optical Trem",
+      "occurrences": 3,
+      "in_presets": 3,
+      "presets": [
+        "data-presets/Mod Page 1.pgp",
+        "presets/no-amp-and-cab/5bl_vol_eq_lpr_broken.pgp",
+        "presets/no-amp-and-cab/5bl_vol_fx_eq_lpr_broken.pgp"
+      ]
+    },
+    "HD2_TremoloPatternStereo": {
+      "category": "modulation",
+      "name": "Tremolo Pattern",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 1.pgp"
+      ]
+    },
+    "HD2_TremoloTremoloStereo": {
+      "category": "modulation",
+      "name": "Tremolo Tremolo",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 1.pgp"
+      ]
+    },
+    "HD2_VibratoBubbleVibratoStereo": {
+      "category": "modulation",
+      "name": "Vibrato Bubble Vibrato",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 3b.pgp"
+      ]
+    },
+    "SampleAndHold": {
+      "category": "modulation",
+      "name": "Sample And Hold",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 8.pgp"
+      ]
+    },
+    "Sweeper": {
+      "category": "modulation",
+      "name": "Sweeper",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 8.pgp"
+      ]
+    },
+    "TapeEater": {
+      "category": "modulation",
+      "name": "Tape Eater",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 8.pgp"
+      ]
+    },
+    "VIC_FlexoVibeStereo": {
+      "category": "modulation",
+      "name": "Flexo Vibe",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 2a.pgp"
+      ]
+    },
+    "Warble_Matic": {
+      "category": "modulation",
+      "name": "Warble_Matic",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 8.pgp"
+      ]
+    },
+    "BuzzWave": {
+      "category": "pitch-synth",
+      "name": "Buzz Wave",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Pitch Page 3.pgp"
+      ]
+    },
+    "DoubleBass": {
+      "category": "pitch-synth",
+      "name": "Double Bass",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Pitch Page 4.pgp"
+      ]
+    },
+    "HD2_FM4AttackSynth": {
+      "category": "pitch-synth",
+      "name": "FM4Attack Synth",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Pitch Page 2.pgp"
+      ]
+    },
+    "HD2_FM4Growler": {
+      "category": "pitch-synth",
+      "name": "FM4Growler",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Pitch Page 2.pgp"
+      ]
+    },
+    "HD2_FM4OctiSynth": {
+      "category": "pitch-synth",
+      "name": "FM4Octi Synth",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Pitch Page 2.pgp"
+      ]
+    },
+    "HD2_FM4SynthOMatic": {
+      "category": "pitch-synth",
+      "name": "FM4Synth OMatic",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Pitch Page 2.pgp"
+      ]
+    },
+    "HD2_FM4SynthString": {
+      "category": "pitch-synth",
+      "name": "FM4Synth String",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Pitch Page 2.pgp"
+      ]
+    },
+    "HD2_M13TwoVoiceHarmony": {
+      "category": "pitch-synth",
+      "name": "M13Two Voice Harmony",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Pitch Page 2.pgp"
+      ]
+    },
+    "HD2_MM4PitchVibrato": {
+      "category": "pitch-synth",
+      "name": "MM4Pitch Vibrato",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 6.pgp"
+      ]
+    },
+    "HD2_PitchDualPitchMono": {
+      "category": "pitch-synth",
+      "name": "Pitch Dual Pitch",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Pitch Page 1.pgp"
+      ]
+    },
+    "HD2_PitchPitchWhamMono": {
+      "category": "pitch-synth",
+      "name": "Pitch Pitch Wham",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Pitch Page 1.pgp"
+      ]
+    },
+    "HD2_PitchSimplePitchMono": {
+      "category": "pitch-synth",
+      "name": "Pitch Simple Pitch",
+      "occurrences": 3,
+      "in_presets": 3,
+      "presets": [
+        "data-presets/Pitch Page 1.pgp",
+        "presets/with-amp-cab/6bl_vol_amp_cab_broken.pgp",
+        "presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp"
+      ]
+    },
+    "HD2_PitchTwinHarmonyMono": {
+      "category": "pitch-synth",
+      "name": "Pitch Twin Harmony",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Pitch Page 1.pgp"
+      ]
+    },
+    "HD2_RingModulatorPitchRingModStereo": {
+      "category": "pitch-synth",
+      "name": "Ring Modulator Pitch Ring Mod",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Mod Page 5.pgp"
+      ]
+    },
+    "HD2_Synth3NoteGeneratorMono": {
+      "category": "pitch-synth",
+      "name": "Synth 3Note Generator",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Pitch Page 1.pgp"
+      ]
+    },
+    "HD2_Synth4OSCGeneratorMono": {
+      "category": "pitch-synth",
+      "name": "Synth 4OSCGenerator",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Pitch Page 1.pgp"
+      ]
+    },
+    "RezSynth": {
+      "category": "pitch-synth",
+      "name": "Rez Synth",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Pitch Page 3.pgp"
+      ]
+    },
+    "Saturn5RingMod": {
+      "category": "pitch-synth",
+      "name": "Saturn 5Ring Mod",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Pitch Page 4.pgp"
+      ]
+    },
+    "SeismicSynth": {
+      "category": "pitch-synth",
+      "name": "Seismic Synth",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Pitch Page 3.pgp"
+      ]
+    },
+    "SynthAnalog": {
+      "category": "pitch-synth",
+      "name": "Synth Analog",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Pitch Page 3.pgp"
+      ]
+    },
+    "SynthFX": {
+      "category": "pitch-synth",
+      "name": "Synth FX",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Pitch Page 3.pgp"
+      ]
+    },
+    "SynthHarmony": {
+      "category": "pitch-synth",
+      "name": "Synth Harmony",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Pitch Page 4.pgp"
+      ]
+    },
+    "SynthLead": {
+      "category": "pitch-synth",
+      "name": "Synth Lead",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Pitch Page 3.pgp"
+      ]
+    },
+    "SynthString": {
+      "category": "pitch-synth",
+      "name": "Synth String",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Pitch Page 3.pgp"
+      ]
+    },
+    "VIC_PitchBoctaverMono": {
+      "category": "pitch-synth",
+      "name": "Pitch Boctaver",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Pitch Page 1.pgp"
+      ]
+    },
+    "HD2_Reverb63SpringStereo": {
+      "category": "reverb",
+      "name": "Reverb 63Spring",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Reverb Page 3b.pgp"
+      ]
+    },
+    "HD2_ReverbCaveStereo": {
+      "category": "reverb",
+      "name": "Reverb Cave",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Reverb Page 3a.pgp"
+      ]
+    },
+    "HD2_ReverbChamberStereo": {
+      "category": "reverb",
+      "name": "Reverb Chamber",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Reverb Page 2b.pgp"
+      ]
+    },
+    "HD2_ReverbDoubleTankStereo": {
+      "category": "reverb",
+      "name": "Reverb Double Tank",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Reverb Page 2b.pgp"
+      ]
+    },
+    "HD2_ReverbDuckingStereo": {
+      "category": "reverb",
+      "name": "Reverb Ducking",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Reverb Page 3a.pgp"
+      ]
+    },
+    "HD2_ReverbGanymedeStereo": {
+      "category": "reverb",
+      "name": "Reverb Ganymede",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Reverb Page 2a.pgp"
+      ]
+    },
+    "HD2_ReverbGlitzStereo": {
+      "category": "reverb",
+      "name": "Reverb Glitz",
+      "occurrences": 7,
+      "in_presets": 7,
+      "presets": [
+        "data-presets/Reverb Page 1c.pgp",
+        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken.pgp",
+        "presets/no-amp-and-cab/6bl_fx_eq_lpr_broken.pgp",
+        "presets/no-amp/5bl_vol_fx_eq_lpr_cab.pgp",
+        "presets/no-amp/6bl_vol_fx_eq_cab_broken.pgp",
+        "presets/with-amp-cab/6bl_vol_amp_cab_broken.pgp",
+        "presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp"
+      ]
+    },
+    "HD2_ReverbHallStereo": {
+      "category": "reverb",
+      "name": "Reverb Hall",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Reverb Page 3a.pgp"
+      ]
+    },
+    "HD2_ReverbHxSpringStereo": {
+      "category": "reverb",
+      "name": "Reverb Hx Spring",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Reverb Page 1b.pgp"
+      ]
+    },
+    "HD2_ReverbOctoStereo": {
+      "category": "reverb",
+      "name": "Reverb Octo",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Reverb Page 3a.pgp"
+      ]
+    },
+    "HD2_ReverbParticleStereo": {
+      "category": "reverb",
+      "name": "Reverb Particle",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Reverb Page 4.pgp"
+      ]
+    },
+    "HD2_ReverbPlateStereo": {
+      "category": "reverb",
+      "name": "Reverb Plate",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Reverb Page 2b.pgp"
+      ]
+    },
+    "HD2_ReverbPlateauxStereo": {
+      "category": "reverb",
+      "name": "Reverb Plateaux",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Reverb Page 2a.pgp"
+      ]
+    },
+    "HD2_ReverbRoomStereo": {
+      "category": "reverb",
+      "name": "Reverb Room",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Reverb Page 2b.pgp"
+      ]
+    },
+    "HD2_ReverbSearchlightsStereo": {
+      "category": "reverb",
+      "name": "Reverb Searchlights",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Reverb Page 2a.pgp"
+      ]
+    },
+    "HD2_ReverbSpringStereo": {
+      "category": "reverb",
+      "name": "Reverb Spring",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Reverb Page 4.pgp"
+      ]
+    },
+    "HD2_ReverbTileStereo": {
+      "category": "reverb",
+      "name": "Reverb Tile",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Reverb Page 3a.pgp"
+      ]
+    },
+    "VIC_DynPlateStereo": {
+      "category": "reverb",
+      "name": "Dyn Plate",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Reverb Page 1a.pgp"
+      ]
+    },
+    "VIC_ReverbDynAmbienceStereo": {
+      "category": "reverb",
+      "name": "Reverb Dyn Ambience",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Reverb Page 1b.pgp"
+      ]
+    },
+    "VIC_ReverbDynRoomStereo": {
+      "category": "reverb",
+      "name": "Reverb Dyn Room",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Reverb Page 1a.pgp"
+      ]
+    },
+    "VIC_ReverbRotatingStereo": {
+      "category": "reverb",
+      "name": "Reverb Rotating",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Reverb Page 1a.pgp"
+      ]
+    },
+    "VIC_ReverbShimmerStereo": {
+      "category": "reverb",
+      "name": "Reverb Shimmer",
+      "occurrences": 1,
+      "in_presets": 1,
+      "presets": [
+        "data-presets/Reverb Page 1b.pgp"
+      ]
+    },
+    "HD2_VolPanVolStereo": {
+      "category": "volume-pan",
+      "name": "Vol Pan Vol",
+      "occurrences": 57,
+      "in_presets": 56,
+      "presets": [
+        "data-presets/Amp A30FawnBrt.pgp",
+        "data-presets/Amp A30FawnNrm.pgp",
+        "data-presets/Amp BritJ45Brt.pgp",
+        "data-presets/Amp BritJ45Nrm.pgp",
+        "data-presets/Amp BritTremBrt.pgp",
+        "data-presets/Amp BritTremJump.pgp",
+        "data-presets/Amp BritTremNrm.pgp",
+        "data-presets/Amp DerailedIngr.pgp",
+        "data-presets/Amp DividedDuo.pgp",
+        "data-presets/Amp EssexA15.pgp",
+        "data-presets/Amp EssexA30.pgp",
+        "data-presets/Amp FullertonBr.pgp",
+        "data-presets/Amp FullertonJp.pgp",
+        "data-presets/Amp FullertonNm.pgp",
+        "data-presets/Amp GrammaticoBr.pgp",
+        "data-presets/Amp GrammaticoGS.pgp",
+        "data-presets/Amp GrammaticoJp.pgp",
+        "data-presets/Amp GrammaticoNm.pgp",
+        "data-presets/Amp InterstateZe.pgp",
+        "data-presets/Amp JazzRivet120.pgp",
+        "data-presets/Amp MailOrderTwi.pgp",
+        "data-presets/Amp Mandrn80.pgp",
+        "data-presets/Amp MandrnRocker.pgp",
+        "data-presets/Amp MatchCh1.pgp",
+        "data-presets/Amp MatchCh2.pgp",
+        "data-presets/Amp MatchJump.pgp",
+        "data-presets/Amp Moo)))nBrt.pgp",
+        "data-presets/Amp Moo)))nJump.pgp",
+        "data-presets/Amp Moo)))nNrm.pgp",
+        "data-presets/Amp SoupPro.pgp",
+        "data-presets/Amp StoneAge185.pgp",
+        "data-presets/Amp TweedBluesBr.pgp",
+        "data-presets/Amp TweedBluesNm.pgp",
+        "data-presets/Amp UsDeluxeNm.pgp",
+        "data-presets/Amp UsDeluxeVib.pgp",
+        "data-presets/Amp UsDoubleNm.pgp",
+        "data-presets/Amp UsDoubleVib.pgp",
+        "data-presets/Amp UsPrincess.pgp",
+        "data-presets/Amp UsSmallTweed.pgp",
+        "data-presets/Amp UsSuperNm.pgp",
+        "data-presets/Amp UsSuperVib.pgp",
+        "data-presets/Amp VoltageQueen.pgp",
+        "data-presets/Amp WhoWatt100.pgp",
+        "presets/no-amp-and-cab/4bl_vol_wah_fx_eq_broken.pgp",
+        "presets/no-amp-and-cab/5bl_vol_eq_lpr_broken.pgp",
+        "presets/no-amp-and-cab/5bl_vol_fx_eq_lpr_broken.pgp",
+        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken.pgp",
+        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken_v2.pgp",
+        "presets/no-amp/5bl_vol_fx_eq_lpr_cab.pgp",
+        "presets/no-amp/6bl_vol_fx_eq_cab_broken.pgp",
+        "presets/with-amp-cab/5bl_vol_fx_eq_amp_cab.pgp",
+        "presets/with-amp-cab/5bl_vol_fx_lpr_amp_cab.pgp",
+        "presets/with-amp-cab/6bl_vol_amp_cab_broken.pgp",
+        "presets/with-amp-cab/6bl_vol_eq_amp_cab.pgp",
+        "presets/with-amp-cab/6bl_vol_lpr_amp_cab.pgp",
+        "presets/with-amp-cab/7bl_vol_amp_cab_broken.pgp"
+      ]
+    },
+    "HD2_WahFasselStereo": {
+      "category": "wah",
+      "name": "Wah Fassel",
+      "occurrences": 46,
+      "in_presets": 46,
+      "presets": [
+        "data-presets/Amp A30FawnBrt.pgp",
+        "data-presets/Amp A30FawnNrm.pgp",
+        "data-presets/Amp BritJ45Brt.pgp",
+        "data-presets/Amp BritJ45Nrm.pgp",
+        "data-presets/Amp BritTremBrt.pgp",
+        "data-presets/Amp BritTremJump.pgp",
+        "data-presets/Amp BritTremNrm.pgp",
+        "data-presets/Amp DerailedIngr.pgp",
+        "data-presets/Amp DividedDuo.pgp",
+        "data-presets/Amp EssexA15.pgp",
+        "data-presets/Amp EssexA30.pgp",
+        "data-presets/Amp FullertonBr.pgp",
+        "data-presets/Amp FullertonJp.pgp",
+        "data-presets/Amp FullertonNm.pgp",
+        "data-presets/Amp GrammaticoBr.pgp",
+        "data-presets/Amp GrammaticoGS.pgp",
+        "data-presets/Amp GrammaticoJp.pgp",
+        "data-presets/Amp GrammaticoNm.pgp",
+        "data-presets/Amp InterstateZe.pgp",
+        "data-presets/Amp JazzRivet120.pgp",
+        "data-presets/Amp MailOrderTwi.pgp",
+        "data-presets/Amp Mandrn80.pgp",
+        "data-presets/Amp MandrnRocker.pgp",
+        "data-presets/Amp MatchCh1.pgp",
+        "data-presets/Amp MatchCh2.pgp",
+        "data-presets/Amp MatchJump.pgp",
+        "data-presets/Amp Moo)))nBrt.pgp",
+        "data-presets/Amp Moo)))nJump.pgp",
+        "data-presets/Amp Moo)))nNrm.pgp",
+        "data-presets/Amp SoupPro.pgp",
+        "data-presets/Amp StoneAge185.pgp",
+        "data-presets/Amp TweedBluesBr.pgp",
+        "data-presets/Amp TweedBluesNm.pgp",
+        "data-presets/Amp UsDeluxeNm.pgp",
+        "data-presets/Amp UsDeluxeVib.pgp",
+        "data-presets/Amp UsDoubleNm.pgp",
+        "data-presets/Amp UsDoubleVib.pgp",
+        "data-presets/Amp UsPrincess.pgp",
+        "data-presets/Amp UsSmallTweed.pgp",
+        "data-presets/Amp UsSuperNm.pgp",
+        "data-presets/Amp UsSuperVib.pgp",
+        "data-presets/Amp VoltageQueen.pgp",
+        "data-presets/Amp WhoWatt100.pgp",
+        "presets/no-amp-and-cab/4bl_vol_wah_fx_eq_broken.pgp",
+        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken.pgp",
+        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken_v2.pgp"
+      ]
+    }
+  }
+}
