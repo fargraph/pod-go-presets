@@ -17,8 +17,30 @@ by `tools/podgo.py` (`canonical_name`), so the name never lies about the file.
 
 Examples: `7bl_eq_amp_cab`, `6bl_vol_lpr_amp_cab`, `5bl_vol_wah_fx_eq_lpr_broken_v2`.
 
-On-device, preset display names cap at ~14 characters and render dynamically
-(uppercase/number glyphs are wider). The collection excludes the Wah by default.
+On-device, preset names render in a proportional font, so wide glyphs (`W`, `M`,
+uppercase) take more horizontal room than narrow ones. The collection excludes the
+Wah by default.
+
+## Name & filename limits (hardware-verified, v2.50)
+
+Three separate "names" with different rules — don't conflate them:
+
+- **Preset name** (`data.meta.name`, what the device stores/shows): **hard cap of 16
+  characters.** POD Go Edit will not let you type past 16, and the screen displays all
+  16 (verified with `1234567890123456`). Letters, digits, **spaces, and symbols**
+  (`/ - )` …) can all be entered directly on the hardware — they are not merely
+  JSON-injection artifacts. **On disk, POD Go escapes a forward slash as `\/`** (an
+  optional JSON escape that decodes back to `/`): the name `5bl/FxEqLpr/-Amp` is stored
+  in the raw `.pgp` as `"5bl\/FxEqLpr\/-Amp"`. To match POD Go's byte-for-byte output
+  when hand-editing, write `\/`; a bare `/` parses fine but won't match the device's
+  own serialization (see the reformatting gotcha in [pgp-format.md](pgp-format.md)).
+- **Over-length names on import:** a hand-edited `meta.name` longer than 16 chars is
+  **silently truncated to 16 on import** (the preset is not rejected).
+- **`.pgp` file name** (on your computer): decoupled from the preset. Export proposes a
+  filename derived from `meta.name` but **sanitizes filesystem-illegal characters** — a
+  preset named `5bl/FxEqLpr/-Amp` exports as `5bl_FxEqLpr_-Amp.pgp` (each `/` → `_`).
+  **Import ignores the filename entirely and reads `meta.name`,** so renaming the file
+  on disk has no effect on the loaded preset name.
 
 ## Folders = removal taxonomy
 
@@ -53,7 +75,7 @@ Run from the repo root:
 | `python3 tools/harvest_blocks.py` | Rebuild `registry/blocks.json` (block ids + per-preset linkage) |
 | `python3 tools/coverage.py` | Rebuild `docs/reference/data-coverage.md` gap worklist |
 | `python3 tools/validate_presets.py` | Check every preset matches its registry entry & name |
-| `python3 tools/gen_matrix.py` | Regenerate `registry/presets.csv` (the filterable table) |
+| `python3 tools/gen_matrix.py` | Regenerate `registry/presets.csv` + the clickable preset list in the README |
 
 `tools/podgo.py` is the shared library (load/parse, classify, taxonomy, naming).
 
@@ -63,4 +85,5 @@ Run from the repo root:
 2. Name it by content (or run the classifier to derive the name).
 3. Add its entry to `registry/combinations.json`.
 4. `python3 tools/refresh.py` (in case it contains newly-seen block ids).
-5. `python3 tools/validate_presets.py` — must pass.
+5. `python3 tools/gen_matrix.py` — refresh `registry/presets.csv` + the README list.
+6. `python3 tools/validate_presets.py` — must pass.

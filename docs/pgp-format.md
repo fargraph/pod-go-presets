@@ -53,10 +53,16 @@ keys are safe to delete — POD Go rebuilds them:
 ## Gotchas
 
 - **Don't reformat `.pgp` files.** They're in `.prettierignore` (`*.pgp`);
-  reformatting creates noisy, meaningless diffs.
+  reformatting creates noisy, meaningless diffs. Note POD Go escapes forward slashes
+  in strings as `\/` (e.g. `meta.name` `"5bl\/FxEqLpr\/-Amp"`) — a JSON re-serializer
+  normalizes `\/` → `/`, changing bytes without changing meaning. Exactly the noise the
+  ignore rule prevents. When hand-editing, preserve the `\/` form.
 - **Trailing commas.** At least one hand-edited preset has a trailing comma that
   makes it invalid JSON; POD Go tolerates it but strict parsers don't. Our tools
   recover from it and flag it (`parse: recovered-trailing-comma`).
+- **`meta.name` is capped at 16 chars.** Hand-editing a longer name is pointless —
+  POD Go truncates it to 16 on import. Symbols/spaces are allowed. See name/filename
+  limits in [naming-and-registry.md](naming-and-registry.md).
 - **Dropped slots.** A preset can end up with fewer than 10 `blockN` entries if a
   free slot was accidentally removed during editing (see
   [data-quality.md](data-quality.md)). That silently lowers the free-block count.
