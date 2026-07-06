@@ -1,0 +1,191 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/fargraph/pod-go-presets/registry/pgp.schema.json",
+  "title": "POD Go .pgp preset",
+  "description": "Structure of a POD Go preset exported by POD Go Edit (firmware v2.50, schema 'L6Preset' v6). ADVISORY: this validates a well-formed .pgp; it is NOT wired into the tools. Two real-world quirks live outside JSON Schema's reach: (1) POD Go tolerates a trailing comma that makes the file invalid JSON — recover it (see tools/podgo.py load_pgp) before validating; (2) a forward slash in a string is stored escaped as \\/ on disk (a valid, optional JSON escape). Built to validate original/New-Preset-2_50_0.pgp and the presets/ library. The over-length-name demonstrator intentionally violates data.meta.name maxLength.",
+  "type": "object",
+  "required": ["data", "meta", "schema", "version"],
+  "additionalProperties": false,
+  "properties": {
+    "data": { "$ref": "#/$defs/data" },
+    "meta": { "$ref": "#/$defs/topMeta" },
+    "schema": { "const": "L6Preset" },
+    "version": { "type": "integer" }
+  },
+  "$defs": {
+    "data": {
+      "type": "object",
+      "required": ["meta", "device", "tone", "device_version"],
+      "additionalProperties": false,
+      "properties": {
+        "meta": { "$ref": "#/$defs/dataMeta" },
+        "device": { "type": "integer" },
+        "tone": { "$ref": "#/$defs/tone" },
+        "device_version": { "type": "integer" }
+      }
+    },
+    "dataMeta": {
+      "type": "object",
+      "$comment": "The preset name shown/stored by the device. maxLength 16 is a hardware cap; an over-length name imports but is truncated to 16.",
+      "required": ["name", "application", "build_sha", "modifieddate", "appversion"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string", "maxLength": 16 },
+        "application": { "type": "string" },
+        "build_sha": { "type": "string" },
+        "modifieddate": { "type": "integer" },
+        "appversion": { "type": "integer" }
+      }
+    },
+    "topMeta": {
+      "type": "object",
+      "$comment": "Top-level sibling of data (distinct from data.meta).",
+      "additionalProperties": true,
+      "properties": {
+        "original": { "type": "integer" },
+        "pbn": { "type": "integer" },
+        "premium": { "type": "integer" }
+      }
+    },
+    "tone": {
+      "type": "object",
+      "required": ["global", "dsp0"],
+      "additionalProperties": false,
+      "properties": {
+        "dsp1": { "type": "object", "$comment": "Unused on POD Go; empty object." },
+        "global": { "$ref": "#/$defs/global" },
+        "dsp0": { "$ref": "#/$defs/dsp0" },
+        "footswitch": { "$ref": "#/$defs/footswitch" },
+        "controller": { "$ref": "#/$defs/controller" }
+      },
+      "patternProperties": {
+        "^snapshot[0-3]$": { "$ref": "#/$defs/snapshot" }
+      }
+    },
+    "global": {
+      "type": "object",
+      "required": ["@model"],
+      "additionalProperties": true,
+      "properties": {
+        "@model": { "const": "@global_params" },
+        "@cursor_group": { "type": "string" },
+        "@pedalstate": { "type": "integer" },
+        "@current_snapshot": { "type": "integer" },
+        "@tempo": { "type": "number" }
+      }
+    },
+    "dsp0": {
+      "type": "object",
+      "$comment": "THE SIGNAL CHAIN: input + output endpoints plus ordered block0..block9 slots.",
+      "required": ["input", "output"],
+      "additionalProperties": false,
+      "properties": {
+        "input": { "$ref": "#/$defs/input" },
+        "output": { "$ref": "#/$defs/output" }
+      },
+      "patternProperties": {
+        "^block[0-9]$": { "$ref": "#/$defs/block" }
+      }
+    },
+    "input": {
+      "type": "object",
+      "required": ["@model"],
+      "additionalProperties": true,
+      "properties": {
+        "@model": { "const": "P34_AppDSPFlowInput" },
+        "@input": { "type": "integer" },
+        "noiseGate": { "type": "boolean" },
+        "decay": { "type": "number" },
+        "threshold": { "type": "number" }
+      }
+    },
+    "output": {
+      "type": "object",
+      "required": ["@model"],
+      "additionalProperties": true,
+      "properties": {
+        "@model": { "const": "P34_AppDSPFlowOutput" },
+        "@output": { "type": "integer" },
+        "pan": { "type": "number" },
+        "gain": { "type": "number" }
+      }
+    },
+    "block": {
+      "type": "object",
+      "$comment": "A chain slot. FREE/empty block = only @position. OCCUPIED block adds @model (+ @type, @enabled, @no_snapshot_bypass, and model-specific params). Built-in role is detected by the @model prefix (HD2_VolPan/Wah/FXLoop/EQ_/Looper/Amp/Cab); everything else is a free-block effect. See docs/reference/model-id-conventions.md.",
+      "required": ["@position"],
+      "additionalProperties": true,
+      "properties": {
+        "@position": { "type": "integer", "minimum": 0, "maximum": 9 },
+        "@model": { "type": "string" },
+        "@type": { "type": "integer" },
+        "@enabled": { "type": "boolean" },
+        "@no_snapshot_bypass": { "type": "boolean" }
+      }
+    },
+    "snapshot": {
+      "type": "object",
+      "$comment": "One of four snapshots. Rebuilt by the device if removed (blank-slate strip).",
+      "required": ["@valid", "blocks"],
+      "additionalProperties": false,
+      "properties": {
+        "@valid": { "type": "boolean" },
+        "@name": { "type": "string" },
+        "@tempo": { "type": "number" },
+        "@pedalstate": { "type": "integer" },
+        "@ledcolor": { "type": "integer" },
+        "blocks": {
+          "type": "object",
+          "properties": {
+            "dsp0": {
+              "type": "object",
+              "additionalProperties": false,
+              "patternProperties": { "^block[0-9]$": { "type": "boolean" } }
+            }
+          },
+          "additionalProperties": true
+        },
+        "controllers": { "type": "object" }
+      }
+    },
+    "footswitch": {
+      "type": "object",
+      "$comment": "Present only once footswitch assignments exist; rebuilt by the device.",
+      "additionalProperties": false,
+      "properties": {
+        "dsp0": {
+          "type": "object",
+          "additionalProperties": false,
+          "patternProperties": {
+            "^block[0-9]$": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "@fs_label": { "type": "string" },
+                "@fs_enabled": { "type": "boolean" },
+                "@fs_index": { "type": "integer" },
+                "@fs_ledcolor": { "type": "integer" },
+                "@fs_momentary": { "type": "boolean" },
+                "@fs_primary": { "type": "boolean" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "controller": {
+      "type": "object",
+      "$comment": "Present only once parameter assignments exist; rebuilt by the device. Uses @controller 3..8 for parameter assignments.",
+      "additionalProperties": false,
+      "properties": {
+        "dsp0": {
+          "type": "object",
+          "additionalProperties": false,
+          "patternProperties": {
+            "^block[0-9]$": { "type": "object" }
+          }
+        }
+      }
+    }
+  }
+}

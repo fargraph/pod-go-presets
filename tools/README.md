@@ -9,6 +9,7 @@ presets, and regenerate the registry/docs. Run them from the repo root.
 | `python3 tools/harvest_blocks.py` | Rebuild `registry/blocks.json` (block ids + per-preset linkage) |
 | `python3 tools/coverage.py` | Rebuild `docs/reference/data-coverage.md` gap worklist |
 | `python3 tools/validate_presets.py` | Check every preset matches its registry entry & name (exit non-zero on error) |
+| `python3 tools/validate_examples.py` | Check the knowledge↔preset linkage: `registry/rules.json` + `data-presets/demonstrations/manifest.json` resolve (exit non-zero on error) |
 | `python3 tools/gen_matrix.py` | Regenerate `registry/presets.csv` + the clickable preset list in the README |
 
 `podgo.py` is the shared library (load/parse, classify, taxonomy, naming) — the

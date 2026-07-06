@@ -44,6 +44,13 @@ Three separate "names" with different rules — don't conflate them:
   **Import ignores the filename entirely and reads `meta.name`,** so renaming the file
   on disk has no effect on the loaded preset name.
 
+> **Demonstrators:** [`name-overlength.pgp`](../../data-presets/demonstrations/name-overlength.pgp)
+> (16-char cap / truncation) and
+> [`name-slash-escape.pgp`](../../data-presets/demonstrations/name-slash-escape.pgp)
+> (`/` stored as `\/`) — each is the [base preset](../../original/New-Preset-2_50_0.pgp)
+> plus one name edit. Rules `name-16-cap`, `name-slash-escape` in
+> [business-rules.md](business-rules.md).
+
 ## Folders = removal taxonomy
 
 `presets/{with-amp-cab, no-cab, no-amp, no-amp-and-cab}/`. The folder encodes which
@@ -66,6 +73,11 @@ Machine-readable source of truth under [`registry/`](../../registry):
   `tools/harvest_blocks.py`.
 - **`reference-models.json`** — the authoritative POD Go model list by category
   (see [reference/block-models.md](../reference/block-models.md)).
+- **`pgp.schema.json`** — JSON Schema (draft 2020-12) for a well-formed `.pgp`
+  (see [pgp-schema.md](pgp-schema.md)).
+- **`rules.json`** — semantic rules + knowledge with a **verified/unverified** status
+  and demonstrator linkage (see [business-rules.md](business-rules.md)). **Authoritative
+  for rule status.**
 
 ## Tools
 
@@ -77,6 +89,7 @@ Run from the repo root:
 | `python3 tools/harvest_blocks.py` | Rebuild `registry/blocks.json` (block ids + per-preset linkage) |
 | `python3 tools/coverage.py` | Rebuild `docs/reference/data-coverage.md` gap worklist |
 | `python3 tools/validate_presets.py` | Check every preset matches its registry entry & name |
+| `python3 tools/validate_examples.py` | Check the knowledge↔preset linkage (`registry/rules.json` + `data-presets/demonstrations/manifest.json`) |
 | `python3 tools/gen_matrix.py` | Regenerate `registry/presets.csv` + the clickable preset list in the README |
 
 `tools/podgo.py` is the shared library (load/parse, classify, taxonomy, naming).

@@ -19,7 +19,9 @@ registry conventions. Start here to understand what a preset *is* and how to
 build one.
 
 - [presets/pgp-format.md](presets/pgp-format.md) — the `.pgp` JSON structure; how to inspect a preset; editing conventions and serialization gotchas
+- [presets/pgp-schema.md](presets/pgp-schema.md) — the **formal JSON Schema** (`registry/pgp.schema.json`, draft 2020-12): the field-by-field envelope, built to validate the base preset
 - [presets/blocks-and-constraints.md](presets/blocks-and-constraints.md) — the block chain; free vs built-in blocks; the **free-block rule**; the 7-block ceiling; why removing Amp/Cab breaks; removal taxonomy; the mandatory EQ/Looper block
+- [presets/business-rules.md](presets/business-rules.md) — **semantic rules a schema can't express** (validity/naming/editing), each tied to a demonstrator preset with a verified/unverified status (`registry/rules.json`)
 - [presets/naming-and-registry.md](presets/naming-and-registry.md) — preset naming; name/filename limits; the `registry/` files; the `tools/`; how to add a preset
 
 ### 🔬 [knowledge/](knowledge/README.md) — what hardware testing taught us
@@ -57,6 +59,7 @@ rules this documentation follows for itself.
 - Keep the **Amp** (removing it tends to break); removing only the **Cab** is fine.
 - Cab block is **single-cab only** — no dual-cab mode.
 - Every preset needs at least one of **EQ or Looper**.
+- Knowledge carries a **verified/unverified** status ([verified.md](knowledge/verified.md)); facts are tied to **demonstrator presets** in [`data-presets/demonstrations/`](../data-presets/demonstrations/README.md). Everything is currently **unverified** pending joint hardware confirmation.
 
 ## Maintaining these docs
 

@@ -5,6 +5,12 @@ points to the doc with the full detail — this page is the "what surprised us" 
 
 ↩ [knowledge index](README.md)
 
+> **Proven by a preset?** Where a finding has a demonstrator, it's catalogued in
+> [`data-presets/demonstrations/manifest.json`](../../data-presets/demonstrations/manifest.json)
+> and carries a verified/unverified status in [business-rules.md](../presets/business-rules.md) /
+> [verified.md](verified.md). Everything is currently **⬜ unverified** pending joint
+> hardware confirmation.
+
 ## POD Go behavior (hardware facts)
 
 - **Free blocks = `blockN` slots − built-in blocks present** (base 10 slots). The

@@ -1,0 +1,202 @@
+{
+  "schema": "podgo-rules/v1",
+  "note": "Machine-readable registry of POD Go rules and non-schema-expressible knowledge. This is the SOURCE OF TRUTH for the verified/unverified status of each fact; docs/presets/business-rules.md renders it and docs/knowledge/verified.md presents the status split. 'demonstrated_by' lists preset(s) that prove the rule (see data-presets/demonstrations/manifest.json). A rule id used as a 'rule' in that manifest MUST appear here.",
+  "status_model": {
+    "verified": "Jointly confirmed with the project owner AND has an accompanying demonstrator preset. For viability facts the demonstrator must be hardware-confirmed. Never set from analysis alone.",
+    "unverified": "The honest default: presumed/expected (research, inference, Line 6 sources), or not yet jointly confirmed. Everything starts here."
+  },
+  "basis_values": ["factory-preset", "hardware", "inferred", "source"],
+  "kinds": ["block-economy", "schema", "naming", "editing"],
+  "rules": [
+    {
+      "id": "free-block-formula",
+      "kind": "block-economy",
+      "statement": "free_blocks = (number of blockN slots) - (number of built-in blocks present); base is 10 slots.",
+      "rationale": "The intuitive '7 - Vol - Wah - FX Loop' rule is wrong; it only coincidentally matches presets that keep EQ+Amp+Cab. Count slots minus built-ins.",
+      "status": "unverified",
+      "basis": "inferred",
+      "demonstrated_by": ["original/New-Preset-2_50_0.pgp"],
+      "docs": ["docs/presets/blocks-and-constraints.md"]
+    },
+    {
+      "id": "phantom-slot-ceiling",
+      "kind": "block-economy",
+      "statement": "The assignable ceiling is 7 free blocks; keeping Volume or the FX Loop while showing 7 free produces a phantom slot the UI won't assign.",
+      "rationale": "POD Go displays free blocks beyond the ceiling but won't let you assign them, so the preset reads as broken.",
+      "status": "unverified",
+      "basis": "inferred",
+      "demonstrated_by": ["presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp"],
+      "docs": ["docs/presets/blocks-and-constraints.md", "docs/knowledge/troubleshooting.md"]
+    },
+    {
+      "id": "genuine-7-free-needs-vol-and-fx-removed",
+      "kind": "block-economy",
+      "statement": "A genuine 7 free blocks requires removing BOTH Volume and FX Loop (Wah also costs a slot).",
+      "rationale": "Consequence of the 7 assignable-block ceiling: any built-in kept while at 7 free yields a phantom slot.",
+      "status": "unverified",
+      "basis": "inferred",
+      "demonstrated_by": ["presets/no-cab/7bl_eq_amp.pgp"],
+      "docs": ["docs/presets/blocks-and-constraints.md"]
+    },
+    {
+      "id": "keep-amp",
+      "kind": "block-economy",
+      "statement": "Keep the Amp block; removing it tends to break the preset. Removing only the Cab (keeping the Amp) is fine.",
+      "rationale": "Every no-amp / no-amp-and-cab preset in the library is broken; every no-cab preset works.",
+      "status": "unverified",
+      "basis": "inferred",
+      "demonstrated_by": ["presets/no-amp/6bl_vol_fx_eq_cab_broken.pgp"],
+      "docs": ["docs/presets/blocks-and-constraints.md", "docs/knowledge/data-quality.md"]
+    },
+    {
+      "id": "no-amp-and-cab-collapses",
+      "kind": "block-economy",
+      "statement": "Removing both Amp and Cab collapses the chain to 8-9 blockN slots (vs the healthy 10) and reliably breaks.",
+      "rationale": "Strong evidence that removing both destabilizes the chain; every known example is broken.",
+      "status": "unverified",
+      "basis": "inferred",
+      "demonstrated_by": ["presets/no-amp-and-cab/6bl_fx_eq_lpr_broken.pgp"],
+      "docs": ["docs/presets/blocks-and-constraints.md", "docs/knowledge/data-quality.md"]
+    },
+    {
+      "id": "eq-or-looper-required",
+      "kind": "block-economy",
+      "statement": "At least one of EQ or Looper must remain in a preset (the mandatory block; EQ is convertible to Looper).",
+      "rationale": "Design constraint of the block chain.",
+      "status": "unverified",
+      "basis": "inferred",
+      "demonstrated_by": [],
+      "docs": ["docs/presets/blocks-and-constraints.md"]
+    },
+    {
+      "id": "cab-single-only",
+      "kind": "block-economy",
+      "statement": "The Cab block is single-cab only; POD Go does NOT support Helix's dual-cab mode.",
+      "rationale": "A research draft claimed dual-cab; the unit corrected it (project owner).",
+      "status": "unverified",
+      "basis": "source",
+      "demonstrated_by": [],
+      "docs": ["docs/reference/block-models.md"]
+    },
+    {
+      "id": "duplicate-builtin",
+      "kind": "block-economy",
+      "statement": "A preset can carry a duplicate built-in block (e.g. two Volume blocks) - a plausible cause of breakage.",
+      "rationale": "Surfaced by classifying presets by content; the duplicate coincides with a broken status.",
+      "status": "unverified",
+      "basis": "inferred",
+      "demonstrated_by": ["presets/with-amp-cab/6bl_vol_amp_cab_broken.pgp"],
+      "docs": ["docs/knowledge/data-quality.md"]
+    },
+    {
+      "id": "empty-free-block-shape",
+      "kind": "schema",
+      "statement": "A free/empty block is exactly {\"@position\": N}; a healthy preset exposes 10 blockN slots (block0-block9).",
+      "rationale": "Occupied blocks add @model + params; the bare @position form is the assignable slot.",
+      "status": "unverified",
+      "basis": "factory-preset",
+      "demonstrated_by": ["original/New-Preset-2_50_0.pgp"],
+      "docs": ["docs/presets/blocks-and-constraints.md", "docs/presets/pgp-format.md"]
+    },
+    {
+      "id": "dropped-slot-lowers-free",
+      "kind": "schema",
+      "statement": "A missing blockN slot (fewer than 10) silently lowers the free-block count below the intended value.",
+      "rationale": "An accidental slot drop during editing changes the count with no error.",
+      "status": "unverified",
+      "basis": "inferred",
+      "demonstrated_by": ["presets/with-amp-cab/5bl_fx_lpr_amp_cab.pgp"],
+      "docs": ["docs/knowledge/data-quality.md", "docs/presets/pgp-format.md"]
+    },
+    {
+      "id": "block-type-values",
+      "kind": "schema",
+      "statement": "@type by built-in role (factory): Volume 0, Wah 0, FX Loop 5, EQ(_STATIC) 0, Looper 4, Amp 1, Cab 2. Some Delay/Reverb free blocks are type 5.",
+      "rationale": "Observed in factory preset JSON.",
+      "status": "unverified",
+      "basis": "factory-preset",
+      "demonstrated_by": ["original/New-Preset-2_50_0.pgp"],
+      "docs": ["docs/presets/pgp-format.md"]
+    },
+    {
+      "id": "assignment-sections-shape",
+      "kind": "schema",
+      "statement": "snapshot0-3, footswitch, and controller sections carry per-snapshot block on/off, footswitch labels/leds, and parameter controllers (@controller 3..8).",
+      "rationale": "The structure of the assignment sections; these are the keys a blank-slate strip removes.",
+      "status": "unverified",
+      "basis": "factory-preset",
+      "demonstrated_by": ["original/New-Preset-2_50_0.pgp"],
+      "docs": ["docs/presets/pgp-format.md", "docs/knowledge/troubleshooting.md"]
+    },
+    {
+      "id": "eq-static-vs-free-eq",
+      "kind": "schema",
+      "statement": "The built-in preset-EQ uses HD2_EQ_STATIC_* (matches the eq built-in prefix HD2_EQ_); free-block EQ effects use HD2_EQ* WITHOUT the underscore and are not built-ins. The same models exist in both forms and can coexist in one preset.",
+      "rationale": "Only the _STATIC_ form is the dedicated preset-EQ slot; the rest are free effects.",
+      "status": "unverified",
+      "basis": "factory-preset",
+      "demonstrated_by": ["data-presets/EQ Page 1.pgp"],
+      "docs": ["docs/reference/model-id-conventions.md", "docs/presets/blocks-and-constraints.md"]
+    },
+    {
+      "id": "name-16-cap",
+      "kind": "naming",
+      "statement": "meta.name is hard-capped at 16 characters; a hand-edited over-length name is silently truncated to 16 on import (not rejected).",
+      "rationale": "POD Go Edit will not type past 16; the screen shows all 16.",
+      "status": "unverified",
+      "basis": "hardware",
+      "demonstrated_by": ["data-presets/demonstrations/name-overlength.pgp"],
+      "docs": ["docs/presets/naming-and-registry.md", "docs/presets/pgp-format.md"]
+    },
+    {
+      "id": "name-slash-escape",
+      "kind": "naming",
+      "statement": "A forward slash in meta.name is stored on disk escaped as \\/ (an optional JSON escape decoding back to /). Spaces and symbols are allowed in names.",
+      "rationale": "Byte-for-byte match to POD Go's serialization requires writing \\/ ; a bare / parses but won't match the device output.",
+      "status": "unverified",
+      "basis": "hardware",
+      "demonstrated_by": ["data-presets/demonstrations/name-slash-escape.pgp"],
+      "docs": ["docs/presets/naming-and-registry.md", "docs/presets/pgp-format.md"]
+    },
+    {
+      "id": "filename-decoupled-from-name",
+      "kind": "naming",
+      "statement": "The .pgp filename is decoupled from the stored name: export sanitizes / to _ in the filename, and import reads meta.name and ignores the filename.",
+      "rationale": "Renaming the file on disk has no effect on the loaded preset name.",
+      "status": "unverified",
+      "basis": "hardware",
+      "demonstrated_by": [],
+      "docs": ["docs/presets/naming-and-registry.md"]
+    },
+    {
+      "id": "no-reformat-pgp",
+      "kind": "editing",
+      "statement": "Never reformat a .pgp file. Preserve POD Go's exact bytes: it escapes / as \\/ and tolerates a trailing comma that strict parsers reject.",
+      "rationale": "A JSON re-serializer normalizes \\/ to / and strips trailing commas, producing noisy, meaningless diffs. .pgp files are in .prettierignore.",
+      "status": "unverified",
+      "basis": "inferred",
+      "demonstrated_by": ["data-presets/demonstrations/name-slash-escape.pgp", "presets/with-amp-cab/7bl_vol_amp_cab_broken.pgp"],
+      "docs": ["docs/presets/pgp-format.md", "docs/conventions/project-conventions.md"]
+    },
+    {
+      "id": "trailing-comma-tolerated",
+      "kind": "editing",
+      "statement": "POD Go tolerates a trailing comma that makes the file invalid to strict JSON parsers; the tools recover and flag it (parse: recovered-trailing-comma).",
+      "rationale": "At least one hand-edited preset has a trailing comma the device accepts.",
+      "status": "unverified",
+      "basis": "inferred",
+      "demonstrated_by": ["presets/with-amp-cab/7bl_vol_amp_cab_broken.pgp"],
+      "docs": ["docs/presets/pgp-format.md", "docs/knowledge/data-quality.md"]
+    },
+    {
+      "id": "blank-slate-ship",
+      "kind": "editing",
+      "statement": "Publish a blank slate: no loaded effects in free blocks, no footswitch/controller assignments. snapshot0-3, footswitch, and controllers are safe to delete - POD Go rebuilds them.",
+      "rationale": "Intended published state; the device reconstructs the deleted sections on import/first assignment.",
+      "status": "unverified",
+      "basis": "inferred",
+      "demonstrated_by": ["presets/with-amp-cab/7bl_eq_amp_cab.pgp"],
+      "docs": ["docs/presets/pgp-format.md", "docs/conventions/best-practices.md"]
+    }
+  ]
+}

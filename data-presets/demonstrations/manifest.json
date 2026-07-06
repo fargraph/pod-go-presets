@@ -1,0 +1,133 @@
+{
+  "schema": "podgo-demonstrations/v1",
+  "note": "Each entry ties one documented POD Go fact to a preset that DEMONSTRATES it. 'rule' matches an id in registry/rules.json. Demonstrators are reference/teaching presets, NOT published presets (those live in presets/). Where possible a demonstrator is the known-good base (base_preset) plus one minimal, documented edit; otherwise it points at a real export already in the repo. status is 'verified' ONLY when the fact was jointly confirmed with Clifton today AND has an accompanying preset here; everything else is 'unverified' (see docs/knowledge/verified.md). Nothing here asserts hardware viability of a block combination.",
+  "base_preset": "original/New-Preset-2_50_0.pgp",
+  "provenance_kinds": {
+    "factory-export": "an untouched Line 6 export (base preset or a data-presets dump)",
+    "derived-illustrative": "base preset + one minimal documented edit, byte-preserving",
+    "published-preset": "a curated preset from presets/ (hardware-tested library)"
+  },
+  "demonstrations": [
+    {
+      "rule": "empty-free-block-shape",
+      "demonstrates": "An empty/free block is exactly {\"@position\": N}; a healthy jailbroken-capable preset exposes 10 blockN slots.",
+      "file": "original/New-Preset-2_50_0.pgp",
+      "provenance": "factory-export",
+      "status": "unverified",
+      "observe": "dsp0.block2/block3/block8/block9 are each {\"@position\": N} with no @model; blocks 0-9 = 10 slots.",
+      "docs": ["docs/presets/blocks-and-constraints.md", "docs/presets/pgp-format.md"]
+    },
+    {
+      "rule": "assignment-sections-shape",
+      "demonstrates": "snapshot0-3, footswitch, and controller sections and their internal shape; these are the keys a blank-slate strip removes.",
+      "file": "original/New-Preset-2_50_0.pgp",
+      "provenance": "factory-export",
+      "status": "unverified",
+      "observe": "tone.snapshot0-3 (per-block on/off + controllers), tone.footswitch.dsp0.blockN (@fs_* keys), tone.controller.dsp0.blockN (@controller/@min/@max).",
+      "docs": ["docs/presets/pgp-format.md", "docs/knowledge/troubleshooting.md"]
+    },
+    {
+      "rule": "block-type-values",
+      "demonstrates": "@type per built-in role: Volume 0, Wah 0, FX Loop 5, EQ(_STATIC) 0, Amp 1, Cab 2.",
+      "file": "original/New-Preset-2_50_0.pgp",
+      "provenance": "factory-export",
+      "status": "unverified",
+      "observe": "block0 VolPan @type 0, block1 Wah @type 0, block4 FXLoop @type 5, block7 EQ_STATIC @type 0, block5 Amp @type 1, block6 Cab @type 2.",
+      "docs": ["docs/presets/pgp-format.md", "docs/reference/model-id-conventions.md"]
+    },
+    {
+      "rule": "eq-static-vs-free-eq",
+      "demonstrates": "The built-in preset-EQ uses HD2_EQ_STATIC_* (matches the eq built-in prefix HD2_EQ_); free-block EQ effects use HD2_EQ* WITHOUT the underscore and are not built-ins. Both coexist in one preset.",
+      "file": "data-presets/EQ Page 1.pgp",
+      "provenance": "factory-export",
+      "status": "unverified",
+      "observe": "block8 = HD2_EQ_STATIC_Simple3BandStereo (built-in) alongside free effects HD2_EQParametricStereo, HD2_EQLowCutHighCutStereo, HD2_EQGraphic10BandStereo, HD2_CaliQStereo, etc.",
+      "docs": ["docs/reference/model-id-conventions.md", "docs/presets/blocks-and-constraints.md"]
+    },
+    {
+      "rule": "name-slash-escape",
+      "demonstrates": "A forward slash in meta.name is stored on disk escaped as \\/ (an optional JSON escape decoding back to /).",
+      "file": "data-presets/demonstrations/name-slash-escape.pgp",
+      "derived_from": "original/New-Preset-2_50_0.pgp",
+      "edit": "meta.name value \"New Preset\" -> \"In\\/Out\"; every other byte identical to the base.",
+      "provenance": "derived-illustrative",
+      "status": "unverified",
+      "observe": "Raw file shows \"name\" : \"In\\/Out\"; decoded the name is In/Out. Diff against the base is one line.",
+      "docs": ["docs/presets/naming-and-registry.md", "docs/presets/pgp-format.md"]
+    },
+    {
+      "rule": "name-16-cap",
+      "demonstrates": "meta.name has a hard 16-character cap; a hand-edited over-length name is silently truncated to 16 on import (not rejected).",
+      "file": "data-presets/demonstrations/name-overlength.pgp",
+      "derived_from": "original/New-Preset-2_50_0.pgp",
+      "edit": "meta.name value \"New Preset\" -> \"0123456789ABCDEFGHIJ\" (20 chars); every other byte identical to the base.",
+      "provenance": "derived-illustrative",
+      "status": "unverified",
+      "observe": "Import to POD Go / POD Go Edit: the stored/displayed name truncates to the first 16 chars \"0123456789ABCDEF\".",
+      "docs": ["docs/presets/naming-and-registry.md", "docs/knowledge/troubleshooting.md"]
+    },
+    {
+      "rule": "blank-slate-ship",
+      "demonstrates": "A published preset ships blank-slate: free blocks empty, no footswitch/controller assignments (snapshots may remain).",
+      "file": "presets/with-amp-cab/7bl_eq_amp_cab.pgp",
+      "provenance": "published-preset",
+      "status": "unverified",
+      "observe": "All free blocks are {\"@position\": N}; no tone.footswitch or tone.controller sections (contrast the base, which has both).",
+      "docs": ["docs/presets/pgp-format.md", "docs/conventions/best-practices.md"]
+    },
+    {
+      "rule": "dropped-slot-lowers-free",
+      "demonstrates": "A missing blockN slot silently lowers the free-block count below the intended value.",
+      "file": "presets/with-amp-cab/5bl_fx_lpr_amp_cab.pgp",
+      "provenance": "published-preset",
+      "status": "unverified",
+      "observe": "dsp0 is missing block5, so only 9 slots exist and free_blocks = 5 despite the '6bl' intent.",
+      "docs": ["docs/knowledge/data-quality.md", "docs/presets/pgp-format.md"]
+    },
+    {
+      "rule": "duplicate-builtin",
+      "demonstrates": "A preset can carry a duplicate built-in block (two Volume blocks) — a plausible cause of breakage.",
+      "file": "presets/with-amp-cab/6bl_vol_amp_cab_broken.pgp",
+      "provenance": "published-preset",
+      "status": "unverified",
+      "observe": "Two HD2_VolPan* blocks in dsp0; podgo.classify reports duplicate_builtins {volume: 2}.",
+      "docs": ["docs/knowledge/data-quality.md"]
+    },
+    {
+      "rule": "trailing-comma-tolerated",
+      "demonstrates": "POD Go tolerates a trailing comma that strict JSON parsers reject; our tools recover and flag it.",
+      "file": "presets/with-amp-cab/7bl_vol_amp_cab_broken.pgp",
+      "provenance": "published-preset",
+      "status": "unverified",
+      "observe": "podgo.load_pgp returns parse status 'recovered-trailing-comma' for this file.",
+      "docs": ["docs/presets/pgp-format.md", "docs/knowledge/data-quality.md"]
+    },
+    {
+      "rule": "phantom-slot-ceiling",
+      "demonstrates": "With Volume or FX Loop kept, a 7th free block is a phantom the UI shows but cannot assign (the 7 assignable-block ceiling).",
+      "file": "presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp",
+      "provenance": "published-preset",
+      "status": "unverified",
+      "observe": "7 free blocks while the FX Loop is present; per the ceiling the extra slot is unassignable (registry status: broken).",
+      "docs": ["docs/presets/blocks-and-constraints.md", "docs/knowledge/troubleshooting.md"]
+    },
+    {
+      "rule": "genuine-7-free-needs-vol-and-fx-removed",
+      "demonstrates": "A genuine 7 free blocks requires removing BOTH Volume and FX Loop.",
+      "file": "presets/no-cab/7bl_eq_amp.pgp",
+      "provenance": "published-preset",
+      "status": "unverified",
+      "observe": "No Volume and no FX Loop present; 7 free blocks, EQ + Amp kept.",
+      "docs": ["docs/presets/blocks-and-constraints.md"]
+    },
+    {
+      "rule": "no-amp-and-cab-collapses",
+      "demonstrates": "Removing both Amp and Cab tends to collapse the chain to 8-9 slots and reliably breaks.",
+      "file": "presets/no-amp-and-cab/6bl_fx_eq_lpr_broken.pgp",
+      "provenance": "published-preset",
+      "status": "unverified",
+      "observe": "no-amp-and-cab taxonomy; fewer than 10 slots; registry status: broken (representative of the folder).",
+      "docs": ["docs/presets/blocks-and-constraints.md", "docs/knowledge/data-quality.md"]
+    }
+  ]
+}

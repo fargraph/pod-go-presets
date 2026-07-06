@@ -42,6 +42,37 @@ reversed in one snapshot vs others), edit the controller entry and set
 
 Parameter assignments use `"@controller": 3` through `"@controller": 8`.
 
+## Preset reads as broken or "off" — schema-level causes
+
+These are the recurring, file-level problems, each with a preset that demonstrates it (open
+it and compare against the base). Full catalog:
+[`data-presets/demonstrations/manifest.json`](../../data-presets/demonstrations/manifest.json).
+
+- **Fewer free blocks than expected → a dropped slot.** If a preset shows one fewer free
+  block than intended, a `blockN` slot was likely deleted during editing (9 slots, not 10).
+  Add the missing `"blockN": { "@position": N }` back to `dsp0`. Demonstrator:
+  [`5bl_fx_lpr_amp_cab.pgp`](../../presets/with-amp-cab/5bl_fx_lpr_amp_cab.pgp) (missing
+  `block5`). See [data-quality.md](data-quality.md).
+- **A 7th free block won't assign → the phantom-slot ceiling.** If Volume or the FX Loop is
+  still present, the 7th free slot is a phantom the UI shows but can't assign — remove
+  *both* Volume and FX Loop for a genuine 7. Demonstrator:
+  [`7bl_fx_amp_cab_broken.pgp`](../../presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp).
+- **A duplicate built-in block.** Two of the same built-in (e.g. two Volume blocks) can
+  break a preset. Demonstrator:
+  [`6bl_vol_amp_cab_broken.pgp`](../../presets/with-amp-cab/6bl_vol_amp_cab_broken.pgp).
+- **Name shows truncated after import.** `meta.name` caps at 16 characters; a longer name
+  is silently cut to the first 16 on import — not rejected. Demonstrator:
+  [`name-overlength.pgp`](../../data-presets/demonstrations/name-overlength.pgp).
+
+## A `.pgp` won't parse in a strict tool (but POD Go loads it)
+
+POD Go tolerates a **trailing comma** that strict JSON parsers reject; our tools recover
+and flag it (`parse: recovered-trailing-comma`). Don't "fix" it by reformatting the file —
+that changes bytes device-wide (it also normalizes `\/` → `/`). Demonstrator:
+[`7bl_vol_amp_cab_broken.pgp`](../../presets/with-amp-cab/7bl_vol_amp_cab_broken.pgp). See
+[pgp-format.md](../presets/pgp-format.md) and the `no-reformat-pgp` rule in
+[business-rules.md](../presets/business-rules.md).
+
 ## Reporting a problem
 
 Open an issue with as much detail as possible: screenshots/photos/video, a clear

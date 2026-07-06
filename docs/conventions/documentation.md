@@ -25,7 +25,9 @@ docs/
 ├── presets/                      how presets are structured, constrained & named
 │   ├── README.md
 │   ├── pgp-format.md             .pgp JSON shape, editing, serialization gotchas
+│   ├── pgp-schema.md             formal JSON Schema (registry/pgp.schema.json) prose
 │   ├── blocks-and-constraints.md block chain, free/built-in, ceilings, taxonomy
+│   ├── business-rules.md         semantic rules (registry/rules.json) + verified/unverified
 │   └── naming-and-registry.md    naming, name/file limits, registry, tools
 ├── knowledge/                    what hardware testing taught us
 │   ├── README.md
@@ -66,13 +68,16 @@ Add a new subfolder only when a genuinely new domain emerges, and give it a
 | The new thing is… | Doc |
 | --- | --- |
 | `.pgp` JSON shape / a key / field / serialization | `presets/pgp-format.md` |
+| A formal schema constraint (envelope, types, required fields) | `presets/pgp-schema.md` + `registry/pgp.schema.json` |
 | Block-chain rules, free/built-in, ceilings, taxonomy, mandatory block | `presets/blocks-and-constraints.md` |
+| A semantic/business rule + its status + demonstrator preset | `presets/business-rules.md` + `registry/rules.json` |
 | Naming, name/file limits, registry contents, tool usage, add-a-preset | `presets/naming-and-registry.md` |
 | A new `@model` id family / prefix / naming pattern | `reference/model-id-conventions.md` |
 | Authoritative model lists, category counts, Helix deltas | `reference/block-models.md` |
 | An external link / source | `reference/resources.md` |
 | A concrete library defect + fix | `knowledge/data-quality.md` |
-| A confirmed / refuted / pending hardware fact | `knowledge/verified.md` |
+| A confirmed / refuted hardware fact (verified/unverified status) | `knowledge/verified.md` + `registry/rules.json` |
+| A preset that demonstrates a fact | `data-presets/demonstrations/manifest.json` |
 | An on-device quirk or workaround | `knowledge/troubleshooting.md` |
 | A convention / workflow / best practice | `conventions/` |
 | A one-line "this surprised us" summary | `knowledge/lessons-learned.md` (links to the detail doc) |
@@ -110,9 +115,14 @@ short `README.md`: one paragraph on what the folder holds, then a **link** to th
 authoritative doc under `docs/` — never a duplicate of it. This keeps GitHub's
 folder view useful without creating a second source that drifts.
 
-## Verified vs. imports-only
+## Verified vs. unverified
 
-Always distinguish "verified on hardware (v2.50)" from "imports cleanly;
-on-device behavior unconfirmed." New hardware claims also get a row in
-[`verified.md`](../knowledge/verified.md) under the correct confidence tier. See
+Status is **binary**: ✅ **verified** (jointly confirmed with the owner **and** backed by a
+demonstrator preset) vs ⬜ **unverified** (everything else — the honest default). Never
+promote "imports cleanly" or a clean parse to verified. Record the status in
+[`registry/rules.json`](../../registry/rules.json), reflect it in
+[`verified.md`](../knowledge/verified.md) and [business-rules.md](../presets/business-rules.md),
+and — where possible — wire the fact to a demonstrator in
+[`data-presets/demonstrations/manifest.json`](../../data-presets/demonstrations/manifest.json).
+Demonstrators are the known-good base preset plus one minimal edit where possible. See
 [best-practices.md](best-practices.md).

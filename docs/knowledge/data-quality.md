@@ -8,6 +8,12 @@ check or fix by the author.
 
 ↩ [knowledge index](README.md)
 
+> Several of these defects double as **demonstrators** — they're the evidence for
+> schema/economy rules. The dropped slot, duplicate built-in, trailing comma, and phantom
+> slot are catalogued in
+> [`data-presets/demonstrations/manifest.json`](../../data-presets/demonstrations/manifest.json)
+> and cross-referenced from [business-rules.md](../presets/business-rules.md).
+
 ## Working presets
 
 - **`no-cab/7bl_eq_amp.pgp`** (was `7bl_Eq_Fx_loopr_Amp.pgp`) — **verify.** The old

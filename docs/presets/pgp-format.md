@@ -5,6 +5,11 @@ library targets **POD Go firmware v2.50**; no backward-compatibility guarantees.
 
 ↩ [presets index](README.md)
 
+> This page is the practical "inspect & edit safely" guide. For the formal,
+> machine-readable structure see [pgp-schema.md](pgp-schema.md) +
+> [`registry/pgp.schema.json`](../../registry/pgp.schema.json). The
+> [base preset](../../original/New-Preset-2_50_0.pgp) is the worked example throughout.
+
 ## Top-level shape
 
 ```
@@ -31,6 +36,11 @@ for what the slots mean.
 - `@type` by role (factory): Volume 0, Wah 0, FX Loop 5, EQ 0, Looper 4, Amp 1,
   Cab 2/0. Some Delay/Reverb blocks are type 5.
 - Reordering blocks changes both the `blockN` index and `@position`.
+
+> **See it:** the [base preset](../../original/New-Preset-2_50_0.pgp) shows the empty-block
+> shape (`block2/3/8/9`), every `@type` value, and the full assignment sections — rules
+> `empty-free-block-shape`, `block-type-values`, `assignment-sections-shape` in
+> [business-rules.md](business-rules.md).
 
 ## Inspecting a preset
 
@@ -61,10 +71,14 @@ keys are safe to delete — POD Go rebuilds them:
   ignore rule prevents. When hand-editing, preserve the `\/` form.
 - **Trailing commas.** At least one hand-edited preset has a trailing comma that
   makes it invalid JSON; POD Go tolerates it but strict parsers don't. Our tools
-  recover from it and flag it (`parse: recovered-trailing-comma`).
+  recover from it and flag it (`parse: recovered-trailing-comma`). Demonstrator:
+  [`7bl_vol_amp_cab_broken.pgp`](../../presets/with-amp-cab/7bl_vol_amp_cab_broken.pgp).
 - **`meta.name` is capped at 16 chars.** Hand-editing a longer name is pointless —
-  POD Go truncates it to 16 on import. Symbols/spaces are allowed. See name/filename
-  limits in [naming-and-registry.md](naming-and-registry.md).
+  POD Go truncates it to 16 on import. Symbols/spaces are allowed; `/` is stored as
+  `\/`. See name/filename limits in [naming-and-registry.md](naming-and-registry.md).
+  Demonstrators: [`name-overlength.pgp`](../../data-presets/demonstrations/name-overlength.pgp),
+  [`name-slash-escape.pgp`](../../data-presets/demonstrations/name-slash-escape.pgp).
 - **Dropped slots.** A preset can end up with fewer than 10 `blockN` entries if a
   free slot was accidentally removed during editing (see
   [data-quality.md](../knowledge/data-quality.md)). That silently lowers the free-block count.
+  Demonstrator: [`5bl_fx_lpr_amp_cab.pgp`](../../presets/with-amp-cab/5bl_fx_lpr_amp_cab.pgp).

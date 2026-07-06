@@ -85,6 +85,14 @@ Working/broken status is **not** encoded by folder — it lives in
 [registry/combinations.json](../../registry/combinations.json) and in a `_broken`
 filename suffix. A folder just says which built-ins were removed.
 
+> **Demonstrated by** (see [business-rules.md](business-rules.md) for status, and the
+> [manifest](../../data-presets/demonstrations/manifest.json) for what to observe):
+> free-block formula → [base](../../original/New-Preset-2_50_0.pgp);
+> phantom 7th slot → [`7bl_fx_amp_cab_broken`](../../presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp);
+> genuine 7 free → [`7bl_eq_amp`](../../presets/no-cab/7bl_eq_amp.pgp);
+> removing both Amp+Cab collapses → [`6bl_fx_eq_lpr_broken`](../../presets/no-amp-and-cab/6bl_fx_eq_lpr_broken.pgp).
+> All still **⬜ unverified** pending joint hardware confirmation.
+
 ## Mandatory block: EQ or Looper
 
 At least one of **EQ** or **Looper** must remain. The mandatory EQ block can be
