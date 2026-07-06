@@ -8,10 +8,38 @@ of which internal `@model` ids we've actually captured is in
 
 ↩ [reference index](README.md)
 
-> Display names are the human labels shown on-device. The internal `@model` id
-> (e.g. `HD2_AmpDelSol300`) is **not** published by Line 6 — the only way to learn
-> it is to dump a preset that uses the block. That is the purpose of
-> [`data-presets/`](../../data-presets) and the coverage worklist.
+> Display names are the human labels shown on-device. Every block's internal `@model`
+> id, category, DSP `load`, and parameter schema ship in **POD Go Edit's bundled
+> catalog** — see [Authoritative source](#authoritative-source-pod-go-edit-catalog)
+> below. (Ids were historically reverse-engineered by dumping presets into
+> [`data-presets/`](../../data-presets); the catalog supersedes that as the source of
+> truth for *which models exist*.)
+
+## Authoritative source: POD Go Edit catalog
+
+POD Go Edit ships the complete, authoritative model catalog as JSON in its app bundle
+(`/Applications/Line6/POD Go Edit.app/Contents/Resources/`): 18 per-category
+`*.models` files plus `PGModelCatalog.json`. Together they define **574 model
+definitions**, each carrying its `symbolicID` (= the `@model` id), display `name`,
+category, **DSP `load`**, full **`params`** schema, and — via a `devices` field —
+**which firmware version added it** (428 base + 146 added across updates).
+
+- [`tools/extract_podgo_catalog.py`](../../tools/extract_podgo_catalog.py) snapshots it
+  into a versioned, git-diffable file at
+  [`registry/model-catalog/`](../../registry/model-catalog/)`podgo-edit-<version>.json`
+  (current: **editor v2.50**). Re-run on a new POD Go Edit release → `git diff` shows
+  exactly what Line 6 changed.
+- [`tools/podgo_models.py`](../../tools/podgo_models.py) reads that snapshot, keyed by
+  `@model`, with no dependency on the app being installed.
+
+**Structure of the 574:** 271 are in the general **FX-block picker**; amps (106),
+preamps (108), cabs (41) and cab-mic IRs (46) use **dedicated block pickers** and aren't
+in `PGModelCatalog.json`. The `devices` field confirms all 574 are genuine POD Go models
+(POD Go + POD Go Wireless), not a Helix superset.
+
+This supersedes preset-mining for *knowing which models exist* — that coverage gap is
+closed by definition. The hand-curated category counts below predate the catalog and are
+being reconciled against it; where they disagree, **the catalog wins**.
 
 ## Chain architecture
 
@@ -52,6 +80,10 @@ See the JSON for the full itemized name lists in each category.
 - **No polyphonic pitch** (Poly Pitch/Wham/Capo, 12-String, Poly Sustain/Detune).
 - **One fixed FX Loop block** instead of Helix's Send/Return category.
 - Every amp is also a **Preamp**; the only standalone preamp is `Studio Tube Pre`.
+- **Every amp carries a `cablink`** in the catalog — a matched default cab
+  (`HD2_AmpUSDoubleNrm → HD2_Cab2x12DoubleC12N`, all 106 amps). This is the vestige of Helix's
+  **Amp+Cab** paired block: POD Go keeps Amp (`@type=1`) and Cab (`@type=2`) as **separate**
+  blocks but records each amp's factory-matched cab via `cablink`.
 - May lack a few of the newest Helix delays/reverbs (e.g. Cosmos Echo) — unverified.
 
 ## Sources

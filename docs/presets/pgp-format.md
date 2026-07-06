@@ -13,17 +13,26 @@ library targets **POD Go firmware v2.50**; no backward-compatibility guarantees.
 ## Top-level shape
 
 ```
-data
-├── meta            name, application, build_sha, modifieddate, appversion
-├── device          numeric device id
-└── tone
-    ├── global      @model, @cursor_group, @pedalstate, @current_snapshot, @tempo
-    ├── dsp0        THE SIGNAL CHAIN — blockN slots + input/output
-    ├── dsp1        (unused on POD Go, empty)
-    ├── snapshot0..3  per-snapshot block on/off + names
-    ├── footswitch  (present only once assignments exist)
-    └── controller  (present only once assignments exist)
+(root)
+├── schema          "L6Preset"   — the preset format id (shared with Helix .hlx)
+├── version         6            — L6Preset schema version (POD Go fw v2.50)
+├── meta            top-level export metadata
+└── data
+    ├── meta            name (data.meta.name is the on-device name), application, build_sha, …
+    ├── device          numeric device id
+    ├── device_version
+    └── tone
+        ├── global      @model, @cursor_group, @pedalstate, @current_snapshot, @tempo
+        ├── dsp0        THE SIGNAL CHAIN — blockN slots + input/output
+        ├── dsp1        (unused on POD Go, empty)
+        ├── snapshot0..3  per-snapshot block on/off + names
+        ├── footswitch  (present only once assignments exist)
+        └── controller  (present only once assignments exist)
 ```
+
+> **Format id:** the top-level `schema` = `"L6Preset"`, `version` = `6` (POD Go
+> firmware v2.50). The on-device preset name lives at **`data.meta.name`**, not the
+> top-level `meta`.
 
 ## The chain: `data.tone.dsp0`
 
@@ -33,14 +42,43 @@ for what the slots mean.
 
 - Empty free block: `{ "@position": 9 }`
 - Occupied block: `@model`, `@type`, `@position`, `@enabled`, plus params.
-- `@type` by role (factory): Volume 0, Wah 0, FX Loop 5, EQ 0, Looper 4, Amp 1,
-  Cab 2/0. Some Delay/Reverb blocks are type 5.
+- `@type` — the block's **DSP class**, not a built-in flag and not the mono/stereo flag.
+  See [The `@type` field](#the-type-field) below.
 - Reordering blocks changes both the `blockN` index and `@position`.
 
 > **See it:** the [base preset](../../original/New-Preset-2_50_0.pgp) shows the empty-block
 > shape (`block2/3/8/9`), every `@type` value, and the full assignment sections — rules
 > `empty-free-block-shape`, `block-type-values`, `assignment-sections-shape` in
 > [business-rules.md](business-rules.md).
+
+### The `@type` field
+
+`@type` is a coarse **DSP/structural class** for a block — how POD Go's engine treats it —
+**not** a built-in marker and **not** the mono/stereo flag (width lives in the `@model`
+suffix; see [model-id-conventions.md](../reference/model-id-conventions.md#mono-vs-stereo-suffix)).
+Observed across the whole library:
+
+| `@type` | Class | Members |
+| --- | --- | --- |
+| 0 | generic series/insert effect | comp, dist, EQ, mod, filter, wah, volume, gate, pitch, **cab-mic-IR**, and *non-trails* delays |
+| 1 | Amp | |
+| 2 | Cab | the speaker/impulse engine (distinct from cab-mic-IR, which is type 0) |
+| 4 | Looper | |
+| 5 | **trails-capable** time-based / send-return | almost all delays, **all** reverbs, the FX Loop |
+| 6 | pitch/synth subtype | |
+
+The one reliable signal is **`@type=5` ↔ the `@trails` field, 1:1** — every type-5 block
+carries `@trails` (spillover tails). The only delays that *aren't* type 5 are the three where
+tails make no sense — `DelayDoubleDouble`, `VIC_DelayRatchet`, `VIC_DelayStutterEdit` — and
+they drop to type 0 with no `@trails`.
+
+> **No built-in flag exists.** A user-assigned FX block and a factory built-in are
+> **structurally identical** — same fields (`@model`, `@type`, `@position`, `@enabled`,
+> `@no_snapshot_bypass`, params). Nothing in the JSON marks a block as built-in; the role is
+> inferred from the **`@model` id alone** (its prefix — see
+> [model-id-conventions.md](../reference/model-id-conventions.md#built-in-block-id-prefixes-how-the-tools-detect-role)).
+> `@type` only *partially* leaks role: values 1/2/4 uniquely imply amp/cab/looper, but 0 and 5
+> are shared with ordinary user effects.
 
 ## Inspecting a preset
 

@@ -23,6 +23,15 @@ points to the doc with the full detail — this page is the "what surprised us" 
 - **The assignable ceiling is 7, and Vol/Wah/FX Loop count against it.** Keeping Volume
   or the FX Loop while having 7 free blocks yields a *phantom* slot the UI shows but
   can't assign — the preset reads as broken. Genuine 7 free needs removing **both**.
+- **Viability has multiple factors: structural rules AND POD Go's import constraints.**
+  Beyond the removal taxonomy and the 7-slot ceiling, POD Go enforces a **constraint set
+  when it imports a preset** — named in POD Go Edit's own error strings: **max DSP load**, a
+  **block-count** cap, **≤ 1 amp/cab/IR**, plus parallel-path rules. Exceed any and POD Go
+  **silently drops the trailing blocks** (audio still flows, UI responsive — hardware
+  confirmed). Two test presets showed it's *not* purely DSP: a heavy one hit **DSP load**
+  (kept 5 of 10), a light one hit the **block-count** cap (kept 7). Caution: the catalog
+  `load` field is only a rough *relative* proxy, **not** POD Go's actual DSP % — don't sum it
+  into a budget number. [→ blocks-and-constraints.md](../presets/blocks-and-constraints.md)
 - **Cab is single-cab only** — POD Go does **not** have Helix's dual-cab mode. (The
   research draft claimed otherwise; the unit corrected it.) [→ reference/block-models.md](../reference/block-models.md)
 - **Hardware is the only authority on viability.** Parsing/importing cleanly means
@@ -45,10 +54,26 @@ points to the doc with the full detail — this page is the "what surprised us" 
   every OS** — so the file can be byte-identical to the `meta.name` (unlike `/`, which is
   filename-illegal). [→ naming-and-registry.md](../presets/naming-and-registry.md)
 - **`@model` ids are not display names, and prefixing is inconsistent** (`HD2_` for most,
-  but also `VIC_`, `L6…`, and 18 bare-name legacy models). Ids can only be captured by
-  dumping a preset — never guessed. [→ reference/model-id-conventions.md](../reference/model-id-conventions.md)
+  but also `VIC_`, `L6…`, and 18 bare-name legacy models). The full id list now comes from
+  **POD Go Edit's bundled catalog** (`registry/model-catalog/`), not preset-dumping.
+  [→ reference/model-id-conventions.md](../reference/model-id-conventions.md), [block-models.md](../reference/block-models.md)
 - **`EQ_STATIC_*` = the fixed preset-EQ block; `EQ*` (no STATIC) = a free-block EQ
   effect.** The same EQ models exist in both forms. [→ reference/model-id-conventions.md](../reference/model-id-conventions.md)
+- **Stock POD Go = 6 built-ins + 4 free in a native 10-slot chain.** POD Go's factory New
+  Preset (device-sourced `original/New-Preset-2_50_0.pgp`) contains all ten `block0`–`block9`
+  slots — the jailbreak *frees* built-in slots, it doesn't add them. POD Go Edit also bundles a
+  `default_preset_p34.hlx` with the same 6+4 economy in a *different* slot arrangement (its
+  usage is unconfirmed — per the owner, new presets come from **device firmware**, not the
+  editor); together they show built-ins are **not pinned to fixed slot indices** (the amp role
+  can even be a `HD2_Preamp…` id). [→ blocks-and-constraints.md](../presets/blocks-and-constraints.md)
+- **`@type` is a DSP class, not a built-in or mono/stereo flag.** It buckets blocks by how the
+  engine treats them (amp 1, cab 2, looper 4, trails-capable delay/reverb/FX-Loop 5, most else
+  0); the clean signal is **`@type=5` ↔ the `@trails` field, 1:1**. There is **no** built-in
+  marker at all — a built-in and a user-FX block are byte-shape-identical; role comes from the
+  `@model` id. Width is pegged per effect in the `@model` `…Mono/…Stereo` suffix (a Helix
+  carryover — path is mono pre-amp, **stereo after the cab**), and Helix's amp+cab pairing
+  survives as a per-amp `cablink`, not a combined block.
+  [→ pgp-format.md](../presets/pgp-format.md), [reference/model-id-conventions.md](../reference/model-id-conventions.md)
 - **Some keys are safe to delete — POD Go rebuilds them** on import/first-assignment:
   `snapshot0–3`, `footswitch`, `controllers`. [→ pgp-format.md](../presets/pgp-format.md)
 - **`.pgp` is JSON but hand-edits drift from POD Go's serialization:** it tolerates
@@ -79,7 +104,8 @@ chain. Lesson: **derive names/status from content and validate, never trust the 
   digits, drop stopwords, require the name's token set ⊆ an id's) plus a small curated
   **`name_overrides` crosswalk** for the genuinely ambiguous cases.
   [→ naming-and-registry.md](../presets/naming-and-registry.md)
-- **Effects were nearly complete from the start; amps/cabs/wah/vol were the gaps.** The
-  stock `data-presets/` dumps are effect-category pages, so they captured ~all effects
-  but almost no amps/cabs. Filling those means dumping amp/cab presets and re-running
-  `tools/refresh.py`. [→ reference/data-coverage.md](../reference/data-coverage.md)
+- **The model-coverage gap is closed by POD Go Edit's catalog.** Preset-mining
+  (`data-presets/` dumps) left amps/cabs/wah/vol under-captured and was slow. POD Go Edit
+  ships the full authoritative catalog (**574 models** with DSP loads + params +
+  firmware provenance) as JSON, so "which models exist" no longer needs harvesting; the
+  gap is closed by definition. [→ reference/block-models.md](../reference/block-models.md)

@@ -17,6 +17,41 @@ Each slot is one of:
 - **Occupied** — has an `@model` id (e.g. `HD2_AmpDelSol300`) plus params. This is
   either a *built-in* block or a user effect placed in a free slot.
 
+> **The 10 slots are native, not created by the jailbreak.** POD Go's factory **New Preset**
+> (firmware v2.50) already contains all ten `block0`–`block9`, with **6 built-ins** present
+> (Volume, Wah, FX Loop, Amp, Cab, and the mandatory EQ *or* Looper) and **4 free slots** — so
+> stock POD Go = **4 free blocks** (`10 − 6`). The jailbreak *removes built-ins* to free their
+> slots (see [the free-block rule](#the-free-block-rule-corrected)); it does not add slots.
+> (`@position` values in the JSON are slot indices, not necessarily signal-chain order.)
+
+**Concrete factory layout (v2.50).** POD Go's factory New Preset — the repo's device-sourced
+[`New-Preset-2_50_0.pgp`](../../original/New-Preset-2_50_0.pgp) (`schema:"L6Preset"` v6) —
+fills the ten slots like this; note the **slot index is not signal-chain order**:
+
+| Slot | `@model` | Role |
+| --- | --- | --- |
+| `block0` | `HD2_VolPanVolStereo` | Volume |
+| `block1` | `HD2_WahFasselStereo` | Wah |
+| `block2`–`block3` | *(empty)* | free ×2 |
+| `block4` | `HD2_FXLoopMono1` | FX Loop |
+| `block5` | `HD2_AmpUSDoubleNrm` | Amp |
+| `block6` | `HD2_Cab2x12DoubleC12N` | Cab |
+| `block7` | `HD2_EQ_STATIC_ParametricStereo` | EQ (mandatory) |
+| `block8`–`block9` | *(empty)* | free ×2 |
+
+That's **6 built-ins + 4 free = 4 stock free blocks.**
+
+> **Aside — POD Go Edit bundles a *different* default.** The editor app ships a
+> `default_preset_p34.hlx` (also `schema:"L6Preset"` v6, name `New Preset`) with the same 6+4
+> economy but a **different slot arrangement** (EQ `block0`, Wah `block1`, FX Loop `block2`,
+> Preamp `block3`, Cab `block7`, Volume `block9`; free at 4–6, 8) — and it uses a *Preamp*
+> (`HD2_Preamp…`) in the amp role. **How the editor uses that file is unconfirmed;** per the
+> project owner, POD Go populates a new preset from the **device firmware**, not from POD Go
+> Edit (there's no known "new preset" or "revert to default" action in the editor). So the two
+> files together establish only the **structural economy** — 10 slots, 6 built-ins + 4 free,
+> built-ins *not* pinned to fixed slot indices — and the **device's own New Preset is the
+> authority** on the actual factory layout.
+
 ## Built-in vs. free blocks
 
 Seven block roles are "built-in" (dedicated, not freely-typed). We detect each by
@@ -93,39 +128,52 @@ tag in the preset name. A folder just says which built-ins were removed.
 > removing both Amp+Cab collapses → [`6_--FEL_--_bad`](../../presets/no-amp-and-cab/6_--FEL_--_bad.pgp).
 > All still **⬜ unverified** pending joint hardware confirmation.
 
-## The DSP budget (second validity factor)
+## Import-translation constraints (why blocks drop)
 
-Removal taxonomy and the phantom-slot ceiling are *structural* limits. A
-structurally-sound preset can still break for a second, independent reason: it
-exceeds POD Go's **DSP budget**. POD Go runs a single DSP path, and every block
-consumes a fixed slice of it. The per-model **DSP load** is published in POD Go
-Edit's catalog and read by [`tools/podgo_models.py`](../../tools/podgo_models.py)
-(see [reference/block-models.md](../reference/block-models.md)).
+Removal taxonomy and the phantom-slot ceiling are *structural* limits. Beyond those, POD Go
+enforces a **set of constraints when it imports (“translates”) a preset**. If the preset
+exceeds any of them, POD Go **silently drops blocks** (trailing-first) rather than refusing
+the preset — audio still flows through the blocks that fit and the UI stays responsive
+(graceful degradation, hardware-confirmed, firmware v2.50).
 
-Approximate per-block loads (firmware v2.50, from the catalog):
+The constraint **names come from POD Go Edit's own error strings**
+(`appErrorStrings_eng.json` — app-authoritative, not our inference; see
+[resources.md](../reference/resources.md)):
 
-| Block | DSP load |
+| Constraint (Line 6's wording) | Meaning |
 | --- | --- |
-| **Amp** | ~24 median, up to 31 — **by far the heaviest** |
-| Preamp | ~15 median |
-| Reverb ~13 · Delay ~9 | the expensive effects |
-| Distortion / Modulation | ~6 median |
-| Cab 6.0 · IR 2.5 · Wah ~3.3 · Volume 1.5 | cheap |
-| Input + Output | ~22 fixed baseline (always present) |
+| `max dsp processing load exceeded` | the **DSP load** budget |
+| `dsp block constraint exceeded` | a **block-count** cap (separate from load) |
+| `too many amps` / `too many cabs` / `too many IRs` | **≤ 1 each** — the single-amp / single-cab rules |
+| `too many parallel dsp paths`, `path block constraint`, split/join rules | parallel-path limits (POD Go is single-path → mostly N/A) |
+| `incompatible model` | a model not valid for this device/slot |
+| `Invalid or bad block location specified` | placement validity |
 
-**What the tested library shows** — summing every block's load across the 23
-recorded presets ([`tools/spikes/preset_dsp.py`](../../tools/spikes/preset_dsp.py)):
+**Two of these trip the drop, whichever comes first** — observed on hardware with two
+purpose-built test presets (same recorded-working structure; only the block weight/count
+varied):
 
-- Every **working** preset sits at **total DSP ≤ ~80.7** (block-load ≤ 58.7).
-- The two heaviest **structurally-sound** (`with-amp-cab`) presets — total **93–94**
-  — break on DSP *alone*.
-- So a real ceiling sits between ~59 and ~71 block-load; its exact value is **not yet
-  pinned** (the library has a gap there). Pinning it with purpose-built boundary
-  presets is a deferred task.
+- A **heavy** over-budget preset
+  ([`build_dsp_test.py`](../../tools/spikes/build_dsp_test.py), 10 heavy blocks) hit the
+  **max DSP load** limit — POD Go kept the first **5** blocks and dropped the rest.
+- A **light** 10-block preset
+  ([`build_calibration.py`](../../tools/spikes/build_calibration.py)) was well under any load
+  estimate yet still dropped 3 blocks — it hit the **block-count** constraint, keeping **7**.
 
-This is **derived/analysis knowledge**, cross-checked against the library's recorded
-statuses — not itself a new hardware claim. Per-block loads come from Line 6's catalog
-(a `source`); the ceiling is `inferred`. See [verified.md](../knowledge/verified.md).
+So block-dropping is **not purely DSP load**; it's this constraint set.
+
+### On the DSP-load numbers — a caution
+
+Per-block **DSP load** values exist in POD Go Edit's catalog and are read by
+[`tools/podgo_models.py`](../../tools/podgo_models.py) (amps heaviest ~24–31; reverb/delay
+next; cab/wah/volume cheap). They're useful for *relative* comparison, **but they are only a
+rough proxy — they do NOT sum to POD Go's actual DSP %.** (A preset that looked light by
+catalog-load still hit a constraint, so any specific “total DSP budget” number from summing
+`load` is unreliable — an earlier draft of this doc claimed ~98–129 and that was wrong-scale.)
+The real numeric limits (max block count, max DSP %) are **compiled into the POD Go Edit
+executable**, not in any readable data file; they can be pinned empirically by bisection.
+Current hardware bounds: a *light* preset fits ~7 blocks, a *heavy* one ~5. See
+[verified.md](../knowledge/verified.md) and [troubleshooting.md](../knowledge/troubleshooting.md).
 
 ### Keeping the Amp is a signal-path rule, not a DSP one
 

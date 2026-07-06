@@ -25,6 +25,25 @@ throughout is **POD Go v2.50** (Helix 3.5-era model set).
 - **POD Go FAQ / Knowledge Base** — <https://kb.line6.com/pod-go-faq>
   Block structure, fixed vs. free blocks, FX Loop mono/stereo behavior.
 
+## POD Go Edit application resources (on-disk, authoritative)
+
+POD Go Edit ships authoritative data inside its app bundle
+(`/Applications/Line6/POD Go Edit.app/Contents/Resources/`):
+
+- **`*.models` + `PGModelCatalog.json`** — the complete model catalog (`@model`/`symbolicID`,
+  display name, category, DSP `load`, param schema, firmware provenance). Snapshotted to
+  [`registry/model-catalog/`](../../registry/model-catalog/) by
+  [`tools/extract_podgo_catalog.py`](../../tools/extract_podgo_catalog.py); see
+  [block-models.md](block-models.md). This is why `@model` ids no longer need preset-dumping.
+- **`strings/appErrorStrings_eng.json`** — Line 6's own error messages, which **name the
+  import "translation" constraints** POD Go enforces (max DSP load, block-count, ≤ 1
+  amp/cab/IR, parallel-path rules, incompatible model, bad block location). See
+  [blocks-and-constraints.md](../presets/blocks-and-constraints.md) · *Import-translation
+  constraints*. The *numeric* thresholds are compiled into the executable
+  (`Contents/MacOS/`), not in any data file.
+- **`PodGoModelDefs.bin`** — MessagePack model definitions (574 entries). Note: its array
+  index is **not** the device/USB model id (tested and refuted).
+
 ## Community / secondary
 
 - **Helix/HX/POD Go model database** — <https://helixhelp.com/models>
@@ -40,6 +59,6 @@ throughout is **POD Go v2.50** (Helix 3.5-era model set).
   single-cab only). When a source disagrees with the unit, the unit wins; record the
   correction in [reference-models.json](../../registry/reference-models.json) and re-run
   `tools/coverage.py`. See [lessons-learned.md](../knowledge/lessons-learned.md).
-- **Internal `@model` ids are never published** by Line 6 — the manuals/gallery give
-  display names only. Ids can only be captured by dumping a preset (see
-  [reference/model-id-conventions.md](model-id-conventions.md)).
+- **Internal `@model` ids are not in the public manuals/gallery** (display names only), but
+  they **are** in POD Go Edit's bundled `*.models` catalog (see above), so they no longer
+  require preset-dumping. See [reference/model-id-conventions.md](model-id-conventions.md).

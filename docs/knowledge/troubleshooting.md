@@ -60,6 +60,18 @@ it and compare against the base). Full catalog:
 - **A duplicate built-in block.** Two of the same built-in (e.g. two Volume blocks) can
   break a preset. Demonstrator:
   [`6_V----_AC_bad.pgp`](../../presets/with-amp-cab/6_V----_AC_bad.pgp).
+- **Fewer blocks than authored → an import constraint was hit.** A preset that exceeds one
+  of POD Go's import (“translation”) constraints still imports, but the unit **fills blocks
+  from the input and silently drops the trailing ones** — leaving empty slots, audio still
+  passing, UI responsive (graceful, not a crash). The two that bite in practice: **max DSP
+  load** (heavy chains) and a **block-count** cap (even light chains); plus the ≤ 1
+  **amp/cab/IR** caps. Fix by lightening the chain and/or using fewer blocks. Note **catalog
+  `load` is only a rough proxy for the DSP %**, not an exact budget. Demonstrators:
+  [`dsp-over-budget-test.pgp`](../../data-presets/demonstrations/dsp-over-budget-test.pgp)
+  (DSP load) and
+  [`usb-id-calibration.pgp`](../../data-presets/demonstrations/usb-id-calibration.pgp)
+  (block count). See [blocks-and-constraints.md](../presets/blocks-and-constraints.md) ·
+  *Import-translation constraints*.
 - **Name shows truncated after import.** `meta.name` caps at 16 characters; a longer name
   is silently cut to the first 16 on import — not rejected. Demonstrator:
   [`name-overlength.pgp`](../../data-presets/demonstrations/name-overlength.pgp).

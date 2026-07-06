@@ -103,6 +103,10 @@ Machine-readable source of truth under [`registry/`](../../registry):
 - **`rules.json`** — semantic rules + knowledge with a **verified/unverified** status
   and demonstrator linkage (see [business-rules.md](business-rules.md)). **Authoritative
   for rule status.**
+- **`model-catalog/podgo-edit-<ver>.json`** — versioned snapshots of POD Go Edit's
+  authoritative model catalog (name, category, DSP `load`, param schema, firmware
+  provenance, keyed by `@model`), produced by `tools/extract_podgo_catalog.py`. See
+  [reference/block-models.md](../reference/block-models.md).
 
 ## Tools
 
@@ -116,8 +120,12 @@ Run from the repo root:
 | `python3 tools/validate_presets.py` | Check every preset matches its registry entry & name |
 | `python3 tools/validate_examples.py` | Check the knowledge↔preset linkage (`registry/rules.json` + `data-presets/demonstrations/manifest.json`) |
 | `python3 tools/gen_matrix.py` | Regenerate `registry/presets.csv` + the clickable preset list in the README |
+| `python3 tools/extract_podgo_catalog.py` | Snapshot POD Go Edit's model catalog → `registry/model-catalog/podgo-edit-<ver>.json` |
 
 `tools/podgo.py` is the shared library (load/parse, classify, taxonomy, naming).
+`tools/podgo_models.py` reads the model-catalog snapshot (name/category/DSP `load`/params by
+`@model`; falls back to live POD Go Edit if no snapshot). `tools/spikes/` holds **experimental**
+USB / DSP / calibration reverse-engineering scripts — not part of the validated pipeline.
 
 ## Adding a preset
 

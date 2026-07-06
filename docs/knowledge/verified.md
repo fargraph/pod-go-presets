@@ -26,8 +26,23 @@ Status is **binary**, and it mirrors [`registry/rules.json`](../../registry/rule
 
 ## ✅ Verified
 
-_None yet._ Items land here as they're confirmed on the unit with an accompanying
-demonstrator. To promote one: set its `status` to `verified` in
+**POD Go drops blocks on import to satisfy its "translation" constraint set** (firmware
+v2.50). An over-limit but otherwise structurally-valid preset imports fine, and POD Go
+**fills blocks from the input, then silently drops the trailing ones** once a constraint is
+hit — leaving empty slots, audio still flowing, UI responsive (graceful, not a crash).
+Confirmed on hardware by Clifton loading two demonstrators:
+[`dsp-over-budget-test.pgp`](../../data-presets/demonstrations/dsp-over-budget-test.pgp)
+(heavy — hit **max DSP load**, kept 5 of 10) and
+[`usb-id-calibration.pgp`](../../data-presets/demonstrations/usb-id-calibration.pgp)
+(light — hit the **block-count** constraint, kept 7 of 10). The constraint *names* are
+app-sourced (POD Go Edit `appErrorStrings_eng.json`); the *numeric* limits are compiled and
+still ⏳ pending (bisect to pin). **Catalog `load` sums are NOT POD Go's DSP % — a rough
+proxy only.** See [blocks-and-constraints.md](../presets/blocks-and-constraints.md) ·
+*Import-translation constraints*. *Still to do: formalize a rule in
+[`registry/rules.json`](../../registry/rules.json).*
+
+Other items land here as they're confirmed on the unit with an accompanying demonstrator.
+To promote one: set its `status` to `verified` in
 [`registry/rules.json`](../../registry/rules.json) (with a non-empty `demonstrated_by`),
 then move its row here.
 
@@ -47,11 +62,17 @@ library; `source` = Line 6 / community.
 | Genuine 7 free requires removing both Volume and FX Loop; else the extra slot is phantom | inferred | [blocks-and-constraints.md](../presets/blocks-and-constraints.md) · rules `genuine-7-free-needs-vol-and-fx-removed`, `phantom-slot-ceiling` |
 | At least one of EQ or Looper must remain | inferred | rule `eq-or-looper-required` |
 | `@type` per role (Vol 0, Wah 0, FX Loop 5, EQ 0, Looper 4, Amp 1, Cab 2) | factory-preset | [pgp-format.md](../presets/pgp-format.md) · rule `block-type-values` |
+| `@type` is a DSP class (amp 1 / cab 2 / looper 4 / trails-capable delay·reverb·FX-Loop 5 / else 0), not a built-in or width flag; `@type=5` ↔ `@trails` 1:1 | inferred | [pgp-format.md](../presets/pgp-format.md) · *The `@type` field* |
+| Path is mono through amp/cab, **stereo after the cab**; each effect pegged to one width via the `…Mono/…Stereo` suffix (catalog: 119 stereo-only, 57 mono-only, only the Looper ships both) | hardware | [model-id-conventions.md](../reference/model-id-conventions.md) · *Mono vs. Stereo suffix* |
+| Helix's amp+cab pairing survives as a per-amp `cablink` (matched default cab), not a combined block | source | [reference/block-models.md](../reference/block-models.md) · *POD Go vs. Helix* |
+| Stock = 6 built-ins + 4 free in a native 10-slot chain; built-ins aren't pinned to fixed slot indices (device New Preset vs. editor-bundled `default_preset_p34.hlx` arrange 6+4 differently; editor file's usage unconfirmed) | factory-preset | [blocks-and-constraints.md](../presets/blocks-and-constraints.md) · *The chain* |
 | `EQ_STATIC_*` is the built-in preset-EQ; `EQ*` (no `_`) are free effects | factory-preset | [model-id-conventions.md](../reference/model-id-conventions.md) · rule `eq-static-vs-free-eq` |
 | `snapshot0–3`, `footswitch`, `controllers` are rebuilt by the device if deleted | source | [pgp-format.md](../presets/pgp-format.md) · rule `blank-slate-ship` |
 | POD Go tolerates a trailing comma strict parsers reject | inferred | [data-quality.md](data-quality.md) · rule `trailing-comma-tolerated` |
 | A dropped `blockN` slot silently lowers the free-block count | inferred | [data-quality.md](data-quality.md) · rule `dropped-slot-lowers-free` |
-| The 429-model list, per-category counts, EXP 1→Wah / EXP 2→Volume | source | [reference/block-models.md](../reference/block-models.md) |
+| EXP 1→Wah / EXP 2→Volume | source | [reference/block-models.md](../reference/block-models.md) |
+| Authoritative model list (**574 defs**) + per-block **DSP loads** + firmware provenance ship in POD Go Edit's catalog (`registry/model-catalog/podgo-edit-2.50.json`) — supersedes the old preset-mined 429 count | source | [reference/block-models.md](../reference/block-models.md) |
+| ~~DSP budget as a 2nd viability factor (hypothesis)~~ **→ now CONFIRMED, see ✅ Verified above** | hardware | [blocks-and-constraints.md](../presets/blocks-and-constraints.md) · *The DSP budget* |
 
 ## Pending a demonstrator or a unit test
 
