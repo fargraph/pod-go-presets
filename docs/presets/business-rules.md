@@ -14,9 +14,10 @@ verified/unverified status.
   backed by an accompanying demonstrator preset (for viability facts, hardware-confirmed).
   ⬜ **unverified** = the honest default: presumed/expected, or not yet jointly confirmed.
   See the [verified/unverified ledger](../knowledge/verified.md).
-- **Everything is currently ⬜ unverified.** Existing knowledge was reset to `unverified`;
-  each item re-earns ✅ only when it's confirmed with a demonstrator. The `demonstrated_by`
-  preset is already wired up for most — what's pending is the joint confirmation.
+- **Almost everything is ⬜ unverified.** Existing knowledge was reset to `unverified`; each
+  item re-earns ✅ only when it's confirmed with a demonstrator (the `demonstrated_by` preset
+  is already wired up for most — what's pending is the joint confirmation). The first ✅
+  **verified** rule is **`usb-id-decode`** (see [USB protocol](#usb-protocol) below).
 - **Demonstrator** links go to a preset that exhibits the rule; the full catalog with
   "what to observe" is [`data-presets/demonstrations/manifest.json`](../../data-presets/demonstrations/manifest.json).
 
@@ -60,6 +61,12 @@ See also the formal envelope in [pgp-schema.md](pgp-schema.md).
 | ⬜ | **no-reformat-pgp** — never reformat; preserve `\/` escapes and tolerated trailing commas. | [`name-slash-escape`](../../data-presets/demonstrations/name-slash-escape.pgp), [`7_V----_AC_bad`](../../presets/with-amp-cab/7_V----_AC_bad.pgp) |
 | ⬜ | **trailing-comma-tolerated** — POD Go accepts a trailing comma strict parsers reject; tools recover + flag it. | [`7_V----_AC_bad`](../../presets/with-amp-cab/7_V----_AC_bad.pgp) |
 | ⬜ | **blank-slate-ship** — publish blank: no loaded FX, no footswitch/controller; those keys are safe to delete. | [`7_---E-_AC`](../../presets/with-amp-cab/7_---E-_AC.pgp) |
+
+## USB protocol
+
+| Status | Rule | Demonstrated by |
+| :-: | --- | --- |
+| ✅ | **usb-id-decode** — over USB a block's `usb_id` is a MessagePack uint after the constant `c2 19` prefix (before `1aff09`) in its slot; a device-internal enumeration (**not** the `PodGoModelDefs` array index), so `usb_id → @model` is built empirically ([`registry/usb-id-map.json`](../../registry/usb-id-map.json)). Confirmed on two independent hardware captures (Vol 224, Amp 289, EQ 472 held). | [`usb-id-calibration`](../../data-presets/demonstrations/usb-id-calibration.pgp), [`usb-id-calibration-2`](../../data-presets/demonstrations/usb-id-calibration-2.pgp) |
 
 ## Flipping an item to ✅ verified
 

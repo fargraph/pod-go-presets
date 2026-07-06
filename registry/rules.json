@@ -6,7 +6,7 @@
     "unverified": "The honest default: presumed/expected (research, inference, Line 6 sources), or not yet jointly confirmed. Everything starts here."
   },
   "basis_values": ["factory-preset", "hardware", "inferred", "source"],
-  "kinds": ["block-economy", "schema", "naming", "editing"],
+  "kinds": ["block-economy", "schema", "naming", "editing", "usb-protocol"],
   "rules": [
     {
       "id": "free-block-formula",
@@ -197,6 +197,16 @@
       "basis": "inferred",
       "demonstrated_by": ["presets/with-amp-cab/7_---E-_AC.pgp"],
       "docs": ["docs/presets/pgp-format.md", "docs/conventions/best-practices.md"]
+    },
+    {
+      "id": "usb-id-decode",
+      "kind": "usb-protocol",
+      "statement": "Over USB, POD Go identifies each occupied block by a small integer (usb_id) encoded as a MessagePack uint right after the constant 'c2 19' prefix, before the '1aff09' marker, in that slot's section. usb_id is a device-internal enumeration - NOT the PodGoModelDefs.bin array index - so the usb_id->@model crosswalk must be built empirically.",
+      "rationale": "Confirmed on two independent hardware captures (USB ID CAL, USBIDCAL2): Vol 224, Amp DelSol 289, EQ Parametric 472 re-read identically across two different presets; amps and cabs use the same encoding. The PodGoModelDefs-index hypothesis was refuted with real numbers (Deluxe Comp is 99, not its index 193).",
+      "status": "verified",
+      "basis": "hardware",
+      "demonstrated_by": ["data-presets/demonstrations/usb-id-calibration.pgp", "data-presets/demonstrations/usb-id-calibration-2.pgp"],
+      "docs": ["docs/reference/model-id-conventions.md"]
     }
   ]
 }

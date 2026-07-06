@@ -107,6 +107,10 @@ Machine-readable source of truth under [`registry/`](../../registry):
   authoritative model catalog (name, category, DSP `load`, param schema, firmware
   provenance, keyed by `@model`), produced by `tools/extract_podgo_catalog.py`. See
   [reference/block-models.md](../reference/block-models.md).
+- **`usb-id-map.json`** — partial, hardware-confirmed `usb_id → @model` crosswalk (the small
+  integer POD Go reports over USB → the block model). Grown empirically from captures; see
+  [reference/model-id-conventions.md](../reference/model-id-conventions.md) and rule
+  `usb-id-decode` in `rules.json`.
 
 ## Tools
 
@@ -121,11 +125,15 @@ Run from the repo root:
 | `python3 tools/validate_examples.py` | Check the knowledge↔preset linkage (`registry/rules.json` + `data-presets/demonstrations/manifest.json`) |
 | `python3 tools/gen_matrix.py` | Regenerate `registry/presets.csv` + the clickable preset list in the README |
 | `python3 tools/extract_podgo_catalog.py` | Snapshot POD Go Edit's model catalog → `registry/model-catalog/podgo-edit-<ver>.json` |
+| `python3 tools/podgo_usb.py <capture.log>` | Decode a raw POD Go USB capture → the live block chain (occupancy, on/off, `usb_id`, `@model`) |
 
 `tools/podgo.py` is the shared library (load/parse, classify, taxonomy, naming).
 `tools/podgo_models.py` reads the model-catalog snapshot (name/category/DSP `load`/params by
-`@model`; falls back to live POD Go Edit if no snapshot). `tools/spikes/` holds **experimental**
-USB / DSP / calibration reverse-engineering scripts — not part of the validated pipeline.
+`@model`; falls back to live POD Go Edit if no snapshot). `tools/podgo_usb.py` decodes a raw
+POD Go USB capture into the live block chain (occupancy, on/off, `usb_id`, and `@model` via
+[`registry/usb-id-map.json`](../../registry/usb-id-map.json)). `tools/spikes/` holds
+**experimental** USB / DSP / calibration reverse-engineering scripts (capture drivers,
+calibration-preset builders, frame/DSP analysis) — not part of the validated pipeline.
 
 ## Adding a preset
 

@@ -105,12 +105,21 @@ harvested from presets. Dumping a preset into `data-presets/` and running
 was built (it records which ids appear in *our* presets), but it is no longer the only way
 to *learn* an id.
 
-## The USB device id is NOT the `@model` (unsolved)
+## The USB device id (`usb_id`) → `@model` — encoding cracked, crosswalk empirical
 
-Over USB, POD Go refers to a block by a **small integer**, not by its `@model` string.
-That integer is **not** the array index in POD Go Edit's `PodGoModelDefs.bin` (tested and
-refuted), and not reliably the community `helix_usb` "modules" table either. Reliably
-mapping a USB block id back to its `@model` is **unsolved** — the current slot parser reads
-the wrong bytes (ids that should differ recur across presets). Treat any USB→`@model`
-naming as unverified until this is cracked. See [resources.md](resources.md) for the
-POD Go Edit on-disk resources.
+Over USB, POD Go refers to a block by a **small integer** (`usb_id`), not by its `@model`
+string. **The encoding is cracked** (hardware-confirmed on two independent captures, firmware
+v2.50): in each occupied slot section of the preset stream, the `usb_id` is a **MessagePack
+uint** stored right after the constant `c2 19` prefix, immediately before the `1aff09` marker
+(fixint `< 0x80`, `0xcc` = uint8, `0xcd` = uint16 BE). **Amps and cabs use the same encoding.**
+Decoded by [`tools/podgo_usb.py`](../../tools/podgo_usb.py).
+Confirmation: Vol `224`, Amp `289`, EQ `472` re-read identically across two different presets.
+
+The **id → `@model` map is a device-internal enumeration** we cannot derive from the app data:
+`usb_id` is **not** the `PodGoModelDefs.bin` array index (refuted with real numbers — the
+Deluxe Comp is `99`, not its array index `193`), not the community `helix_usb` "modules" table,
+and no catalog ordering reproduces it. So the crosswalk must be built **empirically** from
+captures of known presets; a partial one (10/574, hardware-read pairs) lives in
+[`registry/usb-id-map.json`](../../registry/usb-id-map.json). Full coverage would need many
+more captures or the device's own model table. See
+[resources.md](resources.md) for the POD Go Edit on-disk resources.

@@ -1,13 +1,20 @@
-"""Spike 0.3c — reassemble + parse a POD Go preset chain from a raw capture.
+"""podgo_usb — reassemble + decode a POD Go preset chain from a raw USB capture.
 
 Turns a raw USB capture (one read per line, space-separated hex) into the ordered POD Go
-slot list. Reassembly + slot model mirror helix_usb's request_preset.py (accumulate
-data_in[16:] of every ed/80 data frame; split the blob on 8213; slots [1-8,11-18] are the
-assignable chain positions, 06=occupied / 0814c0=empty(No-Slot) / 07=Looper).
+slot list, with each occupied block's on/off state, decoded usb_id, and @model name.
 
-This is first-party code (the beginning of our POD Go parser), informed by helix_usb.
+- Reassembly: accumulate data_in[16:] of every ed/80 data frame; split the blob on 8213;
+  slot_type 06=occupied / 0814c0=empty(No-Slot) / 07=Looper.
+- usb_id decode (hardware-confirmed, two captures): a MessagePack uint right after the
+  constant 'c2 19' prefix, before the '1aff09' marker, in each occupied slot. See rule
+  'usb-id-decode' in registry/rules.json and docs/reference/model-id-conventions.md.
+- Names come from the partial crosswalk registry/usb-id-map.json (empirical, grown by
+  capturing known presets; see tools/spikes/build_calibration2.py).
 
-Usage:  python3 tools/spikes/parse_podgo_preset.py <capture.log>
+First-party code, informed by kempline/helix_usb. Capture production currently uses the
+(external, to-be-vendored/upstreamed) patched helix_usb driver; this tool decodes the log.
+
+Usage:  python3 tools/podgo_usb.py <capture.log>
 """
 import sys
 
@@ -69,28 +76,47 @@ def slot_sections(hexblob):
     return out
 
 
+def read_msgpack_uint(b, i):
+    """Decode a MessagePack unsigned int at b[i]; return (value, next_index)."""
+    t = b[i]
+    if t < 0x80:  return t, i + 1                                       # positive fixint
+    if t == 0xcc: return b[i + 1], i + 2                                # uint8
+    if t == 0xcd: return (b[i + 1] << 8) | b[i + 2], i + 3               # uint16 BE
+    if t == 0xce: return int.from_bytes(b[i + 1:i + 5], "big"), i + 5    # uint32 BE
+    return None, i
+
+
 def extract_standard_module(sec):
-    """For an occupied ('06') slot, extract (module_id, on_off) using
-    helix_usb.parse_standard_module_slot's logic: strip the 0x8X13 header, find the
-    '1aff09' marker, module_id = hexchars[16:idx], on/off = char at idx+11 ('3'=on)."""
-    s = sec.hex()[4:]                     # drop the 2-byte 0x8X 0x13 slot header
-    idx = s.find("1aff09")
-    if idx < 0:
-        return None, None                # not a standard module (amp/cab use other tags)
-    module_id = s[16:idx]
-    onoff = s[idx + 11] if idx + 11 < len(s) else "?"
-    return module_id, {"3": "on", "2": "off"}.get(onoff, f"?({onoff})")
+    """For an occupied ('06') slot, return (usb_id, on_off).
+
+    CRACKED (2026-07-06, one hardware capture): a block's usb_id is a MessagePack uint
+    stored right after the constant 'c2 19' prefix, immediately before the '1aff09' marker
+    — NOT the fixed byte slice the old code read (which grabbed wrong/constant bytes).
+    Verified 7/7 against the 'USB ID CAL' calibration preset; width markers (fixint / cc /
+    cd) match value magnitudes. on/off is the c2(false)/c3(true) bool just after 1aff09."""
+    h = sec.hex()
+    m = sec.find(b"\x1a\xff\x09")
+    if m < 0:
+        return None, None                       # non-standard layout
+    usb_id = None
+    c = h.find("c219")                           # the constant prefix before the id
+    if 0 <= c // 2 < m:
+        usb_id, _ = read_msgpack_uint(sec, c // 2 + 2)
+    onoff = "?"
+    for k in range(m + 3, min(m + 8, len(sec) - 1)):
+        if sec[k] == 0x0a and sec[k + 1] in (0xc2, 0xc3):
+            onoff = "on" if sec[k + 1] == 0xc3 else "off"
+            break
+    return usb_id, onoff
 
 
-def load_helix_table():
-    """helix_usb's Helix model table — used ONLY as an unverified hypothesis for POD Go
-    (the whole point of the harvester is to replace this with a POD-Go-native crosswalk)."""
-    p = ("/private/tmp/claude-502/-Users-clifton-eaton-Desktop-Pod-Go-Presets/"
-         "d5b1660f-8129-48f9-993a-9ec400854059/scratchpad/helix_usb/modules.py")
+def load_crosswalk():
+    """Partial usb_id -> @model crosswalk (registry/usb-id-map.json)."""
+    import json
+    import os
+    p = os.path.join(os.path.dirname(__file__), "..", "registry", "usb-id-map.json")
     try:
-        ns = {}
-        exec(open(p).read(), ns)
-        return ns.get("modules", {})
+        return {int(k): v for k, v in json.load(open(p))["map"].items()}
     except Exception:
         return {}
 
@@ -110,18 +136,18 @@ def main():
     i1 = types.index(0x01) if 0x01 in types else len(secs)
     user = secs[:i1]
     occ = 0
-    helix = load_helix_table()
+    xwalk = load_crosswalk()
     print(f"POD Go chain: {len(user)} user slots + output(01)\n")
     print(f"  {'slot':4} {'state':14} {'on/off':6} {'usb_id':8} "
-          f"helix-table guess (UNVERIFIED for POD Go)")
+          f"@model (partial crosswalk)")
     for n, sec in enumerate(user, 1):
         t = sec[2]
         kind = SLOT_TYPE.get(t, f"?0x{t:02x}")
         if t == 0x06:
             occ += 1
-            mid, onoff = extract_standard_module(sec)
-            guess = " / ".join(helix.get(mid, ["?", "not in table"])) if mid else "-"
-            print(f"  {n:<4} {kind:14} {str(onoff):6} {str(mid):8} {guess}")
+            uid, onoff = extract_standard_module(sec)
+            name = xwalk.get(uid, "?") if uid is not None else "-"
+            print(f"  {n:<4} {kind:14} {str(onoff):6} {str(uid):8} {name}")
         else:
             print(f"  {n:<4} {kind:14}")
     print(f"\noccupied blocks: {occ}    empty: {sum(1 for s in user if s[2]==0x08)}"

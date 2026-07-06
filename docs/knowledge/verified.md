@@ -41,6 +41,20 @@ proxy only.** See [blocks-and-constraints.md](../presets/blocks-and-constraints.
 *Import-translation constraints*. *Still to do: formalize a rule in
 [`registry/rules.json`](../../registry/rules.json).*
 
+**Over USB, POD Go names each block by a `usb_id` — and we can decode it** (firmware v2.50;
+rule [`usb-id-decode`](../../registry/rules.json), the project's **first ✅ verified rule**).
+In each occupied slot of the preset stream the `usb_id` is a **MessagePack uint after the
+constant `c2 19` prefix**, before the `1aff09` marker (amps and cabs included). Confirmed on
+**two independent hardware captures**: Vol `224`, Amp `289`, EQ `472` re-read identically
+across two different presets. The `usb_id → @model` map is a **device-internal enumeration**
+(*not* the `PodGoModelDefs` array index — refuted with real numbers, e.g. Deluxe Comp is `99`
+not index `193`), so the crosswalk is built empirically
+([`registry/usb-id-map.json`](../../registry/usb-id-map.json), 10/574 so far). Demonstrators:
+[`usb-id-calibration.pgp`](../../data-presets/demonstrations/usb-id-calibration.pgp) +
+[`usb-id-calibration-2.pgp`](../../data-presets/demonstrations/usb-id-calibration-2.pgp);
+decoded by [`tools/podgo_usb.py`](../../tools/podgo_usb.py). See
+[model-id-conventions.md](../reference/model-id-conventions.md).
+
 Other items land here as they're confirmed on the unit with an accompanying demonstrator.
 To promote one: set its `status` to `verified` in
 [`registry/rules.json`](../../registry/rules.json) (with a non-empty `demonstrated_by`),

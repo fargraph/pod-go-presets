@@ -1,0 +1,21 @@
+{
+  "_comment": "usb_id -> @model crosswalk. usb_id is the small integer POD Go reports over USB for a block (a MessagePack uint decoded from each occupied slot section, right after the constant 'c2 19' prefix, before the '1aff09' marker). It is NOT the PodGoModelDefs.bin array index (refuted with real numbers) and is not derivable from any catalog ordering, so it must be built empirically from captures of known presets. The DECODE RULE is hardware-confirmed on two independent captures (3/3 cross-checks held: Vol 224, Amp DelSol 289, EQ Parametric 472 re-read identically); amps and cabs use the same encoding. This MAP is still PARTIAL (10 of 574 models). Grow it with more calibration captures; full coverage may need the device's own model table.",
+  "status": "decode-rule-confirmed-2-captures; map-partial (10/574)",
+  "decode": "within an occupied slot section (slot_type 0x06), find 'c2 19', then read a msgpack uint (fixint <0x80, 0xcc=uint8, 0xcd=uint16 BE); that value is the usb_id. It sits immediately before the '1aff09' marker.",
+  "source_captures": [
+    "USB ID CAL (capture 1): vol/comp/delay/dist/filter/amp/eq (kept 7 of 10)",
+    "USBIDCAL2 (capture 2): vol/trem/autoswell-comp/amp/eq/cab (6 blocks, none dropped) - cross-checks 224/289/472 held"
+  ],
+  "map": {
+    "84": "HD2_DelaySimpleDelayStereo",
+    "98": "HD2_DistVerminDistMono",
+    "99": "HD2_CompressorDeluxeCompMono",
+    "117": "HD2_FilterMutantFilterStereo",
+    "224": "HD2_VolPanVolStereo",
+    "249": "HD2_TremoloTremoloStereo",
+    "289": "HD2_AmpDelSol300",
+    "304": "HD2_CompressorAutoSwellMono",
+    "472": "HD2_EQ_STATIC_ParametricStereo",
+    "552": "HD2_CabMicIr_2x15Brute"
+  }
+}
