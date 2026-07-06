@@ -25,7 +25,7 @@
       "rationale": "POD Go displays free blocks beyond the ceiling but won't let you assign them, so the preset reads as broken.",
       "status": "unverified",
       "basis": "inferred",
-      "demonstrated_by": ["presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp"],
+      "demonstrated_by": ["presets/with-amp-cab/7_--F--_AC_bad.pgp"],
       "docs": ["docs/presets/blocks-and-constraints.md", "docs/knowledge/troubleshooting.md"]
     },
     {
@@ -35,7 +35,7 @@
       "rationale": "Consequence of the 7 assignable-block ceiling: any built-in kept while at 7 free yields a phantom slot.",
       "status": "unverified",
       "basis": "inferred",
-      "demonstrated_by": ["presets/no-cab/7bl_eq_amp.pgp"],
+      "demonstrated_by": ["presets/no-cab/7_---E-_A-.pgp"],
       "docs": ["docs/presets/blocks-and-constraints.md"]
     },
     {
@@ -45,7 +45,7 @@
       "rationale": "Every no-amp / no-amp-and-cab preset in the library is broken; every no-cab preset works.",
       "status": "unverified",
       "basis": "inferred",
-      "demonstrated_by": ["presets/no-amp/6bl_vol_fx_eq_cab_broken.pgp"],
+      "demonstrated_by": ["presets/no-amp/6_V-FE-_-C_bad.pgp"],
       "docs": ["docs/presets/blocks-and-constraints.md", "docs/knowledge/data-quality.md"]
     },
     {
@@ -55,7 +55,7 @@
       "rationale": "Strong evidence that removing both destabilizes the chain; every known example is broken.",
       "status": "unverified",
       "basis": "inferred",
-      "demonstrated_by": ["presets/no-amp-and-cab/6bl_fx_eq_lpr_broken.pgp"],
+      "demonstrated_by": ["presets/no-amp-and-cab/6_--FEL_--_bad.pgp"],
       "docs": ["docs/presets/blocks-and-constraints.md", "docs/knowledge/data-quality.md"]
     },
     {
@@ -85,7 +85,7 @@
       "rationale": "Surfaced by classifying presets by content; the duplicate coincides with a broken status.",
       "status": "unverified",
       "basis": "inferred",
-      "demonstrated_by": ["presets/with-amp-cab/6bl_vol_amp_cab_broken.pgp"],
+      "demonstrated_by": ["presets/with-amp-cab/6_V----_AC_bad.pgp"],
       "docs": ["docs/knowledge/data-quality.md"]
     },
     {
@@ -105,7 +105,7 @@
       "rationale": "An accidental slot drop during editing changes the count with no error.",
       "status": "unverified",
       "basis": "inferred",
-      "demonstrated_by": ["presets/with-amp-cab/5bl_fx_lpr_amp_cab.pgp"],
+      "demonstrated_by": ["presets/with-amp-cab/5_--F-L_AC.pgp"],
       "docs": ["docs/knowledge/data-quality.md", "docs/presets/pgp-format.md"]
     },
     {
@@ -175,7 +175,7 @@
       "rationale": "A JSON re-serializer normalizes \\/ to / and strips trailing commas, producing noisy, meaningless diffs. .pgp files are in .prettierignore.",
       "status": "unverified",
       "basis": "inferred",
-      "demonstrated_by": ["data-presets/demonstrations/name-slash-escape.pgp", "presets/with-amp-cab/7bl_vol_amp_cab_broken.pgp"],
+      "demonstrated_by": ["data-presets/demonstrations/name-slash-escape.pgp", "presets/with-amp-cab/7_V----_AC_bad.pgp"],
       "docs": ["docs/presets/pgp-format.md", "docs/conventions/project-conventions.md"]
     },
     {
@@ -185,7 +185,7 @@
       "rationale": "At least one hand-edited preset has a trailing comma the device accepts.",
       "status": "unverified",
       "basis": "inferred",
-      "demonstrated_by": ["presets/with-amp-cab/7bl_vol_amp_cab_broken.pgp"],
+      "demonstrated_by": ["presets/with-amp-cab/7_V----_AC_bad.pgp"],
       "docs": ["docs/presets/pgp-format.md", "docs/knowledge/data-quality.md"]
     },
     {
@@ -195,7 +195,7 @@
       "rationale": "Intended published state; the device reconstructs the deleted sections on import/first assignment.",
       "status": "unverified",
       "basis": "inferred",
-      "demonstrated_by": ["presets/with-amp-cab/7bl_eq_amp_cab.pgp"],
+      "demonstrated_by": ["presets/with-amp-cab/7_---E-_AC.pgp"],
       "docs": ["docs/presets/pgp-format.md", "docs/conventions/best-practices.md"]
     }
   ]

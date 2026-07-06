@@ -50,7 +50,7 @@ How the code in this repo is written — the `tools/` Python scripts and the
   (`@model`, `@type`, `@position`, `@enabled`) — see
   [pgp-format.md](../presets/pgp-format.md).
 - **Status is authoritative in `combinations.json`**, mirrored elsewhere (the
-  `_broken` filename suffix, `presets.csv`) — never the reverse.
+  `_bad` tag in the preset name, `presets.csv`) — never the reverse.
 - `presets.csv` is generated from `combinations.json` by `gen_matrix.py`; edit
   the JSON, then regenerate the CSV.
 

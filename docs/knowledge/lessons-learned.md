@@ -35,6 +35,15 @@ points to the doc with the full detail — this page is the "what surprised us" 
   `.pgp` filename is decoupled from the stored name (import reads `meta.name`, not the
   filename). Symbols/spaces are allowed; `/` is stored escaped as `\/`.
   [→ naming-and-registry.md](../presets/naming-and-registry.md), [pgp-format.md](../presets/pgp-format.md)
+- **One name, everywhere.** The `.pgp` filename stem, the registry `id`, and the
+  on-device `meta.name` are one identical string (`<free>_<VWFEL>_<AC>`). A spelled-out
+  filename reads friendlier in a raw file list, but it overruns the 16-char device cap
+  and forces you to mentally map a downloaded file to its on-device name. A compact
+  fixed-slot scheme fits the cap, and single-letter tokens make "list what's kept" vs
+  "list what's removed" a non-choice (both stay short). Key trick: `_` separates the
+  fields while `-` marks removed blocks — two jobs, two glyphs, **both filename-safe on
+  every OS** — so the file can be byte-identical to the `meta.name` (unlike `/`, which is
+  filename-illegal). [→ naming-and-registry.md](../presets/naming-and-registry.md)
 - **`@model` ids are not display names, and prefixing is inconsistent** (`HD2_` for most,
   but also `VIC_`, `L6…`, and 18 bare-name legacy models). Ids can only be captured by
   dumping a preset — never guessed. [→ reference/model-id-conventions.md](../reference/model-id-conventions.md)
@@ -59,8 +68,10 @@ chain. Lesson: **derive names/status from content and validate, never trust the 
 ## Tooling / methodology
 
 - **Name and classify from content, then validate.** `tools/podgo.py` derives taxonomy,
-  free-block count, and canonical name from the JSON; `validate_presets.py` fails on any
-  mismatch. This auto-fixed the mislabeled files above.
+  free-block count, and the one canonical name (filename = `id` = `meta.name`) from the
+  JSON; `validate_presets.py` fails on any mismatch. This auto-fixed the mislabeled files
+  above — including several old names that misreported their free-block count.
+  [→ data-quality.md](data-quality.md)
 - **Block-coverage matching is deceptively hard.** Naive substring matching of a display
   name inside an id gives both false positives (generic names like `Stereo` match 100+
   ids; `Weeper`→`sweeper`) and false negatives (reordered names like `10 Band Graphic`

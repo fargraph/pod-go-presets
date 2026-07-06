@@ -10,8 +10,8 @@ inferred.
 ## Files in this folder
 
 - [verified.md](verified.md) — the **hardware-verification ledger**: every claim
-  slotted by confidence tier (✅ confirmed on a unit · 🔬 inferred from the tested
-  library · 📖 from Line 6 sources · ⏳ pending). Consult this before trusting any
+  marked ✅ verified (jointly confirmed with a demonstrator preset) or ⬜ unverified
+  (the honest default, carrying a basis note). Consult this before trusting any
   "fact".
 - [data-quality.md](data-quality.md) — concrete defects found in the preset
   library (wrong names, duplicate/missing blocks, dropped slots, malformed JSON)

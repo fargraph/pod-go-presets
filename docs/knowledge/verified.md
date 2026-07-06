@@ -58,7 +58,11 @@ library; `source` = Line 6 / community.
 The [README to-do](../../README.md#to-do) items each need a unit test, and these rules have
 no demonstrator yet: `eq-or-looper-required`, `cab-single-only`,
 `filename-decoupled-from-name`. Also unverified: that each gap-list block id imports cleanly
-once captured.
+once captured. Note the [unified naming scheme](../presets/naming-and-registry.md#preset-naming-convention)
+now used by every preset (filename = `id` = `meta.name`): its **`_` glyph is confirmed on
+hardware (v2.50)** — the owner loaded a renamed preset and it displays and loads fine, so the
+scheme is proven legible on the unit. (The new `_bad` broken tag is `_` + letters, both proven,
+but hasn't been loaded directly yet. A formal ✅ ledger row would still want a rule + demonstrator.)
 
 ---
 

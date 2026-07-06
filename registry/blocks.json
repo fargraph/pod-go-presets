@@ -141,17 +141,17 @@
         "data-presets/Reverb Page 3a.pgp",
         "data-presets/Reverb Page 3b.pgp",
         "data-presets/Reverb Page 4.pgp",
-        "presets/no-cab/7bl_eq_amp.pgp",
-        "presets/no-cab/7bl_eq_lpr_amp.pgp",
-        "presets/with-amp-cab/5bl_fx_eq_lpr_amp_cab.pgp",
-        "presets/with-amp-cab/5bl_fx_lpr_amp_cab.pgp",
-        "presets/with-amp-cab/5bl_vol_fx_lpr_amp_cab.pgp",
-        "presets/with-amp-cab/6bl_eq_lpr_amp_cab.pgp",
-        "presets/with-amp-cab/6bl_fx_eq_amp_cab.pgp",
-        "presets/with-amp-cab/6bl_vol_eq_amp_cab.pgp",
-        "presets/with-amp-cab/6bl_vol_lpr_amp_cab.pgp",
-        "presets/with-amp-cab/7bl_eq_amp_cab.pgp",
-        "presets/with-amp-cab/7bl_lpr_amp_cab.pgp"
+        "presets/no-cab/7_---E-_A-.pgp",
+        "presets/no-cab/7_---EL_A-.pgp",
+        "presets/with-amp-cab/5_--F-L_AC.pgp",
+        "presets/with-amp-cab/5_--FEL_AC.pgp",
+        "presets/with-amp-cab/5_V-F-L_AC.pgp",
+        "presets/with-amp-cab/6_---EL_AC.pgp",
+        "presets/with-amp-cab/6_--FE-_AC.pgp",
+        "presets/with-amp-cab/6_V---L_AC.pgp",
+        "presets/with-amp-cab/6_V--E-_AC.pgp",
+        "presets/with-amp-cab/7_----L_AC.pgp",
+        "presets/with-amp-cab/7_---E-_AC.pgp"
       ]
     },
     "HD2_AmpDerailedIngrid": {
@@ -277,9 +277,9 @@
       "occurrences": 3,
       "in_presets": 3,
       "presets": [
-        "presets/with-amp-cab/5bl_vol_fx_eq_amp_cab.pgp",
-        "presets/with-amp-cab/6bl_vol_amp_cab_broken.pgp",
-        "presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp"
+        "presets/with-amp-cab/5_V-FE-_AC.pgp",
+        "presets/with-amp-cab/6_V----_AC_bad.pgp",
+        "presets/with-amp-cab/7_--F--_AC_bad.pgp"
       ]
     },
     "HD2_AmpMailOrderTwin": {
@@ -415,7 +415,7 @@
       "in_presets": 2,
       "presets": [
         "data-presets/Amp UsDoubleNm.pgp",
-        "presets/with-amp-cab/7bl_vol_amp_cab_broken.pgp"
+        "presets/with-amp-cab/7_V----_AC_bad.pgp"
       ]
     },
     "HD2_AmpUSDoubleVib": {
@@ -489,7 +489,7 @@
       "in_presets": 2,
       "presets": [
         "data-presets/Amp UsDoubleNm.pgp",
-        "presets/with-amp-cab/7bl_vol_amp_cab_broken.pgp"
+        "presets/with-amp-cab/7_V----_AC_bad.pgp"
       ]
     },
     "HD2_CabMicIr_1x10USPrincess": {
@@ -660,15 +660,15 @@
       "occurrences": 9,
       "in_presets": 9,
       "presets": [
-        "presets/with-amp-cab/5bl_fx_eq_lpr_amp_cab.pgp",
-        "presets/with-amp-cab/5bl_fx_lpr_amp_cab.pgp",
-        "presets/with-amp-cab/5bl_vol_fx_lpr_amp_cab.pgp",
-        "presets/with-amp-cab/6bl_eq_lpr_amp_cab.pgp",
-        "presets/with-amp-cab/6bl_fx_eq_amp_cab.pgp",
-        "presets/with-amp-cab/6bl_vol_eq_amp_cab.pgp",
-        "presets/with-amp-cab/6bl_vol_lpr_amp_cab.pgp",
-        "presets/with-amp-cab/7bl_eq_amp_cab.pgp",
-        "presets/with-amp-cab/7bl_lpr_amp_cab.pgp"
+        "presets/with-amp-cab/5_--F-L_AC.pgp",
+        "presets/with-amp-cab/5_--FEL_AC.pgp",
+        "presets/with-amp-cab/5_V-F-L_AC.pgp",
+        "presets/with-amp-cab/6_---EL_AC.pgp",
+        "presets/with-amp-cab/6_--FE-_AC.pgp",
+        "presets/with-amp-cab/6_V---L_AC.pgp",
+        "presets/with-amp-cab/6_V--E-_AC.pgp",
+        "presets/with-amp-cab/7_----L_AC.pgp",
+        "presets/with-amp-cab/7_---E-_AC.pgp"
       ]
     },
     "HD2_CabMicIr_4x10TweedP10R": {
@@ -698,11 +698,11 @@
       "in_presets": 6,
       "presets": [
         "data-presets/Amp DerailedIngr.pgp",
-        "presets/no-amp/5bl_vol_fx_eq_lpr_cab.pgp",
-        "presets/no-amp/6bl_vol_fx_eq_cab_broken.pgp",
-        "presets/with-amp-cab/5bl_vol_fx_eq_amp_cab.pgp",
-        "presets/with-amp-cab/6bl_vol_amp_cab_broken.pgp",
-        "presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp"
+        "presets/no-amp/5_V-FEL_-C.pgp",
+        "presets/no-amp/6_V-FE-_-C_bad.pgp",
+        "presets/with-amp-cab/5_V-FE-_AC.pgp",
+        "presets/with-amp-cab/6_V----_AC_bad.pgp",
+        "presets/with-amp-cab/7_--F--_AC_bad.pgp"
       ]
     },
     "HD2_CabMicIr_4x12Greenback20": {
@@ -1042,8 +1042,8 @@
       "in_presets": 3,
       "presets": [
         "data-presets/Delay Page 1a.pgp",
-        "presets/no-amp-and-cab/5bl_vol_eq_lpr_broken.pgp",
-        "presets/no-amp-and-cab/5bl_vol_fx_eq_lpr_broken.pgp"
+        "presets/no-amp-and-cab/5_V--EL_--_bad.pgp",
+        "presets/no-amp-and-cab/5_V-FEL_--_bad.pgp"
       ]
     },
     "HD2_DelaySweepEchoStereo": {
@@ -1080,13 +1080,13 @@
       "in_presets": 8,
       "presets": [
         "data-presets/Delay Page 2a.pgp",
-        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken.pgp",
-        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken_v2.pgp",
-        "presets/no-amp-and-cab/6bl_fx_eq_lpr_broken.pgp",
-        "presets/no-amp/5bl_vol_fx_eq_lpr_cab.pgp",
-        "presets/no-amp/6bl_vol_fx_eq_cab_broken.pgp",
-        "presets/with-amp-cab/6bl_vol_amp_cab_broken.pgp",
-        "presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp"
+        "presets/no-amp-and-cab/5_VWFEL_--_bad.pgp",
+        "presets/no-amp-and-cab/5_VWFEL_--_bad2.pgp",
+        "presets/no-amp-and-cab/6_--FEL_--_bad.pgp",
+        "presets/no-amp/5_V-FEL_-C.pgp",
+        "presets/no-amp/6_V-FE-_-C_bad.pgp",
+        "presets/with-amp-cab/6_V----_AC_bad.pgp",
+        "presets/with-amp-cab/7_--F--_AC_bad.pgp"
       ]
     },
     "HD2_DelayVintageDigitalStereoV2": {
@@ -1420,13 +1420,13 @@
       "in_presets": 8,
       "presets": [
         "data-presets/Dist Page 1.pgp",
-        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken.pgp",
-        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken_v2.pgp",
-        "presets/no-amp-and-cab/6bl_fx_eq_lpr_broken.pgp",
-        "presets/no-amp/5bl_vol_fx_eq_lpr_cab.pgp",
-        "presets/no-amp/6bl_vol_fx_eq_cab_broken.pgp",
-        "presets/with-amp-cab/6bl_vol_amp_cab_broken.pgp",
-        "presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp"
+        "presets/no-amp-and-cab/5_VWFEL_--_bad.pgp",
+        "presets/no-amp-and-cab/5_VWFEL_--_bad2.pgp",
+        "presets/no-amp-and-cab/6_--FEL_--_bad.pgp",
+        "presets/no-amp/5_V-FEL_-C.pgp",
+        "presets/no-amp/6_V-FE-_-C_bad.pgp",
+        "presets/with-amp-cab/6_V----_AC_bad.pgp",
+        "presets/with-amp-cab/7_--F--_AC_bad.pgp"
       ]
     },
     "HD2_DistHorizonDriveMono": {
@@ -1463,8 +1463,8 @@
       "in_presets": 3,
       "presets": [
         "data-presets/Dist Page 1.pgp",
-        "presets/no-amp-and-cab/5bl_vol_eq_lpr_broken.pgp",
-        "presets/no-amp-and-cab/5bl_vol_fx_eq_lpr_broken.pgp"
+        "presets/no-amp-and-cab/5_V--EL_--_bad.pgp",
+        "presets/no-amp-and-cab/5_V-FEL_--_bad.pgp"
       ]
     },
     "HD2_DistMegaphoneMono": {
@@ -1690,15 +1690,15 @@
       "in_presets": 10,
       "presets": [
         "data-presets/Dyn Page 1.pgp",
-        "presets/no-amp-and-cab/5bl_vol_eq_lpr_broken.pgp",
-        "presets/no-amp-and-cab/5bl_vol_fx_eq_lpr_broken.pgp",
-        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken.pgp",
-        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken_v2.pgp",
-        "presets/no-amp-and-cab/6bl_fx_eq_lpr_broken.pgp",
-        "presets/no-amp/5bl_vol_fx_eq_lpr_cab.pgp",
-        "presets/no-amp/6bl_vol_fx_eq_cab_broken.pgp",
-        "presets/with-amp-cab/6bl_vol_amp_cab_broken.pgp",
-        "presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp"
+        "presets/no-amp-and-cab/5_V--EL_--_bad.pgp",
+        "presets/no-amp-and-cab/5_V-FEL_--_bad.pgp",
+        "presets/no-amp-and-cab/5_VWFEL_--_bad.pgp",
+        "presets/no-amp-and-cab/5_VWFEL_--_bad2.pgp",
+        "presets/no-amp-and-cab/6_--FEL_--_bad.pgp",
+        "presets/no-amp/5_V-FEL_-C.pgp",
+        "presets/no-amp/6_V-FE-_-C_bad.pgp",
+        "presets/with-amp-cab/6_V----_AC_bad.pgp",
+        "presets/with-amp-cab/7_--F--_AC_bad.pgp"
       ]
     },
     "HD2_CompressorKinkyCompMono": {
@@ -1948,19 +1948,19 @@
         "data-presets/Amp UsSuperVib.pgp",
         "data-presets/Amp VoltageQueen.pgp",
         "data-presets/Amp WhoWatt100.pgp",
-        "presets/no-amp-and-cab/4bl_vol_wah_fx_eq_broken.pgp",
-        "presets/no-amp-and-cab/5bl_vol_eq_lpr_broken.pgp",
-        "presets/no-amp-and-cab/5bl_vol_fx_eq_lpr_broken.pgp",
-        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken.pgp",
-        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken_v2.pgp",
-        "presets/no-amp-and-cab/6bl_fx_eq_lpr_broken.pgp",
-        "presets/no-amp/5bl_vol_fx_eq_lpr_cab.pgp",
-        "presets/no-amp/6bl_vol_fx_eq_cab_broken.pgp",
-        "presets/with-amp-cab/5bl_fx_eq_lpr_amp_cab.pgp",
-        "presets/with-amp-cab/5bl_vol_fx_eq_amp_cab.pgp",
-        "presets/with-amp-cab/6bl_eq_lpr_amp_cab.pgp",
-        "presets/with-amp-cab/6bl_fx_eq_amp_cab.pgp",
-        "presets/with-amp-cab/6bl_vol_eq_amp_cab.pgp"
+        "presets/no-amp-and-cab/4_VWFE-_--_bad.pgp",
+        "presets/no-amp-and-cab/5_V--EL_--_bad.pgp",
+        "presets/no-amp-and-cab/5_V-FEL_--_bad.pgp",
+        "presets/no-amp-and-cab/5_VWFEL_--_bad.pgp",
+        "presets/no-amp-and-cab/5_VWFEL_--_bad2.pgp",
+        "presets/no-amp-and-cab/6_--FEL_--_bad.pgp",
+        "presets/no-amp/5_V-FEL_-C.pgp",
+        "presets/no-amp/6_V-FE-_-C_bad.pgp",
+        "presets/with-amp-cab/5_--FEL_AC.pgp",
+        "presets/with-amp-cab/5_V-FE-_AC.pgp",
+        "presets/with-amp-cab/6_---EL_AC.pgp",
+        "presets/with-amp-cab/6_--FE-_AC.pgp",
+        "presets/with-amp-cab/6_V--E-_AC.pgp"
       ]
     },
     "HD2_EQ_STATIC_Simple3BandStereo": {
@@ -2022,9 +2022,9 @@
         "data-presets/Reverb Page 3a.pgp",
         "data-presets/Reverb Page 3b.pgp",
         "data-presets/Reverb Page 4.pgp",
-        "presets/no-cab/7bl_eq_amp.pgp",
-        "presets/no-cab/7bl_eq_lpr_amp.pgp",
-        "presets/with-amp-cab/7bl_eq_amp_cab.pgp"
+        "presets/no-cab/7_---E-_A-.pgp",
+        "presets/no-cab/7_---EL_A-.pgp",
+        "presets/with-amp-cab/7_---E-_AC.pgp"
       ]
     },
     "L6SPB_AcousGtrSimStereo": {
@@ -2220,19 +2220,19 @@
         "data-presets/Amp UsSuperVib.pgp",
         "data-presets/Amp VoltageQueen.pgp",
         "data-presets/Amp WhoWatt100.pgp",
-        "presets/no-amp-and-cab/4bl_vol_wah_fx_eq_broken.pgp",
-        "presets/no-amp-and-cab/5bl_vol_fx_eq_lpr_broken.pgp",
-        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken.pgp",
-        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken_v2.pgp",
-        "presets/no-amp-and-cab/6bl_fx_eq_lpr_broken.pgp",
-        "presets/no-amp/5bl_vol_fx_eq_lpr_cab.pgp",
-        "presets/no-amp/6bl_vol_fx_eq_cab_broken.pgp",
-        "presets/with-amp-cab/5bl_fx_eq_lpr_amp_cab.pgp",
-        "presets/with-amp-cab/5bl_fx_lpr_amp_cab.pgp",
-        "presets/with-amp-cab/5bl_vol_fx_eq_amp_cab.pgp",
-        "presets/with-amp-cab/5bl_vol_fx_lpr_amp_cab.pgp",
-        "presets/with-amp-cab/6bl_fx_eq_amp_cab.pgp",
-        "presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp"
+        "presets/no-amp-and-cab/4_VWFE-_--_bad.pgp",
+        "presets/no-amp-and-cab/5_V-FEL_--_bad.pgp",
+        "presets/no-amp-and-cab/5_VWFEL_--_bad.pgp",
+        "presets/no-amp-and-cab/5_VWFEL_--_bad2.pgp",
+        "presets/no-amp-and-cab/6_--FEL_--_bad.pgp",
+        "presets/no-amp/5_V-FEL_-C.pgp",
+        "presets/no-amp/6_V-FE-_-C_bad.pgp",
+        "presets/with-amp-cab/5_--F-L_AC.pgp",
+        "presets/with-amp-cab/5_--FEL_AC.pgp",
+        "presets/with-amp-cab/5_V-F-L_AC.pgp",
+        "presets/with-amp-cab/5_V-FE-_AC.pgp",
+        "presets/with-amp-cab/6_--FE-_AC.pgp",
+        "presets/with-amp-cab/7_--F--_AC_bad.pgp"
       ]
     },
     "HD2_LooperMono": {
@@ -2291,19 +2291,19 @@
         "data-presets/Reverb Page 3a.pgp",
         "data-presets/Reverb Page 3b.pgp",
         "data-presets/Reverb Page 4.pgp",
-        "presets/no-amp-and-cab/5bl_vol_eq_lpr_broken.pgp",
-        "presets/no-amp-and-cab/5bl_vol_fx_eq_lpr_broken.pgp",
-        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken.pgp",
-        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken_v2.pgp",
-        "presets/no-amp-and-cab/6bl_fx_eq_lpr_broken.pgp",
-        "presets/no-amp/5bl_vol_fx_eq_lpr_cab.pgp",
-        "presets/no-cab/7bl_eq_lpr_amp.pgp",
-        "presets/with-amp-cab/5bl_fx_eq_lpr_amp_cab.pgp",
-        "presets/with-amp-cab/5bl_fx_lpr_amp_cab.pgp",
-        "presets/with-amp-cab/5bl_vol_fx_lpr_amp_cab.pgp",
-        "presets/with-amp-cab/6bl_eq_lpr_amp_cab.pgp",
-        "presets/with-amp-cab/6bl_vol_lpr_amp_cab.pgp",
-        "presets/with-amp-cab/7bl_lpr_amp_cab.pgp"
+        "presets/no-amp-and-cab/5_V--EL_--_bad.pgp",
+        "presets/no-amp-and-cab/5_V-FEL_--_bad.pgp",
+        "presets/no-amp-and-cab/5_VWFEL_--_bad.pgp",
+        "presets/no-amp-and-cab/5_VWFEL_--_bad2.pgp",
+        "presets/no-amp-and-cab/6_--FEL_--_bad.pgp",
+        "presets/no-amp/5_V-FEL_-C.pgp",
+        "presets/no-cab/7_---EL_A-.pgp",
+        "presets/with-amp-cab/5_--F-L_AC.pgp",
+        "presets/with-amp-cab/5_--FEL_AC.pgp",
+        "presets/with-amp-cab/5_V-F-L_AC.pgp",
+        "presets/with-amp-cab/6_---EL_AC.pgp",
+        "presets/with-amp-cab/6_V---L_AC.pgp",
+        "presets/with-amp-cab/7_----L_AC.pgp"
       ]
     },
     "HD2_LooperOneSwitchMono": {
@@ -2367,13 +2367,13 @@
       "in_presets": 8,
       "presets": [
         "data-presets/Mod Page 3a.pgp",
-        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken.pgp",
-        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken_v2.pgp",
-        "presets/no-amp-and-cab/6bl_fx_eq_lpr_broken.pgp",
-        "presets/no-amp/5bl_vol_fx_eq_lpr_cab.pgp",
-        "presets/no-amp/6bl_vol_fx_eq_cab_broken.pgp",
-        "presets/with-amp-cab/6bl_vol_amp_cab_broken.pgp",
-        "presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp"
+        "presets/no-amp-and-cab/5_VWFEL_--_bad.pgp",
+        "presets/no-amp-and-cab/5_VWFEL_--_bad2.pgp",
+        "presets/no-amp-and-cab/6_--FEL_--_bad.pgp",
+        "presets/no-amp/5_V-FEL_-C.pgp",
+        "presets/no-amp/6_V-FE-_-C_bad.pgp",
+        "presets/with-amp-cab/6_V----_AC_bad.pgp",
+        "presets/with-amp-cab/7_--F--_AC_bad.pgp"
       ]
     },
     "HD2_ChorusStereo": {
@@ -2734,8 +2734,8 @@
       "in_presets": 3,
       "presets": [
         "data-presets/Mod Page 1.pgp",
-        "presets/no-amp-and-cab/5bl_vol_eq_lpr_broken.pgp",
-        "presets/no-amp-and-cab/5bl_vol_fx_eq_lpr_broken.pgp"
+        "presets/no-amp-and-cab/5_V--EL_--_bad.pgp",
+        "presets/no-amp-and-cab/5_V-FEL_--_bad.pgp"
       ]
     },
     "HD2_TremoloPatternStereo": {
@@ -2916,8 +2916,8 @@
       "in_presets": 3,
       "presets": [
         "data-presets/Pitch Page 1.pgp",
-        "presets/with-amp-cab/6bl_vol_amp_cab_broken.pgp",
-        "presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp"
+        "presets/with-amp-cab/6_V----_AC_bad.pgp",
+        "presets/with-amp-cab/7_--F--_AC_bad.pgp"
       ]
     },
     "HD2_PitchTwinHarmonyMono": {
@@ -3098,12 +3098,12 @@
       "in_presets": 7,
       "presets": [
         "data-presets/Reverb Page 1c.pgp",
-        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken.pgp",
-        "presets/no-amp-and-cab/6bl_fx_eq_lpr_broken.pgp",
-        "presets/no-amp/5bl_vol_fx_eq_lpr_cab.pgp",
-        "presets/no-amp/6bl_vol_fx_eq_cab_broken.pgp",
-        "presets/with-amp-cab/6bl_vol_amp_cab_broken.pgp",
-        "presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp"
+        "presets/no-amp-and-cab/5_VWFEL_--_bad.pgp",
+        "presets/no-amp-and-cab/6_--FEL_--_bad.pgp",
+        "presets/no-amp/5_V-FEL_-C.pgp",
+        "presets/no-amp/6_V-FE-_-C_bad.pgp",
+        "presets/with-amp-cab/6_V----_AC_bad.pgp",
+        "presets/with-amp-cab/7_--F--_AC_bad.pgp"
       ]
     },
     "HD2_ReverbHallStereo": {
@@ -3290,19 +3290,19 @@
         "data-presets/Amp UsSuperVib.pgp",
         "data-presets/Amp VoltageQueen.pgp",
         "data-presets/Amp WhoWatt100.pgp",
-        "presets/no-amp-and-cab/4bl_vol_wah_fx_eq_broken.pgp",
-        "presets/no-amp-and-cab/5bl_vol_eq_lpr_broken.pgp",
-        "presets/no-amp-and-cab/5bl_vol_fx_eq_lpr_broken.pgp",
-        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken.pgp",
-        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken_v2.pgp",
-        "presets/no-amp/5bl_vol_fx_eq_lpr_cab.pgp",
-        "presets/no-amp/6bl_vol_fx_eq_cab_broken.pgp",
-        "presets/with-amp-cab/5bl_vol_fx_eq_amp_cab.pgp",
-        "presets/with-amp-cab/5bl_vol_fx_lpr_amp_cab.pgp",
-        "presets/with-amp-cab/6bl_vol_amp_cab_broken.pgp",
-        "presets/with-amp-cab/6bl_vol_eq_amp_cab.pgp",
-        "presets/with-amp-cab/6bl_vol_lpr_amp_cab.pgp",
-        "presets/with-amp-cab/7bl_vol_amp_cab_broken.pgp"
+        "presets/no-amp-and-cab/4_VWFE-_--_bad.pgp",
+        "presets/no-amp-and-cab/5_V--EL_--_bad.pgp",
+        "presets/no-amp-and-cab/5_V-FEL_--_bad.pgp",
+        "presets/no-amp-and-cab/5_VWFEL_--_bad.pgp",
+        "presets/no-amp-and-cab/5_VWFEL_--_bad2.pgp",
+        "presets/no-amp/5_V-FEL_-C.pgp",
+        "presets/no-amp/6_V-FE-_-C_bad.pgp",
+        "presets/with-amp-cab/5_V-F-L_AC.pgp",
+        "presets/with-amp-cab/5_V-FE-_AC.pgp",
+        "presets/with-amp-cab/6_V----_AC_bad.pgp",
+        "presets/with-amp-cab/6_V---L_AC.pgp",
+        "presets/with-amp-cab/6_V--E-_AC.pgp",
+        "presets/with-amp-cab/7_V----_AC_bad.pgp"
       ]
     },
     "HD2_WahFasselStereo": {
@@ -3354,9 +3354,9 @@
         "data-presets/Amp UsSuperVib.pgp",
         "data-presets/Amp VoltageQueen.pgp",
         "data-presets/Amp WhoWatt100.pgp",
-        "presets/no-amp-and-cab/4bl_vol_wah_fx_eq_broken.pgp",
-        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken.pgp",
-        "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken_v2.pgp"
+        "presets/no-amp-and-cab/4_VWFE-_--_bad.pgp",
+        "presets/no-amp-and-cab/5_VWFEL_--_bad.pgp",
+        "presets/no-amp-and-cab/5_VWFEL_--_bad2.pgp"
       ]
     }
   }

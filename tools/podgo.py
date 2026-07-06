@@ -25,10 +25,6 @@ BUILTIN_PATTERNS = [
     ("amp",     r"HD2_Amp"),
     ("cab",     r"HD2_Cab"),
 ]
-# short token used in filenames for each built-in
-TOKENS = {"volume": "vol", "wah": "wah", "fx_loop": "fx", "eq": "eq",
-          "looper": "lpr", "amp": "amp", "cab": "cab"}
-
 TOTAL_SLOTS_BASE = 10  # a healthy jailbroken preset exposes 10 blockN slots
 
 
@@ -105,11 +101,38 @@ def taxonomy(present):
     return "no-amp-and-cab"
 
 
-def canonical_name(present, free_blocks, broken=False):
-    """Content-derived filename stem, e.g. '7bl_eq_amp_cab' (+ '_broken')."""
-    toks = [TOKENS[name] for name, _ in BUILTIN_PATTERNS if present[name]]
-    stem = f"{free_blocks}bl_" + "_".join(toks)
-    return stem + ("_broken" if broken else "")
+# Single-letter block tokens for the unified preset name, in signal-chain order,
+# split into the middle built-ins and the amp/cab "rig". See naming-and-registry.md.
+NAME_LETTERS = {"volume": "V", "wah": "W", "fx_loop": "F", "eq": "E",
+                "looper": "L", "amp": "A", "cab": "C"}
+NAME_MID = ["volume", "wah", "fx_loop", "eq", "looper"]
+NAME_RIG = ["amp", "cab"]
+NAME_CAP = 16  # hardware hard cap on meta.name length (v2.50)
+
+
+def canonical_name(present, free_blocks, broken=False, variant=None):
+    """The one unified preset name, e.g. '7_---E-_AC'. This exact string is used as
+    the `.pgp` filename stem, the registry `id`, AND the on-device `meta.name`.
+
+    Format: <free>_<V W F E L>_<A C> — fixed slots in chain order, letter=block
+    present, '-'=removed; trailing '_bad' field=broken; optional trailing `variant`
+    digit disambiguates identical-content presets. `_` separates the fields and `-`
+    marks a removed block — both filename-safe on every OS, so file == device name.
+    """
+    mid = "".join(NAME_LETTERS[n] if present[n] else "-" for n in NAME_MID)
+    rig = "".join(NAME_LETTERS[n] if present[n] else "-" for n in NAME_RIG)
+    name = f"{free_blocks}_{mid}_{rig}"
+    if broken:
+        name += "_bad"
+    if variant:
+        name += str(variant)
+    return name
+
+
+def variant_of(stem):
+    """Disambiguator digit from a legacy '_vN' id suffix (used during migration)."""
+    m = re.search(r"_v(\d+)$", stem)
+    return m.group(1) if m else None
 
 
 def preset_paths():

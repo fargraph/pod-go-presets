@@ -25,20 +25,20 @@ verified/unverified status.
 | Status | Rule | Demonstrated by |
 | :-: | --- | --- |
 | ⬜ | **free-block-formula** — `free_blocks = blockN slots − built-ins present` (base 10 slots); the old "7 − Vol − Wah − FX" rule is wrong. | [base](../../original/New-Preset-2_50_0.pgp) |
-| ⬜ | **phantom-slot-ceiling** — assignable ceiling is 7; keeping Volume or FX Loop at 7 free yields a phantom, unassignable slot. | [`7bl_fx_amp_cab_broken`](../../presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp) |
-| ⬜ | **genuine-7-free-needs-vol-and-fx-removed** — a real 7 free requires removing *both* Volume and FX Loop. | [`7bl_eq_amp`](../../presets/no-cab/7bl_eq_amp.pgp) |
-| ⬜ | **keep-amp** — removing the Amp tends to break; removing only the Cab is fine. | [`6bl_vol_fx_eq_cab_broken`](../../presets/no-amp/6bl_vol_fx_eq_cab_broken.pgp) |
-| ⬜ | **no-amp-and-cab-collapses** — removing both Amp and Cab collapses the chain to 8–9 slots and reliably breaks. | [`6bl_fx_eq_lpr_broken`](../../presets/no-amp-and-cab/6bl_fx_eq_lpr_broken.pgp) |
+| ⬜ | **phantom-slot-ceiling** — assignable ceiling is 7; keeping Volume or FX Loop at 7 free yields a phantom, unassignable slot. | [`7_--F--_AC_bad`](../../presets/with-amp-cab/7_--F--_AC_bad.pgp) |
+| ⬜ | **genuine-7-free-needs-vol-and-fx-removed** — a real 7 free requires removing *both* Volume and FX Loop. | [`7_---E-_A-`](../../presets/no-cab/7_---E-_A-.pgp) |
+| ⬜ | **keep-amp** — removing the Amp tends to break; removing only the Cab is fine. | [`6_V-FE-_-C_bad`](../../presets/no-amp/6_V-FE-_-C_bad.pgp) |
+| ⬜ | **no-amp-and-cab-collapses** — removing both Amp and Cab collapses the chain to 8–9 slots and reliably breaks. | [`6_--FEL_--_bad`](../../presets/no-amp-and-cab/6_--FEL_--_bad.pgp) |
 | ⬜ | **eq-or-looper-required** — at least one of EQ or Looper must remain (EQ is convertible to Looper). | _none yet_ |
 | ⬜ | **cab-single-only** — single-cab only; no Helix dual-cab mode. | _none yet_ |
-| ⬜ | **duplicate-builtin** — a preset can carry a duplicate built-in (two Volume blocks); a plausible break cause. | [`6bl_vol_amp_cab_broken`](../../presets/with-amp-cab/6bl_vol_amp_cab_broken.pgp) |
+| ⬜ | **duplicate-builtin** — a preset can carry a duplicate built-in (two Volume blocks); a plausible break cause. | [`6_V----_AC_bad`](../../presets/with-amp-cab/6_V----_AC_bad.pgp) |
 
 ## Schema — structural facts about the JSON
 
 | Status | Rule | Demonstrated by |
 | :-: | --- | --- |
 | ⬜ | **empty-free-block-shape** — a free block is exactly `{"@position": N}`; a healthy preset has 10 slots. | [base](../../original/New-Preset-2_50_0.pgp) |
-| ⬜ | **dropped-slot-lowers-free** — a missing `blockN` silently lowers the free count. | [`5bl_fx_lpr_amp_cab`](../../presets/with-amp-cab/5bl_fx_lpr_amp_cab.pgp) |
+| ⬜ | **dropped-slot-lowers-free** — a missing `blockN` silently lowers the free count. | [`5_--F-L_AC`](../../presets/with-amp-cab/5_--F-L_AC.pgp) |
 | ⬜ | **block-type-values** — `@type` by role: Vol 0, Wah 0, FX Loop 5, EQ 0, Looper 4, Amp 1, Cab 2. | [base](../../original/New-Preset-2_50_0.pgp) |
 | ⬜ | **assignment-sections-shape** — `snapshot0–3` / `footswitch` / `controller` structure (`@controller` 3–8). | [base](../../original/New-Preset-2_50_0.pgp) |
 | ⬜ | **eq-static-vs-free-eq** — `HD2_EQ_STATIC_*` is the built-in preset-EQ; `HD2_EQ*` (no `_`) are free effects; they coexist. | [`EQ Page 1`](../../data-presets/EQ%20Page%201.pgp) |
@@ -57,9 +57,9 @@ See also the formal envelope in [pgp-schema.md](pgp-schema.md).
 
 | Status | Rule | Demonstrated by |
 | :-: | --- | --- |
-| ⬜ | **no-reformat-pgp** — never reformat; preserve `\/` escapes and tolerated trailing commas. | [`name-slash-escape`](../../data-presets/demonstrations/name-slash-escape.pgp), [`7bl_vol_amp_cab_broken`](../../presets/with-amp-cab/7bl_vol_amp_cab_broken.pgp) |
-| ⬜ | **trailing-comma-tolerated** — POD Go accepts a trailing comma strict parsers reject; tools recover + flag it. | [`7bl_vol_amp_cab_broken`](../../presets/with-amp-cab/7bl_vol_amp_cab_broken.pgp) |
-| ⬜ | **blank-slate-ship** — publish blank: no loaded FX, no footswitch/controller; those keys are safe to delete. | [`7bl_eq_amp_cab`](../../presets/with-amp-cab/7bl_eq_amp_cab.pgp) |
+| ⬜ | **no-reformat-pgp** — never reformat; preserve `\/` escapes and tolerated trailing commas. | [`name-slash-escape`](../../data-presets/demonstrations/name-slash-escape.pgp), [`7_V----_AC_bad`](../../presets/with-amp-cab/7_V----_AC_bad.pgp) |
+| ⬜ | **trailing-comma-tolerated** — POD Go accepts a trailing comma strict parsers reject; tools recover + flag it. | [`7_V----_AC_bad`](../../presets/with-amp-cab/7_V----_AC_bad.pgp) |
+| ⬜ | **blank-slate-ship** — publish blank: no loaded FX, no footswitch/controller; those keys are safe to delete. | [`7_---E-_AC`](../../presets/with-amp-cab/7_---E-_AC.pgp) |
 
 ## Flipping an item to ✅ verified
 

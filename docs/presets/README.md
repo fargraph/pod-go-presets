@@ -21,9 +21,10 @@ tracked in the registry. Start here to understand and create presets.
 - [business-rules.md](business-rules.md) — the **semantic rules a schema can't express**
   (validity, naming, editing), each tied to a demonstrator preset and carrying a
   verified/unverified status. Renders [`registry/rules.json`](../../registry/rules.json).
-- [naming-and-registry.md](naming-and-registry.md) — the content-derived naming
-  convention, hardware name/filename limits, the `registry/*` files, the `tools/`
-  commands, and the add-a-preset checklist.
+- [naming-and-registry.md](naming-and-registry.md) — the one content-derived name
+  shared by the filename, registry `id`, and `meta.name`; the hardware name/filename
+  limits; the `registry/*` files; the `tools/` commands; and the add-a-preset
+  checklist.
 
 ## Related
 

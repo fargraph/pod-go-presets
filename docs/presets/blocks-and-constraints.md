@@ -45,9 +45,9 @@ below). Worked examples (all verified against the working library):
 
 | Preset | Built-ins present | Slots | Free |
 | --- | --- | --- | --- |
-| `7bl_eq_amp_cab` | eq, amp, cab (3) | 10 | 7 |
-| `6bl_fx_eq_amp_cab` | fx, eq, amp, cab (4) | 10 | 6 |
-| `5bl_vol_fx_eq_amp_cab` | vol, fx, eq, amp, cab (5) | 10 | 5 |
+| `7_---E-_AC` | eq, amp, cab (3) | 10 | 7 |
+| `6_--FE-_AC` | fx, eq, amp, cab (4) | 10 | 6 |
+| `5_V-FE-_AC` | vol, fx, eq, amp, cab (5) | 10 | 5 |
 
 > **Note:** an earlier rule of thumb — "free = 7 − Vol − Wah − FX Loop" — is
 > *wrong*. It happens to match presets that keep EQ+Amp+Cab, but it fails whenever
@@ -74,24 +74,72 @@ Removing built-ins *should* give more free blocks, but two hard limits bite:
 Presets are grouped by which of Amp/Cab they remove — the axis that most affects
 validity:
 
-| Folder | Amp | Cab | Observed |
+| Folder | Amp | Cab | Observed (library status counts) |
 | --- | :-: | :-: | --- |
-| `with-amp-cab` | ✅ | ✅ | Safe |
-| `no-cab` | ✅ | ❌ | Works |
-| `no-amp` | ❌ | ✅ | Suspect — verify on hardware |
-| `no-amp-and-cab` | ❌ | ❌ | Breaks (all known examples broken) |
+| `with-amp-cab` | ✅ | ✅ | Safe — 11 working / 2 broken (the 2 fail on DSP or the free-7 edge, *not* the amp/cab axis) |
+| `no-cab` | ✅ | ❌ | Works — 2 / 0 |
+| `no-amp` | ❌ | ✅ | Risky — 1 working / 1 broken |
+| `no-amp-and-cab` | ❌ | ❌ | Breaks — 0 working / 6 broken |
 
 Working/broken status is **not** encoded by folder — it lives in
-[registry/combinations.json](../../registry/combinations.json) and in a `_broken`
-filename suffix. A folder just says which built-ins were removed.
+[registry/combinations.json](../../registry/combinations.json) and in a `_bad`
+tag in the preset name. A folder just says which built-ins were removed.
 
 > **Demonstrated by** (see [business-rules.md](business-rules.md) for status, and the
 > [manifest](../../data-presets/demonstrations/manifest.json) for what to observe):
 > free-block formula → [base](../../original/New-Preset-2_50_0.pgp);
-> phantom 7th slot → [`7bl_fx_amp_cab_broken`](../../presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp);
-> genuine 7 free → [`7bl_eq_amp`](../../presets/no-cab/7bl_eq_amp.pgp);
-> removing both Amp+Cab collapses → [`6bl_fx_eq_lpr_broken`](../../presets/no-amp-and-cab/6bl_fx_eq_lpr_broken.pgp).
+> phantom 7th slot → [`7_--F--_AC_bad`](../../presets/with-amp-cab/7_--F--_AC_bad.pgp);
+> genuine 7 free → [`7_---E-_A-`](../../presets/no-cab/7_---E-_A-.pgp);
+> removing both Amp+Cab collapses → [`6_--FEL_--_bad`](../../presets/no-amp-and-cab/6_--FEL_--_bad.pgp).
 > All still **⬜ unverified** pending joint hardware confirmation.
+
+## The DSP budget (second validity factor)
+
+Removal taxonomy and the phantom-slot ceiling are *structural* limits. A
+structurally-sound preset can still break for a second, independent reason: it
+exceeds POD Go's **DSP budget**. POD Go runs a single DSP path, and every block
+consumes a fixed slice of it. The per-model **DSP load** is published in POD Go
+Edit's catalog and read by [`tools/podgo_models.py`](../../tools/podgo_models.py)
+(see [reference/block-models.md](../reference/block-models.md)).
+
+Approximate per-block loads (firmware v2.50, from the catalog):
+
+| Block | DSP load |
+| --- | --- |
+| **Amp** | ~24 median, up to 31 — **by far the heaviest** |
+| Preamp | ~15 median |
+| Reverb ~13 · Delay ~9 | the expensive effects |
+| Distortion / Modulation | ~6 median |
+| Cab 6.0 · IR 2.5 · Wah ~3.3 · Volume 1.5 | cheap |
+| Input + Output | ~22 fixed baseline (always present) |
+
+**What the tested library shows** — summing every block's load across the 23
+recorded presets ([`tools/spikes/preset_dsp.py`](../../tools/spikes/preset_dsp.py)):
+
+- Every **working** preset sits at **total DSP ≤ ~80.7** (block-load ≤ 58.7).
+- The two heaviest **structurally-sound** (`with-amp-cab`) presets — total **93–94**
+  — break on DSP *alone*.
+- So a real ceiling sits between ~59 and ~71 block-load; its exact value is **not yet
+  pinned** (the library has a gap there). Pinning it with purpose-built boundary
+  presets is a deferred task.
+
+This is **derived/analysis knowledge**, cross-checked against the library's recorded
+statuses — not itself a new hardware claim. Per-block loads come from Line 6's catalog
+(a `source`); the ceiling is `inferred`. See [verified.md](../knowledge/verified.md).
+
+### Keeping the Amp is a signal-path rule, not a DSP one
+
+The amp is the single biggest DSP consumer (~24), so removing it *frees* the most
+budget — a `no-amp` preset can carry more/heavier effects. The library's
+highest-DSP **working** preset (10 blocks, total 80.7) is in fact a `no-amp` preset.
+So "keep the amp" is about signal-path stability, not DSP headroom; when a no-amp
+preset does work, it enables the fullest chains.
+
+### free = 7 is a slot edge, independent of DSP
+
+The phantom-slot ceiling is orthogonal to the budget: a `with-amp-cab` preset with
+**free = 7** (both Volume and FX Loop removed) broke at a *low* DSP load (~29.5) — it
+failed the slot/routing limit, not the budget.
 
 ## Mandatory block: EQ or Looper
 

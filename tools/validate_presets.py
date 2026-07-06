@@ -6,8 +6,8 @@ Checks, per preset:
   - file parses (or is a known recovered/broken case)
   - it has a registry entry, and vice-versa (no orphans on either side)
   - taxonomy folder matches amp/cab content
-  - filename stem matches the content-derived canonical name
-  - the '_broken' filename suffix matches the registry status
+  - the filename stem, registry id, and stored meta.name are all the one canonical
+    name derived from contents (<=16 chars; broken marked '!', '_'-separated)
   - registry's recorded free_blocks / present flags match the file
 
 Exits non-zero if any ERROR is found (WARN does not fail). Run it after editing
@@ -53,14 +53,18 @@ def main():
         if want_folder != got_folder:
             errors.append(f"{rel}: in '{got_folder}/' but content is '{want_folder}/'")
 
-        want_stem = podgo.canonical_name(c["present"], c["free_blocks"], broken)
+        # One unified name is the filename stem, the registry id, AND the meta.name.
+        want = podgo.canonical_name(c["present"], c["free_blocks"], broken, e.get("variant"))
+        if len(want) > podgo.NAME_CAP:
+            errors.append(f"{rel}: name '{want}' exceeds {podgo.NAME_CAP} chars")
         got_stem = os.path.splitext(os.path.basename(rel))[0]
-        # allow a disambiguating suffix like _v2 after the canonical stem
-        if not (got_stem == want_stem or got_stem.startswith(want_stem + "_")):
-            errors.append(f"{rel}: name '{got_stem}' != content name '{want_stem}'")
-
-        if broken != got_stem.endswith("broken") and "_broken" not in got_stem:
-            warns.append(f"{rel}: status={e['status']} but filename broken-marker mismatch")
+        if got_stem != want:
+            errors.append(f"{rel}: filename stem '{got_stem}' != canonical '{want}'")
+        if e["id"] != want:
+            errors.append(f"{rel}: registry id '{e['id']}' != canonical '{want}'")
+        got_name = data["data"]["meta"]["name"]
+        if got_name != want:
+            errors.append(f"{rel}: meta.name {got_name!r} != canonical {want!r}")
         if e["free_blocks"] != c["free_blocks"]:
             errors.append(f"{rel}: registry free_blocks={e['free_blocks']} != actual {c['free_blocks']}")
         if e["blocks"] != c["present"]:

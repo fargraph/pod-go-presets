@@ -49,7 +49,7 @@ Don't eyeball JSON — parse it. The `tools/` scripts do this; quick one-liner:
 ```bash
 python3 -c "import json,sys; d=json.load(open(sys.argv[1]))['data']['tone']['dsp0']; \
 [print(k, v.get('@model','(free)')) for k,v in sorted(d.items()) if isinstance(v,dict)]" \
-presets/with-amp-cab/7bl_eq_amp_cab.pgp
+presets/with-amp-cab/7_---E-_AC.pgp
 ```
 
 ## Editing conventions
@@ -72,7 +72,7 @@ keys are safe to delete — POD Go rebuilds them:
 - **Trailing commas.** At least one hand-edited preset has a trailing comma that
   makes it invalid JSON; POD Go tolerates it but strict parsers don't. Our tools
   recover from it and flag it (`parse: recovered-trailing-comma`). Demonstrator:
-  [`7bl_vol_amp_cab_broken.pgp`](../../presets/with-amp-cab/7bl_vol_amp_cab_broken.pgp).
+  [`7_V----_AC_bad.pgp`](../../presets/with-amp-cab/7_V----_AC_bad.pgp).
 - **`meta.name` is capped at 16 chars.** Hand-editing a longer name is pointless —
   POD Go truncates it to 16 on import. Symbols/spaces are allowed; `/` is stored as
   `\/`. See name/filename limits in [naming-and-registry.md](naming-and-registry.md).
@@ -81,4 +81,4 @@ keys are safe to delete — POD Go rebuilds them:
 - **Dropped slots.** A preset can end up with fewer than 10 `blockN` entries if a
   free slot was accidentally removed during editing (see
   [data-quality.md](../knowledge/data-quality.md)). That silently lowers the free-block count.
-  Demonstrator: [`5bl_fx_lpr_amp_cab.pgp`](../../presets/with-amp-cab/5bl_fx_lpr_amp_cab.pgp).
+  Demonstrator: [`5_--F-L_AC.pgp`](../../presets/with-amp-cab/5_--F-L_AC.pgp).

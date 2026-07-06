@@ -69,7 +69,7 @@
     {
       "rule": "blank-slate-ship",
       "demonstrates": "A published preset ships blank-slate: free blocks empty, no footswitch/controller assignments (snapshots may remain).",
-      "file": "presets/with-amp-cab/7bl_eq_amp_cab.pgp",
+      "file": "presets/with-amp-cab/7_---E-_AC.pgp",
       "provenance": "published-preset",
       "status": "unverified",
       "observe": "All free blocks are {\"@position\": N}; no tone.footswitch or tone.controller sections (contrast the base, which has both).",
@@ -78,7 +78,7 @@
     {
       "rule": "dropped-slot-lowers-free",
       "demonstrates": "A missing blockN slot silently lowers the free-block count below the intended value.",
-      "file": "presets/with-amp-cab/5bl_fx_lpr_amp_cab.pgp",
+      "file": "presets/with-amp-cab/5_--F-L_AC.pgp",
       "provenance": "published-preset",
       "status": "unverified",
       "observe": "dsp0 is missing block5, so only 9 slots exist and free_blocks = 5 despite the '6bl' intent.",
@@ -87,7 +87,7 @@
     {
       "rule": "duplicate-builtin",
       "demonstrates": "A preset can carry a duplicate built-in block (two Volume blocks) — a plausible cause of breakage.",
-      "file": "presets/with-amp-cab/6bl_vol_amp_cab_broken.pgp",
+      "file": "presets/with-amp-cab/6_V----_AC_bad.pgp",
       "provenance": "published-preset",
       "status": "unverified",
       "observe": "Two HD2_VolPan* blocks in dsp0; podgo.classify reports duplicate_builtins {volume: 2}.",
@@ -96,7 +96,7 @@
     {
       "rule": "trailing-comma-tolerated",
       "demonstrates": "POD Go tolerates a trailing comma that strict JSON parsers reject; our tools recover and flag it.",
-      "file": "presets/with-amp-cab/7bl_vol_amp_cab_broken.pgp",
+      "file": "presets/with-amp-cab/7_V----_AC_bad.pgp",
       "provenance": "published-preset",
       "status": "unverified",
       "observe": "podgo.load_pgp returns parse status 'recovered-trailing-comma' for this file.",
@@ -105,7 +105,7 @@
     {
       "rule": "phantom-slot-ceiling",
       "demonstrates": "With Volume or FX Loop kept, a 7th free block is a phantom the UI shows but cannot assign (the 7 assignable-block ceiling).",
-      "file": "presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp",
+      "file": "presets/with-amp-cab/7_--F--_AC_bad.pgp",
       "provenance": "published-preset",
       "status": "unverified",
       "observe": "7 free blocks while the FX Loop is present; per the ceiling the extra slot is unassignable (registry status: broken).",
@@ -114,7 +114,7 @@
     {
       "rule": "genuine-7-free-needs-vol-and-fx-removed",
       "demonstrates": "A genuine 7 free blocks requires removing BOTH Volume and FX Loop.",
-      "file": "presets/no-cab/7bl_eq_amp.pgp",
+      "file": "presets/no-cab/7_---E-_A-.pgp",
       "provenance": "published-preset",
       "status": "unverified",
       "observe": "No Volume and no FX Loop present; 7 free blocks, EQ + Amp kept.",
@@ -123,7 +123,7 @@
     {
       "rule": "no-amp-and-cab-collapses",
       "demonstrates": "Removing both Amp and Cab tends to collapse the chain to 8-9 slots and reliably breaks.",
-      "file": "presets/no-amp-and-cab/6bl_fx_eq_lpr_broken.pgp",
+      "file": "presets/no-amp-and-cab/6_--FEL_--_bad.pgp",
       "provenance": "published-preset",
       "status": "unverified",
       "observe": "no-amp-and-cab taxonomy; fewer than 10 slots; registry status: broken (representative of the folder).",

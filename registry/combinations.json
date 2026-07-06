@@ -18,8 +18,8 @@
   ],
   "presets": [
     {
-      "id": "6bl_vol_fx_eq_cab_broken",
-      "file": "presets/no-amp/6bl_vol_fx_eq_cab_broken.pgp",
+      "id": "6_V-FE-_-C_bad",
+      "file": "presets/no-amp/6_V-FE-_-C_bad.pgp",
       "status": "broken",
       "taxonomy": "no-amp",
       "free_blocks": 6,
@@ -46,8 +46,8 @@
       "notes": []
     },
     {
-      "id": "5bl_vol_fx_eq_lpr_cab",
-      "file": "presets/no-amp/5bl_vol_fx_eq_lpr_cab.pgp",
+      "id": "5_V-FEL_-C",
+      "file": "presets/no-amp/5_V-FEL_-C.pgp",
       "status": "working",
       "taxonomy": "no-amp",
       "free_blocks": 5,
@@ -76,8 +76,8 @@
       ]
     },
     {
-      "id": "4bl_vol_wah_fx_eq_broken",
-      "file": "presets/no-amp-and-cab/4bl_vol_wah_fx_eq_broken.pgp",
+      "id": "4_VWFE-_--_bad",
+      "file": "presets/no-amp-and-cab/4_VWFE-_--_bad.pgp",
       "status": "broken",
       "taxonomy": "no-amp-and-cab",
       "free_blocks": 4,
@@ -100,8 +100,8 @@
       ]
     },
     {
-      "id": "5bl_vol_eq_lpr_broken",
-      "file": "presets/no-amp-and-cab/5bl_vol_eq_lpr_broken.pgp",
+      "id": "5_V--EL_--_bad",
+      "file": "presets/no-amp-and-cab/5_V--EL_--_bad.pgp",
       "status": "broken",
       "taxonomy": "no-amp-and-cab",
       "free_blocks": 5,
@@ -129,8 +129,8 @@
       ]
     },
     {
-      "id": "5bl_vol_fx_eq_lpr_broken",
-      "file": "presets/no-amp-and-cab/5bl_vol_fx_eq_lpr_broken.pgp",
+      "id": "5_V-FEL_--_bad",
+      "file": "presets/no-amp-and-cab/5_V-FEL_--_bad.pgp",
       "status": "broken",
       "taxonomy": "no-amp-and-cab",
       "free_blocks": 5,
@@ -158,8 +158,8 @@
       ]
     },
     {
-      "id": "5bl_vol_wah_fx_eq_lpr_broken",
-      "file": "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken.pgp",
+      "id": "5_VWFEL_--_bad",
+      "file": "presets/no-amp-and-cab/5_VWFEL_--_bad.pgp",
       "status": "broken",
       "taxonomy": "no-amp-and-cab",
       "free_blocks": 5,
@@ -186,8 +186,8 @@
       "notes": []
     },
     {
-      "id": "5bl_vol_wah_fx_eq_lpr_broken_v2",
-      "file": "presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken_v2.pgp",
+      "id": "5_VWFEL_--_bad2",
+      "file": "presets/no-amp-and-cab/5_VWFEL_--_bad2.pgp",
       "status": "broken",
       "taxonomy": "no-amp-and-cab",
       "free_blocks": 5,
@@ -212,11 +212,12 @@
       "original_file": "broken/No Amp and Cab/5VolWahFxEqLpr2.pgp",
       "notes": [
         "Second variant of the vol/wah/fx/eq/looper no-amp-and-cab experiment (author's '2')."
-      ]
+      ],
+      "variant": "2"
     },
     {
-      "id": "6bl_fx_eq_lpr_broken",
-      "file": "presets/no-amp-and-cab/6bl_fx_eq_lpr_broken.pgp",
+      "id": "6_--FEL_--_bad",
+      "file": "presets/no-amp-and-cab/6_--FEL_--_bad.pgp",
       "status": "broken",
       "taxonomy": "no-amp-and-cab",
       "free_blocks": 6,
@@ -245,8 +246,8 @@
       ]
     },
     {
-      "id": "7bl_eq_amp",
-      "file": "presets/no-cab/7bl_eq_amp.pgp",
+      "id": "7_---E-_A-",
+      "file": "presets/no-cab/7_---E-_A-.pgp",
       "status": "working",
       "taxonomy": "no-cab",
       "free_blocks": 7,
@@ -269,8 +270,8 @@
       ]
     },
     {
-      "id": "7bl_eq_lpr_amp",
-      "file": "presets/no-cab/7bl_eq_lpr_amp.pgp",
+      "id": "7_---EL_A-",
+      "file": "presets/no-cab/7_---EL_A-.pgp",
       "status": "working",
       "taxonomy": "no-cab",
       "free_blocks": 7,
@@ -291,8 +292,8 @@
       "notes": []
     },
     {
-      "id": "6bl_vol_amp_cab_broken",
-      "file": "presets/with-amp-cab/6bl_vol_amp_cab_broken.pgp",
+      "id": "6_V----_AC_bad",
+      "file": "presets/with-amp-cab/6_V----_AC_bad.pgp",
       "status": "broken",
       "taxonomy": "with-amp-cab",
       "free_blocks": 6,
@@ -324,8 +325,8 @@
       ]
     },
     {
-      "id": "7bl_fx_amp_cab_broken",
-      "file": "presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp",
+      "id": "7_--F--_AC_bad",
+      "file": "presets/with-amp-cab/7_--F--_AC_bad.pgp",
       "status": "broken",
       "taxonomy": "with-amp-cab",
       "free_blocks": 7,
@@ -355,8 +356,8 @@
       ]
     },
     {
-      "id": "7bl_vol_amp_cab_broken",
-      "file": "presets/with-amp-cab/7bl_vol_amp_cab_broken.pgp",
+      "id": "7_V----_AC_bad",
+      "file": "presets/with-amp-cab/7_V----_AC_bad.pgp",
       "status": "broken",
       "taxonomy": "with-amp-cab",
       "free_blocks": 7,
@@ -379,8 +380,8 @@
       ]
     },
     {
-      "id": "5bl_fx_eq_lpr_amp_cab",
-      "file": "presets/with-amp-cab/5bl_fx_eq_lpr_amp_cab.pgp",
+      "id": "5_--FEL_AC",
+      "file": "presets/with-amp-cab/5_--FEL_AC.pgp",
       "status": "working",
       "taxonomy": "with-amp-cab",
       "free_blocks": 5,
@@ -401,8 +402,8 @@
       "notes": []
     },
     {
-      "id": "5bl_fx_lpr_amp_cab",
-      "file": "presets/with-amp-cab/5bl_fx_lpr_amp_cab.pgp",
+      "id": "5_--F-L_AC",
+      "file": "presets/with-amp-cab/5_--F-L_AC.pgp",
       "status": "working",
       "taxonomy": "with-amp-cab",
       "free_blocks": 5,
@@ -425,8 +426,8 @@
       ]
     },
     {
-      "id": "5bl_vol_fx_eq_amp_cab",
-      "file": "presets/with-amp-cab/5bl_vol_fx_eq_amp_cab.pgp",
+      "id": "5_V-FE-_AC",
+      "file": "presets/with-amp-cab/5_V-FE-_AC.pgp",
       "status": "working",
       "taxonomy": "with-amp-cab",
       "free_blocks": 5,
@@ -447,8 +448,8 @@
       "notes": []
     },
     {
-      "id": "5bl_vol_fx_lpr_amp_cab",
-      "file": "presets/with-amp-cab/5bl_vol_fx_lpr_amp_cab.pgp",
+      "id": "5_V-F-L_AC",
+      "file": "presets/with-amp-cab/5_V-F-L_AC.pgp",
       "status": "working",
       "taxonomy": "with-amp-cab",
       "free_blocks": 5,
@@ -469,8 +470,8 @@
       "notes": []
     },
     {
-      "id": "6bl_eq_lpr_amp_cab",
-      "file": "presets/with-amp-cab/6bl_eq_lpr_amp_cab.pgp",
+      "id": "6_---EL_AC",
+      "file": "presets/with-amp-cab/6_---EL_AC.pgp",
       "status": "working",
       "taxonomy": "with-amp-cab",
       "free_blocks": 6,
@@ -491,8 +492,8 @@
       "notes": []
     },
     {
-      "id": "6bl_fx_eq_amp_cab",
-      "file": "presets/with-amp-cab/6bl_fx_eq_amp_cab.pgp",
+      "id": "6_--FE-_AC",
+      "file": "presets/with-amp-cab/6_--FE-_AC.pgp",
       "status": "working",
       "taxonomy": "with-amp-cab",
       "free_blocks": 6,
@@ -513,8 +514,8 @@
       "notes": []
     },
     {
-      "id": "6bl_vol_eq_amp_cab",
-      "file": "presets/with-amp-cab/6bl_vol_eq_amp_cab.pgp",
+      "id": "6_V--E-_AC",
+      "file": "presets/with-amp-cab/6_V--E-_AC.pgp",
       "status": "working",
       "taxonomy": "with-amp-cab",
       "free_blocks": 6,
@@ -535,8 +536,8 @@
       "notes": []
     },
     {
-      "id": "6bl_vol_lpr_amp_cab",
-      "file": "presets/with-amp-cab/6bl_vol_lpr_amp_cab.pgp",
+      "id": "6_V---L_AC",
+      "file": "presets/with-amp-cab/6_V---L_AC.pgp",
       "status": "working",
       "taxonomy": "with-amp-cab",
       "free_blocks": 6,
@@ -557,8 +558,8 @@
       "notes": []
     },
     {
-      "id": "7bl_eq_amp_cab",
-      "file": "presets/with-amp-cab/7bl_eq_amp_cab.pgp",
+      "id": "7_---E-_AC",
+      "file": "presets/with-amp-cab/7_---E-_AC.pgp",
       "status": "working",
       "taxonomy": "with-amp-cab",
       "free_blocks": 7,
@@ -579,8 +580,8 @@
       "notes": []
     },
     {
-      "id": "7bl_lpr_amp_cab",
-      "file": "presets/with-amp-cab/7bl_lpr_amp_cab.pgp",
+      "id": "7_----L_AC",
+      "file": "presets/with-amp-cab/7_----L_AC.pgp",
       "status": "working",
       "taxonomy": "with-amp-cab",
       "free_blocks": 7,

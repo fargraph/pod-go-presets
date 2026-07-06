@@ -51,15 +51,15 @@ it and compare against the base). Full catalog:
 - **Fewer free blocks than expected → a dropped slot.** If a preset shows one fewer free
   block than intended, a `blockN` slot was likely deleted during editing (9 slots, not 10).
   Add the missing `"blockN": { "@position": N }` back to `dsp0`. Demonstrator:
-  [`5bl_fx_lpr_amp_cab.pgp`](../../presets/with-amp-cab/5bl_fx_lpr_amp_cab.pgp) (missing
+  [`5_--F-L_AC.pgp`](../../presets/with-amp-cab/5_--F-L_AC.pgp) (missing
   `block5`). See [data-quality.md](data-quality.md).
 - **A 7th free block won't assign → the phantom-slot ceiling.** If Volume or the FX Loop is
   still present, the 7th free slot is a phantom the UI shows but can't assign — remove
   *both* Volume and FX Loop for a genuine 7. Demonstrator:
-  [`7bl_fx_amp_cab_broken.pgp`](../../presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp).
+  [`7_--F--_AC_bad.pgp`](../../presets/with-amp-cab/7_--F--_AC_bad.pgp).
 - **A duplicate built-in block.** Two of the same built-in (e.g. two Volume blocks) can
   break a preset. Demonstrator:
-  [`6bl_vol_amp_cab_broken.pgp`](../../presets/with-amp-cab/6bl_vol_amp_cab_broken.pgp).
+  [`6_V----_AC_bad.pgp`](../../presets/with-amp-cab/6_V----_AC_bad.pgp).
 - **Name shows truncated after import.** `meta.name` caps at 16 characters; a longer name
   is silently cut to the first 16 on import — not rejected. Demonstrator:
   [`name-overlength.pgp`](../../data-presets/demonstrations/name-overlength.pgp).
@@ -69,7 +69,7 @@ it and compare against the base). Full catalog:
 POD Go tolerates a **trailing comma** that strict JSON parsers reject; our tools recover
 and flag it (`parse: recovered-trailing-comma`). Don't "fix" it by reformatting the file —
 that changes bytes device-wide (it also normalizes `\/` → `/`). Demonstrator:
-[`7bl_vol_amp_cab_broken.pgp`](../../presets/with-amp-cab/7bl_vol_amp_cab_broken.pgp). See
+[`7_V----_AC_bad.pgp`](../../presets/with-amp-cab/7_V----_AC_bad.pgp). See
 [pgp-format.md](../presets/pgp-format.md) and the `no-reformat-pgp` rule in
 [business-rules.md](../presets/business-rules.md).
 

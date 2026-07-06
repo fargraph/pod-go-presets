@@ -48,7 +48,7 @@ Pod Go Presets/            ← working root. NOT a git repo. Holds Claude's CLAU
   [blocks-and-constraints.md](../presets/blocks-and-constraints.md).
 - **Working/broken status is authoritative in
   [`registry/combinations.json`](../../registry/combinations.json)** and mirrored
-  by a `_broken` filename suffix.
+  by a `_bad` tag in the preset name.
 - The full add-a-preset checklist and tool commands are in
   [naming-and-registry.md](../presets/naming-and-registry.md).
 

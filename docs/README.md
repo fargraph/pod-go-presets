@@ -22,7 +22,7 @@ build one.
 - [presets/pgp-schema.md](presets/pgp-schema.md) — the **formal JSON Schema** (`registry/pgp.schema.json`, draft 2020-12): the field-by-field envelope, built to validate the base preset
 - [presets/blocks-and-constraints.md](presets/blocks-and-constraints.md) — the block chain; free vs built-in blocks; the **free-block rule**; the 7-block ceiling; why removing Amp/Cab breaks; removal taxonomy; the mandatory EQ/Looper block
 - [presets/business-rules.md](presets/business-rules.md) — **semantic rules a schema can't express** (validity/naming/editing), each tied to a demonstrator preset with a verified/unverified status (`registry/rules.json`)
-- [presets/naming-and-registry.md](presets/naming-and-registry.md) — preset naming; name/filename limits; the `registry/` files; the `tools/`; how to add a preset
+- [presets/naming-and-registry.md](presets/naming-and-registry.md) — the one unified preset name (filename = `id` = `meta.name`); name/filename limits; the `registry/` files; the `tools/`; how to add a preset
 
 ### 🔬 [knowledge/](knowledge/README.md) — what hardware testing taught us
 The living lab notebook: what's confirmed on a unit, the defects found in the

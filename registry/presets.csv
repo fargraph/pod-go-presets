@@ -1,24 +1,24 @@
 free_blocks,vol,wah,fx,eq,lpr,amp,cab,status,taxonomy,slots,file,notes
-6,1,0,1,1,0,0,1,broken,no-amp,10,presets/no-amp/6bl_vol_fx_eq_cab_broken.pgp,
-5,1,0,1,1,1,0,1,working,no-amp,10,presets/no-amp/5bl_vol_fx_eq_lpr_cab.pgp,Original name omitted the Volume block that is present. Not a blank slate: ships with a loaded effect chain (Comp/Dist/Chorus/Delay/Reverb). No-amp config — verify on hardware.
-6,0,0,1,1,1,0,0,broken,no-amp-and-cab,9,presets/no-amp-and-cab/6bl_fx_eq_lpr_broken.pgp,Only 9 block slots.
-5,1,0,0,1,1,0,0,broken,no-amp-and-cab,8,presets/no-amp-and-cab/5bl_vol_eq_lpr_broken.pgp,Only 8 block slots.
-5,1,0,1,1,1,0,0,broken,no-amp-and-cab,9,presets/no-amp-and-cab/5bl_vol_fx_eq_lpr_broken.pgp,Only 9 block slots (chain collapsed with amp+cab removed).
-5,1,1,1,1,1,0,0,broken,no-amp-and-cab,10,presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken.pgp,
-5,1,1,1,1,1,0,0,broken,no-amp-and-cab,10,presets/no-amp-and-cab/5bl_vol_wah_fx_eq_lpr_broken_v2.pgp,Second variant of the vol/wah/fx/eq/looper no-amp-and-cab experiment (author's '2').
-4,1,1,1,1,0,0,0,broken,no-amp-and-cab,8,presets/no-amp-and-cab/4bl_vol_wah_fx_eq_broken.pgp,Only 8 block slots.
-7,0,0,0,1,0,1,0,working,no-cab,9,presets/no-cab/7bl_eq_amp.pgp,"Original name claimed FX Loop + Looper, but the file contains neither (only EQ + Amp). Renamed to match actual content; verify intent."
-7,0,0,0,1,1,1,0,working,no-cab,10,presets/no-cab/7bl_eq_lpr_amp.pgp,
-7,0,0,0,1,0,1,1,working,with-amp-cab,10,presets/with-amp-cab/7bl_eq_amp_cab.pgp,
-7,0,0,1,0,0,1,1,broken,with-amp-cab,10,presets/with-amp-cab/7bl_fx_amp_cab_broken.pgp,7 free blocks while FX Loop is present — the 7th free block cannot be user-assigned (see FX-Loop/Volume constraint).
-7,0,0,0,0,1,1,1,working,with-amp-cab,10,presets/with-amp-cab/7bl_lpr_amp_cab.pgp,
-7,1,0,0,0,0,1,1,broken,with-amp-cab,10,presets/with-amp-cab/7bl_vol_amp_cab_broken.pgp,Malformed JSON (trailing comma) — recovered by parser. 7 free with Volume present (extra block unassignable).
-6,0,0,0,1,1,1,1,working,with-amp-cab,10,presets/with-amp-cab/6bl_eq_lpr_amp_cab.pgp,
-6,0,0,1,1,0,1,1,working,with-amp-cab,10,presets/with-amp-cab/6bl_fx_eq_amp_cab.pgp,
-6,1,0,0,0,0,1,1,broken,with-amp-cab,10,presets/with-amp-cab/6bl_vol_amp_cab_broken.pgp,"Contains TWO Volume blocks (duplicate). Original name claimed FX Loop, which is absent."
-6,1,0,0,1,0,1,1,working,with-amp-cab,10,presets/with-amp-cab/6bl_vol_eq_amp_cab.pgp,
-6,1,0,0,0,1,1,1,working,with-amp-cab,10,presets/with-amp-cab/6bl_vol_lpr_amp_cab.pgp,
-5,0,0,1,1,1,1,1,working,with-amp-cab,10,presets/with-amp-cab/5bl_fx_eq_lpr_amp_cab.pgp,
-5,0,0,1,0,1,1,1,working,with-amp-cab,9,presets/with-amp-cab/5bl_fx_lpr_amp_cab.pgp,"Original name claimed 6 free blocks; file is missing slot 'block5' so it currently exposes only 5 free blocks. Re-add {""@position"":5} to restore the 6th."
-5,1,0,1,1,0,1,1,working,with-amp-cab,10,presets/with-amp-cab/5bl_vol_fx_eq_amp_cab.pgp,
-5,1,0,1,0,1,1,1,working,with-amp-cab,10,presets/with-amp-cab/5bl_vol_fx_lpr_amp_cab.pgp,
+6,1,0,1,1,0,0,1,broken,no-amp,10,presets/no-amp/6_V-FE-_-C_bad.pgp,
+5,1,0,1,1,1,0,1,working,no-amp,10,presets/no-amp/5_V-FEL_-C.pgp,Original name omitted the Volume block that is present. Not a blank slate: ships with a loaded effect chain (Comp/Dist/Chorus/Delay/Reverb). No-amp config — verify on hardware.
+6,0,0,1,1,1,0,0,broken,no-amp-and-cab,9,presets/no-amp-and-cab/6_--FEL_--_bad.pgp,Only 9 block slots.
+5,1,0,0,1,1,0,0,broken,no-amp-and-cab,8,presets/no-amp-and-cab/5_V--EL_--_bad.pgp,Only 8 block slots.
+5,1,0,1,1,1,0,0,broken,no-amp-and-cab,9,presets/no-amp-and-cab/5_V-FEL_--_bad.pgp,Only 9 block slots (chain collapsed with amp+cab removed).
+5,1,1,1,1,1,0,0,broken,no-amp-and-cab,10,presets/no-amp-and-cab/5_VWFEL_--_bad.pgp,
+5,1,1,1,1,1,0,0,broken,no-amp-and-cab,10,presets/no-amp-and-cab/5_VWFEL_--_bad2.pgp,Second variant of the vol/wah/fx/eq/looper no-amp-and-cab experiment (author's '2').
+4,1,1,1,1,0,0,0,broken,no-amp-and-cab,8,presets/no-amp-and-cab/4_VWFE-_--_bad.pgp,Only 8 block slots.
+7,0,0,0,1,0,1,0,working,no-cab,9,presets/no-cab/7_---E-_A-.pgp,"Original name claimed FX Loop + Looper, but the file contains neither (only EQ + Amp). Renamed to match actual content; verify intent."
+7,0,0,0,1,1,1,0,working,no-cab,10,presets/no-cab/7_---EL_A-.pgp,
+7,0,0,0,0,1,1,1,working,with-amp-cab,10,presets/with-amp-cab/7_----L_AC.pgp,
+7,0,0,0,1,0,1,1,working,with-amp-cab,10,presets/with-amp-cab/7_---E-_AC.pgp,
+7,0,0,1,0,0,1,1,broken,with-amp-cab,10,presets/with-amp-cab/7_--F--_AC_bad.pgp,7 free blocks while FX Loop is present — the 7th free block cannot be user-assigned (see FX-Loop/Volume constraint).
+7,1,0,0,0,0,1,1,broken,with-amp-cab,10,presets/with-amp-cab/7_V----_AC_bad.pgp,Malformed JSON (trailing comma) — recovered by parser. 7 free with Volume present (extra block unassignable).
+6,0,0,0,1,1,1,1,working,with-amp-cab,10,presets/with-amp-cab/6_---EL_AC.pgp,
+6,0,0,1,1,0,1,1,working,with-amp-cab,10,presets/with-amp-cab/6_--FE-_AC.pgp,
+6,1,0,0,0,0,1,1,broken,with-amp-cab,10,presets/with-amp-cab/6_V----_AC_bad.pgp,"Contains TWO Volume blocks (duplicate). Original name claimed FX Loop, which is absent."
+6,1,0,0,0,1,1,1,working,with-amp-cab,10,presets/with-amp-cab/6_V---L_AC.pgp,
+6,1,0,0,1,0,1,1,working,with-amp-cab,10,presets/with-amp-cab/6_V--E-_AC.pgp,
+5,0,0,1,0,1,1,1,working,with-amp-cab,9,presets/with-amp-cab/5_--F-L_AC.pgp,"Original name claimed 6 free blocks; file is missing slot 'block5' so it currently exposes only 5 free blocks. Re-add {""@position"":5} to restore the 6th."
+5,0,0,1,1,1,1,1,working,with-amp-cab,10,presets/with-amp-cab/5_--FEL_AC.pgp,
+5,1,0,1,0,1,1,1,working,with-amp-cab,10,presets/with-amp-cab/5_V-F-L_AC.pgp,
+5,1,0,1,1,0,1,1,working,with-amp-cab,10,presets/with-amp-cab/5_V-FE-_AC.pgp,
