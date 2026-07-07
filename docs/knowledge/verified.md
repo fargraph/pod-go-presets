@@ -88,6 +88,7 @@ library; `source` = Line 6 / community.
 | EXP 1→Wah / EXP 2→Volume | source | [reference/block-models.md](../reference/block-models.md) |
 | Authoritative model list (**574 defs**) + per-block **DSP loads** + firmware provenance ship in POD Go Edit's catalog (`registry/model-catalog/podgo-edit-2.50.json`) — supersedes the old preset-mined 429 count | source | [reference/block-models.md](../reference/block-models.md) |
 | ~~DSP budget as a 2nd viability factor (hypothesis)~~ **→ now CONFIRMED, see ✅ Verified above** | hardware | [blocks-and-constraints.md](../presets/blocks-and-constraints.md) · *The DSP budget* |
+| USB **control protocol** decoded — checksum-free framed transport, deterministic handshake, command dictionary (bypass/set-model/set-param/add/remove/load/save/rename) — captured from POD Go Edit but **not yet replayed by us** | hardware (capture only) | [usb-control-protocol.md](../reference/usb-control-protocol.md) · working spec `tools/usb-intercept/protocol.md` |
 
 ## Pending a demonstrator or a unit test
 

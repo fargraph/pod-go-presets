@@ -20,6 +20,11 @@ machine-readable data lives in [`registry/`](../../registry/).
   hardware-cracked wire encoding, why the `usb_id → @model` map is device-internal
   (confirmed by decompiling POD Go Edit — it's not in the app), the
   monotonic-within-category constraint, and how to grow the empirical crosswalk.
+- [usb-control-protocol.md](usb-control-protocol.md) — the **USB control protocol**: how POD Go
+  Edit drives the unit (transport, channels, frame format, session mechanics) and the decoded
+  **command dictionary** (bypass/set-model/set-param/add/remove/load/save/rename), plus the libusb
+  capture method. Orientation + status (⬜ decoded, not replay-verified); byte-level spec in
+  [`tools/usb-intercept/protocol.md`](../../tools/usb-intercept/protocol.md).
 - [data-coverage.md](data-coverage.md) — **generated** gap worklist: which block
   `@model` ids we've captured vs. still need. Written by
   [`tools/coverage.py`](../../tools/coverage.py); **do not hand-edit.**

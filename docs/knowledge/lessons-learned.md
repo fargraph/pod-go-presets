@@ -116,3 +116,14 @@ chain. Lesson: **derive names/status from content and validate, never trust the 
   is **monotonic with defs-order within each category** (it's the HX platform's global,
   historically-assigned model id) — a handy validation constraint but not enough to
   reconstruct all 574 offline. [→ reference/usb-id-mapping.md](../reference/usb-id-mapping.md)
+- **POD Go Edit's USB traffic is capturable on macOS with SIP left on** — no second machine, no
+  hardware analyzer. The app drives the unit through a bundled **libusb**, so a **DYLD interposer**
+  on a re-signed copy of the app logs every bulk transfer's payload (Wireshark's macOS USB path
+  needs SIP *off* and hits an Apple-Silicon all-zero-payload bug). From those captures the wire
+  protocol fell out: a **checksum-free** framed transport (validated across 100% of frames), a
+  **deterministic** handshake (every fresh connect reaches the same counter state), and a command
+  dictionary (bypass/set-model/set-param/add/remove/load/save/rename). Gotcha met along the way:
+  dyld interposes `dlsym` too, so resolving the "real" libusb function via `dlsym` recurses —
+  call it by name. **All of it is decoded, not yet replayed** — issuing a command *from our own
+  code* and confirming on the unit is the open step.
+  [→ reference/usb-control-protocol.md](../reference/usb-control-protocol.md)

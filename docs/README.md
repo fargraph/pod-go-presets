@@ -40,6 +40,7 @@ coverage worklist, and external sources.
 - [reference/block-models.md](reference/block-models.md) — authoritative POD Go model list by category; POD Go vs. Helix deltas; sources
 - [reference/model-id-conventions.md](reference/model-id-conventions.md) — how internal `@model` ids are structured (prefixes, legacy codes, mono/stereo, `EQ_STATIC`)
 - [reference/usb-id-mapping.md](reference/usb-id-mapping.md) — the separate **`usb_id`** system: wire encoding, why the `usb_id → @model` map is device-internal (decompiled POD Go Edit — not in the app), the monotonic-within-category constraint, growing the crosswalk
+- [reference/usb-control-protocol.md](reference/usb-control-protocol.md) — the **USB control protocol**: transport, channels, frame format, session mechanics, the decoded **command dictionary**, and the libusb capture method (⬜ decoded, not yet replay-verified)
 - [reference/data-coverage.md](reference/data-coverage.md) — **gap worklist:** which block `@model` ids we've captured vs still need (generated)
 - [reference/resources.md](reference/resources.md) — external links: Line 6 manuals, model gallery, FAQ, community references
 
