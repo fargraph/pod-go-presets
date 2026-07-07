@@ -59,8 +59,10 @@ enumeration / 10-of-574 empirical" note. The full 627-pair
 [`tools/gen_usb_id_map.py`](../../tools/gen_usb_id_map.py) and cross-checks against every known
 pair. **Blind predictive hardware confirmation (v2.50):** predicted `PodGo.sym[41] =
 HD2_AmpUSDoubleNrm`, and setting the amp to "US Double Nrm" sent exactly `c2 19 29` (= 41).
-⏳ *Pending formal promotion to a `verified` rule (needs a rule id + a demonstrator preset,
-jointly with Clifton).* Full treatment in [usb-id-mapping.md](../reference/usb-id-mapping.md).
+This is now its own ✅ **verified** rule
+([`usb-id-map-is-podgo-sym-index`](../../registry/rules.json)), demonstrated by the calibration
+presets (each captured usb_id equals its model's `PodGo.sym` index). Full treatment in
+[usb-id-mapping.md](../reference/usb-id-mapping.md).
 
 Other items land here as they're confirmed on the unit with an accompanying demonstrator.
 To promote one: set its `status` to `verified` in

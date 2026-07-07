@@ -66,7 +66,8 @@ See also the formal envelope in [pgp-schema.md](pgp-schema.md).
 
 | Status | Rule | Demonstrated by |
 | :-: | --- | --- |
-| ✅ | **usb-id-decode** — over USB a block's `usb_id` is a MessagePack uint after the constant `c2 19` prefix (before `1aff09`) in its slot; a device-internal enumeration (**not** the `PodGoModelDefs` array index), so `usb_id → @model` is built empirically ([`registry/usb-id-map.json`](../../registry/usb-id-map.json)). Confirmed on two independent hardware captures (Vol 224, Amp 289, EQ 472 held). | [`usb-id-calibration`](../../data-presets/demonstrations/usb-id-calibration.pgp), [`usb-id-calibration-2`](../../data-presets/demonstrations/usb-id-calibration-2.pgp) |
+| ✅ | **usb-id-decode** — over USB a block's `usb_id` is a MessagePack uint after the constant `c2 19` prefix (before `1aff09`) in its slot (the Looper uses `84 08 <uint> 09`). Confirmed on two independent hardware captures (Vol 224, Amp 289, EQ 472 held). | [`usb-id-calibration`](../../data-presets/demonstrations/usb-id-calibration.pgp), [`usb-id-calibration-2`](../../data-presets/demonstrations/usb-id-calibration-2.pgp) |
+| ✅ | **usb-id-map-is-podgo-sym-index** — `usb_id` = a model's 0-based index in POD Go Edit's `PodGo.sym` (a `HelixSymbolTable`; the entry position is the id), so the complete 627-pair `usb_id → @model` map is derived from the app ([`registry/usb-id-map.json`](../../registry/usb-id-map.json) via `tools/gen_usb_id_map.py`) — **not** empirical, and **not** the `PodGoModelDefs` array index. Blind predictive hardware test (v2.50): US Double Nrm → `c2 19 29` = 41 = `PodGo.sym[41]`. | [`usb-id-calibration`](../../data-presets/demonstrations/usb-id-calibration.pgp), [`usb-id-calibration-2`](../../data-presets/demonstrations/usb-id-calibration-2.pgp) |
 
 ## Flipping an item to ✅ verified
 
