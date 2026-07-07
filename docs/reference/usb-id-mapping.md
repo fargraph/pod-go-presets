@@ -98,12 +98,19 @@ The partial, hardware-read map lives in
    stream, decode with [`tools/podgo_usb.py`](../../tools/podgo_usb.py), and record each
    slot's `usb_id` against the block you know is there. Slow but reliable; validate new pairs
    against the monotonic-within-category constraint above.
-2. **Per-category model-list fetch (proposed, untested).** The device appears to hand the
-   editor per-category numeric id lists aligned to its catalog order (that alignment is what
-   makes the ids monotonic). Capturing the editor *opening the model picker for each block
-   type once* — connected to the unit — should yield a numeric list per category that aligns
-   1:1 with that category's `.models` order, giving the whole table in one session. The
-   existing captures only touched a few blocks, so they don't contain it.
+2. **Model-list fetch, aligned to catalog order** — the fast path, via
+   [`tools/decode_model_list.py`](../../tools/decode_model_list.py). The device hands the editor
+   its model ids in `PodGoModelDefs.bin` order (that alignment is what makes them monotonic).
+   Capture the editor *fetching the model lists* — connected, open every block's model picker
+   once — and the decoder locates the numeric array in the device→host stream by using the
+   known pairs as **anchors** (so it needs no prior knowledge of the wire encoding: it tries a
+   MessagePack uint array and uint16 LE/BE, whole-catalog first, then per numeric category),
+   validates every decoded value against the known pairs and the monotonic constraint, and
+   emits the merged crosswalk. The decoder ships a `--selftest` that recovers a synthetic
+   574-model table end-to-end, so the logic is proven; it awaits a *browse-every-category*
+   capture to run for real (the existing captures are edit sessions with no list, and the tool
+   says so). **Caveat:** alignment keys off `PodGoModelDefs.bin` order, **not** the reordered
+   `registry/model-catalog/` snapshot nor the `.models` filename grouping.
 
 A runtime (lldb) dump of the editor's block-id map with the unit connected is a third,
 heavier option. **All routes require the hardware** — the app alone cannot produce the ids.

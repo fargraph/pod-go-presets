@@ -126,6 +126,7 @@ Run from the repo root:
 | `python3 tools/gen_matrix.py` | Regenerate `registry/presets.csv` + the clickable preset list in the README |
 | `python3 tools/extract_podgo_catalog.py` | Snapshot POD Go Edit's model catalog → `registry/model-catalog/podgo-edit-<ver>.json` |
 | `python3 tools/podgo_usb.py <capture.log>` | Decode a raw POD Go USB capture → the live block chain (occupancy, on/off, `usb_id`, `@model`) |
+| `python3 tools/decode_model_list.py <capture.log>` | Recover the full `usb_id`↔`@model` table from a *browse-every-category* capture (anchor-aligns the device's model-list array to `PodGoModelDefs.bin` order; `--selftest` proves it). See [../reference/usb-id-mapping.md](../reference/usb-id-mapping.md) |
 
 `tools/podgo.py` is the shared library (load/parse, classify, taxonomy, naming).
 `tools/podgo_models.py` reads the model-catalog snapshot (name/category/DSP `load`/params by
