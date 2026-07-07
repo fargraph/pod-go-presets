@@ -1,0 +1,33 @@
+{
+  "_about": "usb_id -> POD Go block, built from libusb captures (tools/usb-intercept) + block names read off POD Go Edit's UI. Working artifact, NOT the formal verified ledger: 'name' is the editor display name; '@model' is TBD (resolve via the model catalog by name). Cross-check per project epistemics before promoting to registry/rules.json. See plans/usb-libusb-intercept/PLAN.md.",
+  "_notes": {
+    "looper_encoding": "CORRECTION: the Looper DOES carry a usb_id, but encoded as '84 08 <msgpack-uint id> 09', NOT the 'c2 19 <id> 1a ff 09' the other blocks use — which is why a c2 19 scan misses it. Proven by changing 6sw->1sw looper in run-20260706-184021: the looper-slot byte went 7f (127) -> cd01ae (430), region grew exactly +2 bytes (fixint->uint16).",
+    "encoding": "non-looper occupied slot: c2 19 <msgpack-uint usb_id> 1a ff 09 ; looper slot: 84 08 <msgpack-uint usb_id> 09 ; msgpack widths: fixint(<0x80), cc+u8, cd+u16(BE)"
+  },
+  "pairs": {
+    "127": {"name": "6 Switch Looper",    "category": "looper",     "source": "run-20260706-184021", "encoding": "84 08"},
+    "430": {"name": "1 Switch Looper",    "category": "looper",     "source": "run-20260706-184021", "encoding": "84 08"},
+    "92":  {"name": "Minitaur",           "category": "distortion", "source": "run-20260706-184021"},
+    "93":  {"name": "Scream 808",         "category": "distortion", "source": "run-20260707-074442"},
+    "286": {"name": "Line 6 Litigator",   "category": "amp",        "source": "run-20260707-081009"},
+    "101": {"name": "Red Squeeze",        "category": "dynamics",   "source": "run-20260706-184021"},
+    "342": {"name": "Stereo",             "category": "delay",      "source": "run-20260706-184021"},
+    "387": {"name": "Analog Chorus",      "category": "modulation", "source": "run-20260706-184021"},
+    "434": {"name": "Deranged Master",    "category": "distortion", "source": "run-20260706-184021"},
+    "445": {"name": "Low/High Shelf",     "category": "eq",         "source": "run-20260706-184021"},
+    "513": {"name": "Shimmer",            "category": "reverb",     "source": "run-20260706-184021"},
+    "527": {"name": "Line 6 Ventoux",     "category": "amp",        "source": "run-20260706-184021"},
+    "551": {"name": "4x12 Greenback 25",  "category": "cab",        "source": "run-20260706-184021"},
+
+    "224": {"name": "Volume/Pan",         "category": "volume",     "source": "sibling-seed"},
+    "289": {"name": "Amp (seed)",         "category": "amp",        "source": "sibling-seed"},
+    "472": {"name": "EQ (seed)",          "category": "eq",         "source": "sibling-seed"},
+    "99":  {"name": "Compressor",         "category": "dynamics",   "source": "sibling-seed"},
+    "84":  {"name": "Simple Delay",       "category": "delay",      "source": "run-20260707-081009 (confirmed; was sibling-seed 'Delay')"},
+    "98":  {"name": "Distortion (seed)",  "category": "distortion", "source": "sibling-seed"},
+    "117": {"name": "Filter",             "category": "filter",     "source": "sibling-seed"},
+    "249": {"name": "Tremolo",            "category": "modulation", "source": "sibling-seed"},
+    "304": {"name": "Compressor (AutoSwell)", "category": "dynamics", "source": "sibling-seed"},
+    "552": {"name": "2x15 Brute",         "category": "cab",        "source": "sibling-seed"}
+  }
+}
