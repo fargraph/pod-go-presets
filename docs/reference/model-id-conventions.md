@@ -108,9 +108,9 @@ to *learn* an id.
 ## The USB block id (`usb_id`) — a separate id system
 
 Over USB, POD Go names a block by a **small integer** (`usb_id`), not by its `@model` string.
-That is a different id space with its own encoding, its own device-internal enumeration, and
-its own (empirical) crosswalk to `@model` — all covered in
-**[usb-id-mapping.md](usb-id-mapping.md)**. In short: the encoding is hardware-cracked
-(`c2 19 <msgpack-uint> 1aff09`), but the `usb_id → @model` map is **not** in POD Go Edit's data
-(confirmed by decompiling the app) — it comes from the device, so the crosswalk
-([`registry/usb-id-map.json`](../../registry/usb-id-map.json)) is built empirically.
+That is a different id space with its own encoding and its own crosswalk to `@model` — all
+covered in **[usb-id-mapping.md](usb-id-mapping.md)**. In short: `usb_id` = the index of a
+model's `symbolicID` in POD Go Edit's `PodGo.sym`, so the complete 627-pair map
+([`registry/usb-id-map.json`](../../registry/usb-id-map.json)) is generated from the app by
+[`tools/gen_usb_id_map.py`](../../tools/gen_usb_id_map.py); the wire encoding is
+`c2 19 <msgpack-uint> 1aff09` (Looper: `84 08 <uint> 09`).

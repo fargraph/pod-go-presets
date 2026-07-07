@@ -109,13 +109,15 @@ chain. Lesson: **derive names/status from content and validate, never trust the 
   ships the full authoritative catalog (**574 models** with DSP loads + params +
   firmware provenance) as JSON, so "which models exist" no longer needs harvesting; the
   gap is closed by definition. [→ reference/block-models.md](../reference/block-models.md)
-- **The `usb_id → @model` map isn't in POD Go Edit — the device holds it.** Decompiling the
-  editor (x86-64, unstripped, ~45.6k symbols) found the id in **no** shipped data: not a
-  catalog field, not a static array in any order, not string- or FNV-hash-keyed; the editor
-  keeps blocks as numeric ids and gets them from the unit. The one regularity is that `usb_id`
-  is **monotonic with defs-order within each category** (it's the HX platform's global,
-  historically-assigned model id) — a handy validation constraint but not enough to
-  reconstruct all 574 offline. [→ reference/usb-id-mapping.md](../reference/usb-id-mapping.md)
+- **`usb_id` = the index of a model's symbolicID in `PodGo.sym`** — the whole 627-pair map is
+  a *local* file. POD Go Edit loads `PodGo.sym` into a `HelixSymbolTable`; the entry's **position
+  is the id** (there's no id column), and `HelixSymbolTable::lookupModel()` does the translation
+  both ways. Hardware-confirmed by a blind predictive test (US Double Nrm → `c2 19 29` = 41).
+  **The RE lesson:** a value that isn't *stored* may be encoded as an *ordering* — `PodGo.sym`
+  was dismissed early as a "symbol → parameters" list, so a long hunt (binary arrays in every
+  model order/width, FNV-hashed keys, a device-sent manifest, picker-fetch captures) all came up
+  empty because the answer was an implicit index. Regenerate with `tools/gen_usb_id_map.py`.
+  [→ reference/usb-id-mapping.md](../reference/usb-id-mapping.md)
 - **POD Go Edit's USB traffic is capturable on macOS with SIP left on** — no second machine, no
   hardware analyzer. The app drives the unit through a bundled **libusb**, so a **DYLD interposer**
   on a re-signed copy of the app logs every bulk transfer's payload (Wireshark's macOS USB path

@@ -1,6 +1,12 @@
 """decode_model_list — recover the full usb_id ↔ @model table from a capture where
 POD Go Edit fetched the device's model list(s).
 
+SUPERSEDED (kept for reference): the usb_id ↔ @model map turned out to be derivable directly
+from POD Go Edit's PodGo.sym (usb_id == a symbolicID's index in that file) — use
+tools/gen_usb_id_map.py, no capture needed. Hardware then showed opening a model picker sends
+NO device traffic (the picker is rendered from the local catalog), so the "browse to capture
+the list" premise below never fires anyway. See docs/reference/usb-id-mapping.md.
+
 Motivation (see docs/reference/usb-id-mapping.md): the `usb_id → @model` map is NOT in
 POD Go Edit's shipped data — the app decompiles clean of any static table, keeps blocks as
 numeric ids, and gets those ids from the unit. But `usb_id` is strictly MONOTONIC with the
@@ -290,24 +296,19 @@ def selftest():
     """Synthesize a device response from the catalog + a plausible per-model usb_id, then
     confirm the decoder recovers the whole table from each supported encoding."""
     flat, by_cat = load_catalog_order()
-    known = load_known()
-    # Build a ground-truth usb_id per model that satisfies monotonic-within-category and
-    # matches the real known pairs where we have them (so anchors are realistic).
-    truth = {}
+    # Purely SYNTHETIC ground truth (strictly increasing per category by construction) and
+    # synthetic anchors — self-contained, independent of registry/usb-id-map.json so this test
+    # keeps passing regardless of what the real map holds.
+    truth, base = {}, 40
     for cat, sids in by_cat.items():
-        base = 40
         for sid in sids:
             truth[sid] = base
             base += 3
-    for uid, sid in known.items():                 # pin real anchors onto the ground truth
-        truth[sid] = uid
-    # ensure still strictly increasing per category after pinning
+    known = {}                                     # a few anchors per multi-model category
     for cat, sids in by_cat.items():
-        prev = -1
-        for sid in sids:
-            if truth[sid] <= prev:
-                truth[sid] = prev + 1
-            prev = truth[sid]
+        if len(sids) >= 2:
+            for sid in (sids[0], sids[-1]):
+                known[truth[sid]] = sid
 
     def mp_array(vals):
         b = bytearray()
@@ -330,20 +331,13 @@ def selftest():
     print(f"selftest full-catalog msgpack array: {'PASS' if full_ok else 'FAIL'} "
           f"({len(mapping)}/{len(flat)} recovered)")
     ok &= full_ok
-    # (b) per-category uint16-LE arrays (no full list present). The canonical usb-id-map.json
-    # is anchor-sparse, so augment with 2 synthetic anchors per multi-model category to prove
-    # the per-category code path itself works when enough anchors exist.
-    aug = dict(known)
-    for cat, sids in by_cat.items():
-        if len(sids) >= 2:
-            for sid in (sids[0], sids[-1]):        # first + last of the category
-                aug[truth[sid]] = sid
+    # (b) per-category uint16-LE arrays (no full list present).
     blob = b""
     for cat, sids in by_cat.items():
         blob += b"\x00\x00" + b"".join(struct.pack("<H", truth[s]) for s in sids) + b"\x00\x00"
-    mapping, notes, contra = decode(blob, flat, by_cat, aug)
+    mapping, notes, contra = decode(blob, flat, by_cat, known)
     aligned_cats = [c for c, sids in by_cat.items()
-                    if len(_anchors_for(sids, aug)) >= 2]
+                    if len(_anchors_for(sids, known)) >= 2]
     covered = [s for c in aligned_cats for s in by_cat[c]]
     percat_ok = (not contra and covered
                  and all(mapping.get(s) == truth[s] for s in covered))
