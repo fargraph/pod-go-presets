@@ -109,8 +109,8 @@ Machine-readable source of truth under [`registry/`](../../registry):
   [reference/block-models.md](../reference/block-models.md).
 - **`usb-id-map.json`** — partial, hardware-confirmed `usb_id → @model` crosswalk (the small
   integer POD Go reports over USB → the block model). Grown empirically from captures; see
-  [reference/model-id-conventions.md](../reference/model-id-conventions.md) and rule
-  `usb-id-decode` in `rules.json`.
+  [reference/usb-id-mapping.md](../reference/usb-id-mapping.md) (encoding, why it's
+  device-internal, how to extend it) and rule `usb-id-decode` in `rules.json`.
 
 ## Tools
 

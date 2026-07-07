@@ -109,3 +109,10 @@ chain. Lesson: **derive names/status from content and validate, never trust the 
   ships the full authoritative catalog (**574 models** with DSP loads + params +
   firmware provenance) as JSON, so "which models exist" no longer needs harvesting; the
   gap is closed by definition. [→ reference/block-models.md](../reference/block-models.md)
+- **The `usb_id → @model` map isn't in POD Go Edit — the device holds it.** Decompiling the
+  editor (x86-64, unstripped, ~45.6k symbols) found the id in **no** shipped data: not a
+  catalog field, not a static array in any order, not string- or FNV-hash-keyed; the editor
+  keeps blocks as numeric ids and gets them from the unit. The one regularity is that `usb_id`
+  is **monotonic with defs-order within each category** (it's the HX platform's global,
+  historically-assigned model id) — a handy validation constraint but not enough to
+  reconstruct all 574 offline. [→ reference/usb-id-mapping.md](../reference/usb-id-mapping.md)

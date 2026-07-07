@@ -52,8 +52,9 @@ not index `193`), so the crosswalk is built empirically
 ([`registry/usb-id-map.json`](../../registry/usb-id-map.json), 10/574 so far). Demonstrators:
 [`usb-id-calibration.pgp`](../../data-presets/demonstrations/usb-id-calibration.pgp) +
 [`usb-id-calibration-2.pgp`](../../data-presets/demonstrations/usb-id-calibration-2.pgp);
-decoded by [`tools/podgo_usb.py`](../../tools/podgo_usb.py). See
-[model-id-conventions.md](../reference/model-id-conventions.md).
+decoded by [`tools/podgo_usb.py`](../../tools/podgo_usb.py). Full treatment — encoding, why
+the map is device-internal (decompiling POD Go Edit confirms it's **not** in the app), and the
+monotonic-within-category constraint — in [usb-id-mapping.md](../reference/usb-id-mapping.md).
 
 Other items land here as they're confirmed on the unit with an accompanying demonstrator.
 To promote one: set its `status` to `verified` in

@@ -16,6 +16,10 @@ machine-readable data lives in [`registry/`](../../registry/).
 - [model-id-conventions.md](model-id-conventions.md) — how Pod Go names blocks
   internally in the JSON: prefixes (`HD2_`, `VIC_`, bare legacy), legacy stompbox
   family codes, mono/stereo suffixes, and `EQ_STATIC` vs. `EQ`.
+- [usb-id-mapping.md](usb-id-mapping.md) — the separate **`usb_id`** id system: the
+  hardware-cracked wire encoding, why the `usb_id → @model` map is device-internal
+  (confirmed by decompiling POD Go Edit — it's not in the app), the
+  monotonic-within-category constraint, and how to grow the empirical crosswalk.
 - [data-coverage.md](data-coverage.md) — **generated** gap worklist: which block
   `@model` ids we've captured vs. still need. Written by
   [`tools/coverage.py`](../../tools/coverage.py); **do not hand-edit.**
